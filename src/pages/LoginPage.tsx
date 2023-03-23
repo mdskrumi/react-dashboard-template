@@ -13,7 +13,7 @@ import ErrorMessage from 'components/ErrorMessage';
 import Loading from 'components/Loading';
 
 // Icons
-import Logo from '../../public/logo.svg';
+import Logo from '/logo.svg';
 
 const LoginPage: React.FC = () => {
     const navigate = useNavigate();

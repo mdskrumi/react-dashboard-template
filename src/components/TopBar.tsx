@@ -3,7 +3,7 @@ import { useAppSelector, useAppDispatch } from 'store/hooks';
 import { setSidebarOpen } from 'store/reducers/util';
 
 // Icons
-import Logo from '../../public/logo.svg';
+import Logo from '/logo.svg';
 
 const TopBar = () => {
     const dispatch = useAppDispatch();

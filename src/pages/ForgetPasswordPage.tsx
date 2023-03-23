@@ -6,7 +6,7 @@ import { ForgetPasswordInterface } from 'types';
 import ErrorMessage from 'components/ErrorMessage';
 
 // Icons
-import Logo from '../../public/logo.svg';
+import Logo from '/logo.svg';
 
 const ForgetPasswordPage: React.FC = () => {
     const onSubmit = (data: ForgetPasswordInterface) => {
