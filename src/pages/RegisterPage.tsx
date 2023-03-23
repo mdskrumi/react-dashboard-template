@@ -7,7 +7,7 @@ import { RegisterUserInterface } from 'types';
 import ErrorMessage from 'components/ErrorMessage';
 
 // Icons
-import Logo from '../../public/logo.svg';
+import Logo from '/logo.svg';
 
 const RegisterPage: React.FC = () => {
     const navigate = useNavigate();
