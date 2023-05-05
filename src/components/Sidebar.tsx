@@ -1,5 +1,9 @@
+// Slandered libraries
+import { useEffect } from 'react';
+
 // Redux
-import { useAppSelector } from 'store/hooks';
+import { useAppDispatch, useAppSelector } from 'store/hooks';
+import { setSidebarOpen } from 'store/reducers/util';
 
 // Components
 import MenuItem, { MenuItemInterface } from './MenuItem';
@@ -13,6 +17,23 @@ import ClientManagementImage from 'assets/client-management.svg';
 
 const Sidebar: React.FC = () => {
     const isOpen = useAppSelector((state) => state.util.isSidebarOpen);
+    const dispatch = useAppDispatch()
+    
+    useEffect(() => {
+        const mobileSize = 767;
+        if(window.innerWidth <= mobileSize) {
+            dispatch(setSidebarOpen(false))
+        }
+        const handleResize = () => {
+            if(window.innerWidth <= mobileSize) {
+                dispatch(setSidebarOpen(false))
+            } else {
+                dispatch(setSidebarOpen(true))
+            }
+        }
+        window.addEventListener('resize', handleResize)
+        return () => window.removeEventListener('resize', handleResize)
+    }, [])
 
     const menus: MenuItemInterface[] = [
         {
