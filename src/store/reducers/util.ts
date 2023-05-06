@@ -7,7 +7,7 @@ export interface UtilState {
 
 const initialState: UtilState = {
     isLoading: false,
-    isSidebarOpen: true,
+    isSidebarOpen: window.innerWidth < 767 ? false : true,
 };
 
 const utilSliece = createSlice({
