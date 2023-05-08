@@ -11,6 +11,15 @@ This is a flexible and responsive dashboard template created using some of the l
 - React Router DOM v6 for easy navigation throughout your application
 - Vite JS for speedy development
 
+## Tech Stack
+
+- [React](https://react.dev/)
+- [React Router](https://reactrouter.com/) 
+- [TailwindCSS](https://tailwindcss.com/)
+- [Vite](https://vitejs.dev/) 
+- [TypeScript](https://www.typescriptlang.org/) 
+- [Yarn](https://yarnpkg.com/)
+
 ## Installation
 
 To use this dashboard template in your project, follow these steps:
