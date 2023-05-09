@@ -8,9 +8,10 @@ import MenuItem, { MenuItemInterface } from './MenuItem';
 import DashboardIcon from 'assets/dashboard.svg';
 import UserIcon from 'assets/user.svg';
 import UserSettingIcon from 'assets/user-settings.svg';
-import TypographyIcon from 'assets/typography.svg';
 import ClientManagementIcon from 'assets/client-management.svg';
+import TypographyIcon from 'assets/typography.svg';
 import ReactIcon from 'assets/react.svg';
+import ButtonIcon from 'assets/buttons.svg';
 import LogoutIcon from 'assets/logout.svg';
 
 const Sidebar: React.FC = () => {
@@ -68,10 +69,18 @@ const Sidebar: React.FC = () => {
         {
             id: 'components',
             title: 'Components',
-            url: '/components',
             icon: ReactIcon,
             type: 'expandable',
-            subMenus: [],
+            subMenus: [
+                {
+                    id: 'button-page',
+                    title: 'Buttons',
+                    url: '/button-page',
+                    icon: ButtonIcon,
+                    type: 'url',
+                    subMenus: [],
+                },
+            ],
         },
         {
             id: 'logout',

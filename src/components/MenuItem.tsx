@@ -53,13 +53,15 @@ const MenuItem: React.FC<MenuItemInterface> = ({
     useEffect(() => {
         let shouldClose = true;
         for (let i = 0; subMenus && i < subMenus!.length; i++) {
-            if (location.pathname.search(subMenus![i]!.url!)) {
+            if (location.pathname.search(subMenus![i]!.url!) !== -1) {
                 shouldClose = false;
             }
             if (subMenus![i].type === 'expandable') {
                 for (let j = 0; j < subMenus![i].subMenus!.length; j++) {
                     if (
-                        location.pathname.search(subMenus![i].subMenus![j].url!)
+                        location.pathname.search(
+                            subMenus![i].subMenus![j].url!
+                        ) !== -1
                     ) {
                         shouldClose = false;
                     }

@@ -55,7 +55,7 @@
     }
 
     caption {
-      @apply italic font-semibold w-max
+      @apply italic font-semibold w-max text-xs
     }
 
     /* Scroll bar design */
