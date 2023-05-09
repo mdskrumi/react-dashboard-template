@@ -13,7 +13,7 @@ const SearchBar: React.FC<SearchBarInterface> = ({
     const debouncedValue = useDebounce<string>(text, delay);
 
     useEffect(() => {
-        callBackFunction(debouncedValue);
+        if (debouncedValue !== '') callBackFunction(debouncedValue);
     }, [debouncedValue]);
 
     return (

@@ -12,6 +12,7 @@ import ClientManagementIcon from 'assets/client-management.svg';
 import TypographyIcon from 'assets/typography.svg';
 import ReactIcon from 'assets/react.svg';
 import ButtonIcon from 'assets/buttons.svg';
+import FilterIcon from 'assets/filter.svg';
 import LogoutIcon from 'assets/logout.svg';
 
 const Sidebar: React.FC = () => {
@@ -77,6 +78,14 @@ const Sidebar: React.FC = () => {
                     title: 'Buttons',
                     url: '/button-page',
                     icon: ButtonIcon,
+                    type: 'url',
+                    subMenus: [],
+                },
+                {
+                    id: 'filter-page',
+                    title: 'Filters',
+                    url: '/filter-page',
+                    icon: FilterIcon,
                     type: 'url',
                     subMenus: [],
                 },

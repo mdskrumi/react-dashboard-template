@@ -5,6 +5,8 @@ const Button: React.FC<ButtonInterface> = ({
     handleClick,
     type = 'button',
     variant = 'primary',
+    icon,
+    iconAlt,
     disabled,
     className,
 }) => (
@@ -28,7 +30,10 @@ const Button: React.FC<ButtonInterface> = ({
         }}
         disabled={disabled}
     >
-        {title}
+        <div className="flex w-full items-center justify-around">
+            {icon && <img src={icon} alt={iconAlt} className="w-5 h-5 mr-3" />}
+            {title}
+        </div>
     </button>
 );
 

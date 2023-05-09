@@ -25,7 +25,7 @@ const getColorForLevel = (level = 0) => {
         case 0:
             return '#98c9eb';
         case 1:
-            return '#98c9eb';
+            return '#5ca1d1';
         case 2:
             return '#2775ab';
         default:
