@@ -11,7 +11,7 @@ import DropdownIcon from 'assets/dropdown.svg';
 export interface MenuItemInterface {
     id: string;
     title: string;
-    image: string;
+    icon: string;
     type: 'expandable' | 'url';
     url?: string;
     subMenus?: MenuItemInterface[];
@@ -25,7 +25,7 @@ const getColorForLevel = (level = 0) => {
         case 0:
             return '#98c9eb';
         case 1:
-            return '#98c9eb';
+            return '#5ca1d1';
         case 2:
             return '#2775ab';
         default:
@@ -37,7 +37,7 @@ const MenuItem: React.FC<MenuItemInterface> = ({
     id,
     title,
     type,
-    image,
+    icon,
     url,
     subMenus,
     isChild = false,
@@ -53,13 +53,15 @@ const MenuItem: React.FC<MenuItemInterface> = ({
     useEffect(() => {
         let shouldClose = true;
         for (let i = 0; subMenus && i < subMenus!.length; i++) {
-            if (location.pathname.search(subMenus![i]!.url!)) {
+            if (location.pathname.search(subMenus![i]!.url!) !== -1) {
                 shouldClose = false;
             }
             if (subMenus![i].type === 'expandable') {
                 for (let j = 0; j < subMenus![i].subMenus!.length; j++) {
                     if (
-                        location.pathname.search(subMenus![i].subMenus![j].url!)
+                        location.pathname.search(
+                            subMenus![i].subMenus![j].url!
+                        ) !== -1
                     ) {
                         shouldClose = false;
                     }
@@ -104,7 +106,7 @@ const MenuItem: React.FC<MenuItemInterface> = ({
                                 : 'none',
                     }}
                 >
-                    <img className="w-5 h-5 mr-4" src={image} alt={title} />
+                    <img className="w-5 h-5 mr-4" src={icon} alt={title} />
                     <div className="flex justify-between items-center w-full">
                         {isOpen && (
                             <span className="text-gray-100">{title}</span>

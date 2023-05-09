@@ -5,11 +5,15 @@ import { useAppSelector } from 'store/hooks';
 import MenuItem, { MenuItemInterface } from './MenuItem';
 
 // Icons
-import DashboardImage from 'assets/dashboard.svg';
-import UserImage from 'assets/user.svg';
-import UserSettingImage from 'assets/user-settings.svg';
-import LogoutImage from 'assets/logout.svg';
-import ClientManagementImage from 'assets/client-management.svg';
+import DashboardIcon from 'assets/dashboard.svg';
+import UserIcon from 'assets/user.svg';
+import UserSettingIcon from 'assets/user-settings.svg';
+import ClientManagementIcon from 'assets/client-management.svg';
+import TypographyIcon from 'assets/typography.svg';
+import ReactIcon from 'assets/react.svg';
+import ButtonIcon from 'assets/buttons.svg';
+import FilterIcon from 'assets/filter.svg';
+import LogoutIcon from 'assets/logout.svg';
 
 const Sidebar: React.FC = () => {
     const isOpen = useAppSelector((state) => state.util.isSidebarOpen);
@@ -19,22 +23,21 @@ const Sidebar: React.FC = () => {
             id: 'dashboard',
             title: 'Dashboard',
             url: '/',
-            image: DashboardImage,
+            icon: DashboardIcon,
             type: 'url',
             subMenus: [],
         },
-
         {
             id: 'sample',
             title: 'Sample Pages',
-            image: UserImage,
+            icon: UserIcon,
             type: 'expandable',
             subMenus: [
                 {
                     id: 'sample-page-one',
                     title: 'Sample Page One',
                     url: '/sample-one',
-                    image: UserSettingImage,
+                    icon: UserSettingIcon,
                     type: 'url',
                     subMenus: [],
                 },
@@ -42,7 +45,7 @@ const Sidebar: React.FC = () => {
                     id: 'sample-page-two',
                     title: 'Sample Page Two',
                     url: '/sample-two',
-                    image: ClientManagementImage,
+                    icon: ClientManagementIcon,
                     type: 'url',
                     subMenus: [],
                 },
@@ -50,7 +53,39 @@ const Sidebar: React.FC = () => {
                     id: 'sample-page-three',
                     title: 'Sample Page Three',
                     url: '/sample-three',
-                    image: UserSettingImage,
+                    icon: UserSettingIcon,
+                    type: 'url',
+                    subMenus: [],
+                },
+            ],
+        },
+        {
+            id: 'typography',
+            title: 'Typography',
+            url: '/typography',
+            icon: TypographyIcon,
+            type: 'url',
+            subMenus: [],
+        },
+        {
+            id: 'components',
+            title: 'Components',
+            icon: ReactIcon,
+            type: 'expandable',
+            subMenus: [
+                {
+                    id: 'button-page',
+                    title: 'Buttons',
+                    url: '/button-page',
+                    icon: ButtonIcon,
+                    type: 'url',
+                    subMenus: [],
+                },
+                {
+                    id: 'filter-page',
+                    title: 'Filters',
+                    url: '/filter-page',
+                    icon: FilterIcon,
                     type: 'url',
                     subMenus: [],
                 },
@@ -60,7 +95,7 @@ const Sidebar: React.FC = () => {
             id: 'logout',
             title: 'Log Out',
             url: '/',
-            image: LogoutImage,
+            icon: LogoutIcon,
             type: 'url',
             subMenus: [],
         },

@@ -3,6 +3,8 @@ export interface ButtonInterface {
     handleClick?: Function;
     type?: 'button' | 'submit' | 'reset' | undefined;
     variant?: 'primary' | 'secondary' | 'ghost' | 'danger';
+    icon?: string;
+    iconAlt?: string;
     disabled?: boolean;
     className?: string;
 }
