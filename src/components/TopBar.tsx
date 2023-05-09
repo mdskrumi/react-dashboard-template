@@ -4,6 +4,7 @@ import { setSidebarOpen } from 'store/reducers/util';
 
 // Icons
 import Logo from '/logo.svg';
+import NotificationIcon from 'assets/notification.svg';
 
 const TopBar = () => {
     const dispatch = useAppDispatch();
@@ -17,6 +18,14 @@ const TopBar = () => {
             >
                 <img className="w-7" src={Logo} />
                 <h5 className="cursor-pointer ml-5">React Dashboard</h5>
+            </div>
+
+            <div>
+                <img
+                    className="w-5 h-5 mr-4"
+                    src={NotificationIcon}
+                    alt={'notification'}
+                />
             </div>
         </div>
     );

@@ -17,6 +17,7 @@ const SamplePageTwo = loadable(() => import('pages/SamplePageTwo'));
 const SamplePageThree = loadable(() => import('pages/SamplePageThree'));
 
 const TypographyPage = loadable(() => import('pages/TypographyPage'));
+const ComponentPage = loadable(() => import('pages/ComponentPage'));
 
 const PrivateOutlet = loadable(() => import('components/PrivateOutlet'));
 
@@ -54,6 +55,10 @@ function App() {
                             <Route
                                 path="typography"
                                 element={<TypographyPage />}
+                            />
+                            <Route
+                                path="components"
+                                element={<ComponentPage />}
                             />
                         </Route>
                         <Route path="*" element={<Navigate to={'/'} />} />

@@ -11,7 +11,7 @@ import DropdownIcon from 'assets/dropdown.svg';
 export interface MenuItemInterface {
     id: string;
     title: string;
-    image: string;
+    icon: string;
     type: 'expandable' | 'url';
     url?: string;
     subMenus?: MenuItemInterface[];
@@ -37,7 +37,7 @@ const MenuItem: React.FC<MenuItemInterface> = ({
     id,
     title,
     type,
-    image,
+    icon,
     url,
     subMenus,
     isChild = false,
@@ -104,7 +104,7 @@ const MenuItem: React.FC<MenuItemInterface> = ({
                                 : 'none',
                     }}
                 >
-                    <img className="w-5 h-5 mr-4" src={image} alt={title} />
+                    <img className="w-5 h-5 mr-4" src={icon} alt={title} />
                     <div className="flex justify-between items-center w-full">
                         {isOpen && (
                             <span className="text-gray-100">{title}</span>
