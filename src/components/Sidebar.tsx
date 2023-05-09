@@ -23,7 +23,6 @@ const Sidebar: React.FC = () => {
             type: 'url',
             subMenus: [],
         },
-
         {
             id: 'sample',
             title: 'Sample Pages',
@@ -55,6 +54,14 @@ const Sidebar: React.FC = () => {
                     subMenus: [],
                 },
             ],
+        },
+        {
+            id: 'typography',
+            title: 'Typography',
+            url: '/typography',
+            image: LogoutImage,
+            type: 'url',
+            subMenus: [],
         },
         {
             id: 'logout',

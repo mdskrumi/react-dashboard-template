@@ -31,20 +31,31 @@
     }
 
     h1 {
-        @apply text-4xl;
+        @apply text-6xl font-semibold mt-1 mb-1;
     }
+
     h2 {
-        @apply text-2xl font-semibold;
+        @apply text-5xl font-semibold mt-1 mb-1;
     }
+
     h3 {
-        @apply text-xl font-semibold;
+        @apply text-4xl font-semibold mt-1 mb-1;
     } 
 
     h4 {
-        @apply text-xl;
+        @apply text-3xl font-semibold mt-1 mb-1;
     }
+
     h5 {
-        @apply text-lg font-semibold;
+        @apply text-2xl font-semibold mt-1 mb-1;
+    }
+
+    h6 {
+        @apply text-xl font-semibold mt-1 mb-1;
+    }
+
+    caption {
+      @apply italic font-semibold w-max
     }
 
     /* Scroll bar design */

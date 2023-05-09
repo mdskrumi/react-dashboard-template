@@ -16,7 +16,7 @@ const TopBar = () => {
                 onClick={() => dispatch(setSidebarOpen(!isOpen))}
             >
                 <img className="w-7" src={Logo} />
-                <h3 className="cursor-pointer ml-5">React Dashboard</h3>
+                <h5 className="cursor-pointer ml-5">React Dashboard</h5>
             </div>
         </div>
     );
