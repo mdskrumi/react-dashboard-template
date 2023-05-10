@@ -6,12 +6,14 @@ import NotificationGrey from 'assets/alert-grey.svg';
 export interface INotificationTile {
     title: string;
     content: string;
+    date: string;
     varient: 'green' | 'yellow' | 'red' | 'read';
 }
 
 const NotificationTile: React.FC<INotificationTile> = ({
     title,
     content,
+    date,
     varient = 'read',
 }) => {
     return (
@@ -31,6 +33,7 @@ const NotificationTile: React.FC<INotificationTile> = ({
                     alt="alert"
                 />
                 <div className="font-semibold">{title}</div>
+                <caption className="ml-auto">{date}</caption>
             </div>
             <p className="text-justify m-2">{content}</p>
         </div>
