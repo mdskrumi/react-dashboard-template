@@ -10,7 +10,7 @@ const TypographyPage: React.FC = () => {
                 <h6>This is Heading6 (H6)</h6>
             </div>
 
-            <div>
+            <div className="m-auto w-full">
                 <p>This is Paragraph (P)</p>
                 <caption>This is Caption (caption)</caption>
             </div>

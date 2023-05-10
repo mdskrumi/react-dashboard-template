@@ -1,16 +1,21 @@
 export interface ILoading {
     className?: string;
-    varient?: 'small' | 'normal';
+    varient?: 'small' | 'normal' | 'large';
+    message?: string;
 }
 
-const Loading: React.FC<ILoading> = ({ className, varient }) => (
+const Loading: React.FC<ILoading> = ({ className, varient, message }) => (
     <div
-        className={`min-h-full min-w-full flex justify-center items-center ${className}`}
+        className={`min-h-full min-w-full flex-col justify-center items-center ${className}`}
     >
         <div role="status">
             <svg
                 className={`inline mr-2 ${
-                    varient === 'small' ? 'w-8 h-8' : 'w-16 h-16'
+                    varient === 'small'
+                        ? 'w-8 h-8'
+                        : varient === 'normal'
+                        ? 'w-16 h-16'
+                        : 'w-24 h-24'
                 } text-primary_light animate-spin dark:text-gray-600 fill-primary dark:fill-gray-300`}
                 viewBox="0 0 100 101"
                 fill="none"
@@ -26,6 +31,7 @@ const Loading: React.FC<ILoading> = ({ className, varient }) => (
                 />
             </svg>
         </div>
+        {message ?? <p className="pt-2">{message}</p>}
     </div>
 );
 

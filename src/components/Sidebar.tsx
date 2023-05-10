@@ -13,6 +13,7 @@ import TypographyIcon from 'assets/typography.svg';
 import ReactIcon from 'assets/react.svg';
 import ButtonIcon from 'assets/buttons.svg';
 import FilterIcon from 'assets/filter.svg';
+import LoadingIcon from 'assets/loading.svg';
 import LogoutIcon from 'assets/logout.svg';
 
 const Sidebar: React.FC = () => {
@@ -86,6 +87,14 @@ const Sidebar: React.FC = () => {
                     title: 'Filters',
                     url: '/filter-page',
                     icon: FilterIcon,
+                    type: 'url',
+                    subMenus: [],
+                },
+                {
+                    id: 'loading-page',
+                    title: 'Loader',
+                    url: '/loading-page',
+                    icon: LoadingIcon,
                     type: 'url',
                     subMenus: [],
                 },

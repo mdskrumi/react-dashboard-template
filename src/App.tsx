@@ -19,6 +19,7 @@ const SamplePageThree = loadable(() => import('pages/SamplePageThree'));
 const TypographyPage = loadable(() => import('pages/TypographyPage'));
 const ButtonPage = loadable(() => import('pages/ButtonPage'));
 const FilterPage = loadable(() => import('pages/FilterPage'));
+const LoadingPage = loadable(() => import('pages/LoadingPage'));
 
 const PrivateOutlet = loadable(() => import('components/PrivateOutlet'));
 
@@ -64,6 +65,10 @@ function App() {
                             <Route
                                 path="filter-page"
                                 element={<FilterPage />}
+                            />
+                            <Route
+                                path="loading-page"
+                                element={<LoadingPage />}
                             />
                         </Route>
                         <Route path="*" element={<Navigate to={'/'} />} />
