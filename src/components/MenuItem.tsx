@@ -74,8 +74,8 @@ const MenuItem: React.FC<MenuItemInterface> = ({
     }, [url, location.pathname]);
 
     return (
-        <div>
-            <li
+        <>
+            <div
                 onClick={(e) => {
                     e.stopPropagation();
 
@@ -126,7 +126,7 @@ const MenuItem: React.FC<MenuItemInterface> = ({
                         )}
                     </div>
                 </div>
-            </li>
+            </div>
             {id !== 'logout' && (
                 <hr
                     className="border-main
@@ -145,7 +145,7 @@ const MenuItem: React.FC<MenuItemInterface> = ({
                     </ul>
                 ))}
             </div>
-        </div>
+        </>
     );
 };
 

@@ -116,11 +116,11 @@ const Sidebar: React.FC = () => {
                 isOpen ? 'w-72' : 'w-16'
             } h-[calc(100vh-2.5rem)] bg-main_dark duration-300 overflow-x-hidden`}
         >
-            <ul className="pt-2 pb-4 text-sm">
+            <div className="pt-2 pb-4 text-sm">
                 {menus.map((item) => (
                     <MenuItem {...item} key={item.id} />
                 ))}
-            </ul>
+            </div>
         </div>
     );
 };
