@@ -40,7 +40,7 @@ const Dashboard: React.FC = () => {
                 <h5 className="mt-4">Developer: </h5>
                 <a href="https://www.linkedin.com/in/mdskrumi" target="_blank">
                     <img className="w-8 h-8" src={LinkedInIcon} alt="github" />
-                </a>{' '}
+                </a>
                 <a href="https://github.com/mdskrumi" target="_blank">
                     <img className="w-8 h-8" src={GithubIcon} alt="github" />
                 </a>
