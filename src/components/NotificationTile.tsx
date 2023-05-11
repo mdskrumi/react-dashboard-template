@@ -7,14 +7,14 @@ export interface INotificationTile {
     title: string;
     content: string;
     date: string;
-    varient: 'green' | 'yellow' | 'red' | 'read';
+    varient: 'green' | 'yellow' | 'red' | 'grey';
 }
 
 const NotificationTile: React.FC<INotificationTile> = ({
     title,
     content,
     date,
-    varient = 'read',
+    varient = 'grey',
 }) => {
     return (
         <div className="min-h-[64px] pt-2 pb-2 flex-col hover:bg-main items-start">
