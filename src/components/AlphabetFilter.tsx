@@ -40,11 +40,11 @@ const AlphabetFilter: React.FC<IAlphabetFilter> = ({
     className,
 }) => {
     return (
-        <ul
+        <div
             className={`flex justify-center items-center p-8 flex-wrap ${className}`}
         >
             {alphabets.map((a) => (
-                <li
+                <div
                     key={a}
                     className={
                         a === currentAlphabet
@@ -54,9 +54,9 @@ const AlphabetFilter: React.FC<IAlphabetFilter> = ({
                     onClick={() => setCurrentAlphabet(a)}
                 >
                     {a}
-                </li>
+                </div>
             ))}
-        </ul>
+        </div>
     );
 };
 
