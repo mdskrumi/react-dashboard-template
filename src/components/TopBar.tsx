@@ -75,7 +75,7 @@ const TopBar = () => {
                     title="Sample Notifications"
                     content="This is a test notification body. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi repudiandae numquam ab recusandae a itaque eaque ad, quos nulla et! Qui ducimus sed, sit debitis minus impedit dignissimos cumque facilis!"
                     date="25 Dec, 2022"
-                    varient="read"
+                    varient="grey"
                 />
             </NotificationModal>
         </>
