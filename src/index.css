@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -12,22 +14,11 @@
 
 @layer base {
     body {
-        background: #1a242f;
-        padding: 0;
-        margin: 0;
-        color: white;
+        @apply m-0 p-0 bg-ui text-text dark:bg-ui-dark dark:text-text-dark
     }
+
     #root {
-        font-family: 'Open Sans', sans-serif;
-        background: #1a242f;
-    }
-    input,
-    textarea {
-        width: 100%;
-        padding: 1rem;
-        border-radius: 12px;
-        background: #1a242f;
-        color: white;
+        @apply m-0 p-0 bg-ui text-text dark:bg-ui-dark dark:text-text-dark
     }
 
     h1 {
@@ -40,7 +31,7 @@
 
     h3 {
         @apply text-3xl font-semibold mt-1 mb-1;
-    } 
+    }
 
     h4 {
         @apply text-2xl font-semibold mt-1 mb-1;
@@ -55,38 +46,36 @@
     }
 
     caption {
-      @apply italic font-semibold w-max text-xs
+        @apply italic font-semibold w-max text-xs;
     }
 
     li {
-      @apply list-disc list-inside
+        @apply list-disc list-inside;
     }
 
-    a{
-      @apply text-secondary_light hover:text-secondary
-    }
+    /* a {
+        @apply text-link hover:text-link-hover;
+    } */
 
     /* Scroll bar design */
     * {
         scrollbar-width: thin;
         scrollbar-color: #42566b;
-      }
-      
-      /* Chrome, Edge, and Safari */
-      *::-webkit-scrollbar {
+    }
+
+    /* Chrome, Edge, and Safari */
+    *::-webkit-scrollbar {
         width: 4px;
-      }
-      
-      *::-webkit-scrollbar-track {
+    }
+
+    *::-webkit-scrollbar-track {
         background: #0f1821;
         border-radius: 1px;
-      }
-      
-      *::-webkit-scrollbar-thumb {
+    }
+
+    *::-webkit-scrollbar-thumb {
         background-color: #0f1821;
         border-radius: 14px;
         border: 1px solid #42566b;
-      }
-      
-
+    }
 }
