@@ -6,15 +6,15 @@ module.exports = {
         extend: {
             colors: {
                 // Light Theme
-                ui: '#FFFFFF',
-                surface: '#FCFCFC',
+                ui: '#FCFCFC',
+                surface: '#FFFFFF',
                 error: '#B00020',
                 text: '#000000',
-                line: '#CDCDCD',
+                line: '#F0F0F0',
 
                 // Dark Theme
-                'ui-dark': '#181818',
-                'surface-dark': '#141414',
+                'ui-dark': '#141414',
+                'surface-dark': '#181818',
                 'error-dark': '#CF6679',
                 'text-dark': '#FFFFFF',
                 'line-dark': '#242424',
@@ -28,6 +28,7 @@ module.exports = {
                 'link-varient': '#0044CC',
                 danger: '#ff0000',
                 'danger-varient': '#ff2626',
+                hint: '#797A7B',
             },
             keyframes: {
                 'fade-in-up': {
