@@ -29,6 +29,53 @@ module.exports = {
                 danger: '#ff0000',
                 'danger-varient': '#ff2626',
             },
+            keyframes: {
+                'fade-in-up': {
+                    '0%': {
+                        opacity: '0',
+                        transform: 'translateY(10px)',
+                    },
+                    '100%': {
+                        opacity: '1',
+                        transform: 'translateY(0)',
+                    },
+                },
+                'face-in-down': {
+                    '0%': {
+                        opacity: '0',
+                        transform: 'translateY(-10px)',
+                    },
+                    '100%': {
+                        opacity: '1',
+                        transform: 'translateY(0)',
+                    },
+                },
+                'fade-in': {
+                    '0%': {
+                        opacity: '0',
+                    },
+                    '100%': {
+                        opacity: '1',
+                    },
+                },
+                'fade-out': {
+                    '0%': {
+                        opacity: '1',
+                    },
+                    '100%': {
+                        opacity: '0',
+                    },
+                },
+            },
+            animation: {
+                'fade-in-up': 'fade-in-up 250ms ease-in-out',
+                'fade-in-down': 'fade-in-down 250ms ease-in-out',
+                'fade-in': 'fade-in 250ms ease-in-out',
+                'fade-out': 'fade-out 250ms ease-in-out',
+            },
+            fontFamily: {
+                custom: ['IBM Plex Sans', 'sans-serif'],
+            },
         },
     },
     plugins: [],
