@@ -14,31 +14,27 @@
     }
 
     h1 {
-        @apply text-5xl font-semibold mt-1 mb-1;
+        @apply text-5xl font-semibold;
     }
 
     h2 {
-        @apply text-4xl font-semibold mt-1 mb-1;
+        @apply text-4xl font-semibold;
     }
 
     h3 {
-        @apply text-3xl font-semibold mt-1 mb-1;
+        @apply text-3xl font-semibold;
     }
 
     h4 {
-        @apply text-2xl font-semibold mt-1 mb-1;
+        @apply text-2xl font-semibold;
     }
 
     h5 {
-        @apply text-xl font-semibold mt-1 mb-1;
+        @apply text-xl font-semibold;
     }
 
     h6 {
-        @apply text-lg font-semibold mt-1 mb-1;
-    }
-
-    caption {
-        @apply italic font-semibold w-max text-xs;
+        @apply text-lg font-semibold;
     }
 
     li {
@@ -49,5 +45,9 @@
 @layer components {
     .card {
         @apply mx-auto shadow-md rounded-3xl bg-surface dark:bg-surface-dark;
+    }
+
+    .caption {
+        @apply italic font-semibold w-max text-xs;
     }
 }

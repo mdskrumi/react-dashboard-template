@@ -1,21 +1,22 @@
 import { useEffect, useState } from 'react';
+
 import { useNavigate, useLocation } from 'react-router-dom';
 
 // Redux
 import { useAppSelector, useAppDispatch } from 'store/hooks';
 import { clearUser } from 'store/reducers/user';
 
-export interface MenuItemInterface {
+export interface SideBarItemInterface {
     id: string;
     title: string;
-    icon: string;
+    icon: Function;
     type: 'expandable' | 'url';
     url?: string;
-    subMenus?: MenuItemInterface[];
+    subMenus?: SideBarItemInterface[];
     children?: React.ReactNode;
 }
 
-const MenuItem: React.FC<MenuItemInterface> = ({
+const SideBarItem: React.FC<SideBarItemInterface> = ({
     id,
     title,
     type,
@@ -56,6 +57,7 @@ const MenuItem: React.FC<MenuItemInterface> = ({
     return (
         <>
             <div
+                className="h-[52px] cursor-pointer flex items-center pr-2 pl-5 w-72"
                 onClick={(e) => {
                     e.stopPropagation();
 
@@ -71,18 +73,18 @@ const MenuItem: React.FC<MenuItemInterface> = ({
                     }
                 }}
             >
+                <div className="mr-4">{icon()}</div>
                 <div
-                    className={`h-[52px] cursor-pointer flex items-center pr-2 pl-5 space-x-3 hover:bg-main ${
-                        isOpen ? 'w-72' : 'w-16'
-                    } ${
+                    className={`${isOpen ? 'w-full' : 'w-0'} ${
                         location.pathname === url && id !== 'logout'
                             ? 'bg-main'
                             : ''
                     }`}
                 >
-                    <img className="w-5 h-5 mr-4" src={icon} alt={title} />
                     <div className="flex justify-between items-center w-full">
-                        {isOpen && <span>{title}</span>}
+                        {isOpen && (
+                            <span className="animate-fade-in">{title}</span>
+                        )}
                         {type === 'expandable' ? (
                             <img
                                 style={{
@@ -99,24 +101,19 @@ const MenuItem: React.FC<MenuItemInterface> = ({
                     </div>
                 </div>
             </div>
-            {id !== 'logout' && (
-                <hr
-                    className="border-main
-            "
-                />
-            )}
+
             <div
                 className={`overflow-hidden duration-500`}
                 style={{ maxHeight: !isExpanded ? 0 : 57 * 7 }}
             >
                 {subMenus?.map((sub) => (
-                    <ul className="text-sm" key={sub.id}>
-                        <MenuItem {...sub} />
-                    </ul>
+                    <div key={sub.id}>
+                        <SideBarItem {...sub} />
+                    </div>
                 ))}
             </div>
         </>
     );
 };
 
-export default MenuItem;
+export default SideBarItem;

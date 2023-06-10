@@ -3,10 +3,8 @@ import { Navigate, Outlet } from 'react-router-dom';
 // Redux
 import { useAppSelector } from 'store/hooks';
 
-import LoginPage from 'pages/LoginPage';
-
-import Sidebar from 'components/Sidebar';
-import TopBar from 'components/TopBar';
+import Sidebar from 'layout/Sidebar';
+import TopBar from 'layout/TopBar';
 
 const PrivateOutlet = () => {
     const isOpen = useAppSelector((state) => state.util.isSidebarOpen);
@@ -14,10 +12,10 @@ const PrivateOutlet = () => {
 
     return token ? (
         <div className="overflow-hidden">
-            <Sidebar />
             <TopBar />
+            <Sidebar />
             <div
-                className={`pt-14 min-h-screen overflow-auto duration-300`}
+                className={`pt-16 min-h-screen overflow-auto duration-300`}
                 style={{ paddingLeft: isOpen ? '18.5rem' : '4.5rem' }}
             >
                 <Outlet />
