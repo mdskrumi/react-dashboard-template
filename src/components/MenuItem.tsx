@@ -13,22 +13,7 @@ export interface MenuItemInterface {
     url?: string;
     subMenus?: MenuItemInterface[];
     children?: React.ReactNode;
-    isChild?: boolean;
-    level?: number;
 }
-
-const getColorForLevel = (level = 0) => {
-    switch (level) {
-        case 0:
-            return '#98c9eb';
-        case 1:
-            return '#5ca1d1';
-        case 2:
-            return '#2775ab';
-        default:
-            return '#98c9eb';
-    }
-};
 
 const MenuItem: React.FC<MenuItemInterface> = ({
     id,
@@ -37,8 +22,6 @@ const MenuItem: React.FC<MenuItemInterface> = ({
     icon,
     url,
     subMenus,
-    isChild = false,
-    level = 0,
 }) => {
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
@@ -96,12 +79,6 @@ const MenuItem: React.FC<MenuItemInterface> = ({
                             ? 'bg-main'
                             : ''
                     }`}
-                    style={{
-                        borderLeft:
-                            isExpanded || isChild
-                                ? `2px solid ${getColorForLevel(level)}`
-                                : 'none',
-                    }}
                 >
                     <img className="w-5 h-5 mr-4" src={icon} alt={title} />
                     <div className="flex justify-between items-center w-full">
@@ -114,7 +91,7 @@ const MenuItem: React.FC<MenuItemInterface> = ({
                                         : '',
                                 }}
                                 className="w-7"
-                                src={''}
+                                src={'DropdownIcon'}
                             />
                         ) : (
                             ''
@@ -134,9 +111,7 @@ const MenuItem: React.FC<MenuItemInterface> = ({
             >
                 {subMenus?.map((sub) => (
                     <ul className="text-sm" key={sub.id}>
-                        <MenuItem
-                            {...{ ...sub, isChild: true, level: level + 1 }}
-                        />
+                        <MenuItem {...sub} />
                     </ul>
                 ))}
             </div>

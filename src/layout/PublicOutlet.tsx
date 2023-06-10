@@ -1,29 +1,30 @@
 import { Outlet, Navigate } from 'react-router-dom';
+import { FiSun, FiMoon } from 'react-icons/fi';
+
 import { useAppSelector, useAppDispatch } from 'store/hooks';
 import { toggleTheme } from 'store/reducers/util';
 
-import light from 'assets/light/theme.svg';
-import dark from 'assets/dark/theme.svg';
-
 const PublicOutlet = () => {
     const dispatch = useAppDispatch();
-    const token = useAppSelector((state) => state.user.token);
-    const theme = useAppSelector((state) => state.util.theme);
+    const { token } = useAppSelector((state) => state.user);
+    const { theme } = useAppSelector((state) => state.util);
 
     return !token ? (
-        <div className="overflow-hidden">
-            <div className="pr-6 pt-4">
-                <img
-                    className="w-7 h-7 ml-auto"
-                    src={theme === 'light' ? dark : light}
-                    alt={'theme'}
-                    onClick={() => dispatch(toggleTheme())}
-                />
+        <>
+            <div
+                onClick={() => dispatch(toggleTheme())}
+                className="text-primary fixed right-6 top-4 hover:text-primary-varient select-none"
+            >
+                {theme === 'light' ? (
+                    <FiMoon size="2rem" />
+                ) : (
+                    <FiSun size="2rem" />
+                )}
             </div>
-            <div>
+            <div className="overflow-hidden">
                 <Outlet />
             </div>
-        </div>
+        </>
     ) : (
         <Navigate to={'dashboard'} />
     );

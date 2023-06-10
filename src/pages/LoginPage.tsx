@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 // Redux
 import { useAppDispatch, useAppSelector } from 'store/hooks';
 import { login } from 'store/reducers/user';
-import { useLoginMutation } from 'store/api/login';
+// import { useLoginMutation } from 'store/api/login';
 
 import Button from 'components/Button';
 import { LoginUserInterface } from 'types';
@@ -20,10 +20,10 @@ const LoginPage: React.FC = () => {
     const dispatch = useAppDispatch();
     const { token } = useAppSelector((state) => state.user);
 
-    const [callLogin, { data, error, isLoading }] = useLoginMutation();
+    // const [callLogin, { data, error, isLoading }] = useLoginMutation();
 
     const onSubmit = (data: LoginUserInterface) => {
-        callLogin(data).unwrap();
+        // callLogin(data).unwrap();
         dispatch(
             login({
                 token: 'asd',
@@ -40,7 +40,7 @@ const LoginPage: React.FC = () => {
     const {
         register,
         handleSubmit,
-        setError,
+        // setError,
         formState: { errors },
     } = useForm<LoginUserInterface>({
         defaultValues: {
@@ -49,22 +49,22 @@ const LoginPage: React.FC = () => {
         },
     });
 
-    useEffect(() => {
-        if (data?.token) {
-            dispatch(login(data));
-        }
-    }, [data]);
+    // useEffect(() => {
+    //     if (data?.token) {
+    //         dispatch(login(data));
+    //     }
+    // }, [data]);
 
-    useEffect(() => {
-        // @ts-ignore
-        if (error?.status === 400) {
-            setError('password', {
-                type: 'custom',
-                // @ts-ignore
-                message: error?.data?.message,
-            });
-        }
-    }, [error]);
+    // useEffect(() => {
+    //     // @ts-ignore
+    //     if (error?.status === 400) {
+    //         setError('password', {
+    //             type: 'custom',
+    //             // @ts-ignore
+    //             message: error?.data?.message,
+    //         });
+    //     }
+    // }, [error]);
 
     return (
         <div className="flex justify-center min-h-screen bg-main items-center">
@@ -146,7 +146,7 @@ const LoginPage: React.FC = () => {
                         </Link>
                     </span>
                 </div>
-                {isLoading && <Loading varient="small" />}
+                {/* {isLoading && <Loading varient="small" />} */}
             </form>
         </div>
     );

@@ -1,3 +1,4 @@
+import { FaRegHandPointRight } from 'react-icons/fa';
 // Redux
 import { useAppSelector } from 'store/hooks';
 
@@ -12,7 +13,7 @@ const Sidebar: React.FC = () => {
             id: 'dashboard',
             title: 'Dashboard',
             url: '/',
-            icon: 'DashboardIcon',
+            icon: 'material-symbols:dashboard',
             type: 'url',
             subMenus: [],
         },
@@ -104,6 +105,7 @@ const Sidebar: React.FC = () => {
                 isOpen ? 'w-72' : 'w-16'
             } h-[calc(100vh-2.5rem)] bg-main_dark duration-300 overflow-x-hidden`}
         >
+            <FaRegHandPointRight size="4rem" color="black" />
             <div className="pt-2 pb-4 text-sm">
                 {menus.map((item) => (
                     <MenuItem {...item} key={item.id} />
