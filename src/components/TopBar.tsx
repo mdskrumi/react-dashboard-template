@@ -11,11 +11,6 @@ import MenuRightItem from './MenuRightItem';
 
 // Icons
 import Logo from '/logo.svg';
-import NotificationIcon from 'assets/notification.svg';
-import light from 'assets/light/theme.svg';
-import dark from 'assets/dark/theme.svg';
-import menu from 'assets/light/menu.svg';
-import menuDark from 'assets/dark/menu.svg';
 
 const TopBar = () => {
     const dispatch = useAppDispatch();
@@ -38,7 +33,7 @@ const TopBar = () => {
 
                 <div className="cursor-pointer flex w-fit mr-4 gap-4">
                     <img
-                        src={theme === 'light' ? menuDark : menu}
+                        src={''}
                         className="w-7 h-7"
                         alt="menu"
                         onClick={() =>
@@ -57,14 +52,14 @@ const TopBar = () => {
             >
                 <MenuRightItem
                     title="Theme"
-                    icon={theme === 'light' ? dark : light}
+                    icon={''}
                     handleClick={() => {
                         dispatch(toggleTheme());
                     }}
                 />
                 <MenuRightItem
                     title="Notifications"
-                    icon={NotificationIcon}
+                    icon={''}
                     handleClick={() => {}}
                 />
             </div>

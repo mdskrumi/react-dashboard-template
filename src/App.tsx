@@ -7,20 +7,12 @@ import SplashPage from 'pages/SplashPage';
 const LoginPage = lazy(() => import('pages/LoginPage'));
 const RegisterPage = lazy(() => import('pages/RegisterPage'));
 const ForgetPasswordPage = lazy(() => import('pages/ForgetPasswordPage'));
+
 const Dashboard = lazy(() => import('pages/Dashboard'));
 const SetPassword = lazy(() => import('pages/SetPassword'));
 
-const SamplePageOne = lazy(() => import('pages/SamplePageOne'));
-const SamplePageTwo = lazy(() => import('pages/SamplePageTwo'));
-const SamplePageThree = lazy(() => import('pages/SamplePageThree'));
-
-const TypographyPage = lazy(() => import('pages/TypographyPage'));
-const ButtonPage = lazy(() => import('pages/ButtonPage'));
-const FilterPage = lazy(() => import('pages/FilterPage'));
-const LoadingPage = lazy(() => import('pages/LoadingPage'));
-
-const PrivateOutlet = lazy(() => import('layout/PrivateOutlet'));
 const PublicOutlet = lazy(() => import('layout/PublicOutlet'));
+const PrivateOutlet = lazy(() => import('layout/PrivateOutlet'));
 
 import { useAppSelector } from 'store/hooks';
 
@@ -61,34 +53,6 @@ function App() {
                         </Route>
                         <Route path="" element={<PrivateOutlet />}>
                             <Route path="" element={<Dashboard />} />
-                            <Route
-                                path="sample-one"
-                                element={<SamplePageOne />}
-                            />
-                            <Route
-                                path="sample-two"
-                                element={<SamplePageTwo />}
-                            />
-                            <Route
-                                path="sample-three"
-                                element={<SamplePageThree />}
-                            />
-                            <Route
-                                path="typography"
-                                element={<TypographyPage />}
-                            />
-                            <Route
-                                path="button-page"
-                                element={<ButtonPage />}
-                            />
-                            <Route
-                                path="filter-page"
-                                element={<FilterPage />}
-                            />
-                            <Route
-                                path="loading-page"
-                                element={<LoadingPage />}
-                            />
                         </Route>
                         <Route path="*" element={<Navigate to={'/'} />} />
                     </Routes>

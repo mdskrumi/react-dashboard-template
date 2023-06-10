@@ -5,9 +5,6 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { useAppSelector, useAppDispatch } from 'store/hooks';
 import { clearUser } from 'store/reducers/user';
 
-// Icons
-import DropdownIcon from 'assets/dropdown.svg';
-
 export interface MenuItemInterface {
     id: string;
     title: string;
@@ -117,7 +114,7 @@ const MenuItem: React.FC<MenuItemInterface> = ({
                                         : '',
                                 }}
                                 className="w-7"
-                                src={DropdownIcon}
+                                src={''}
                             />
                         ) : (
                             ''

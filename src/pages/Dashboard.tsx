@@ -1,7 +1,3 @@
-// Icons
-import GithubIcon from 'assets/github.svg';
-import LinkedInIcon from 'assets/linkedIn.svg';
-
 const Dashboard: React.FC = () => {
     return (
         <div className="w-full">
@@ -27,24 +23,6 @@ const Dashboard: React.FC = () => {
                 </li>
                 <li>Vite JS for speedy development</li>
             </ul>
-            <div className="flex gap-4 mt-4 items-center">
-                <h5 className="mt-4">Source code: </h5>
-                <a
-                    href="https://github.com/mdskrumi/react-dashboard-template"
-                    target="_blank"
-                >
-                    <img className="w-8 h-8" src={GithubIcon} alt="github" />
-                </a>
-            </div>
-            <div className="flex gap-4 mt-4 items-center">
-                <h5 className="mt-4">Developer: </h5>
-                <a href="https://www.linkedin.com/in/mdskrumi" target="_blank">
-                    <img className="w-8 h-8" src={LinkedInIcon} alt="github" />
-                </a>
-                <a href="https://github.com/mdskrumi" target="_blank">
-                    <img className="w-8 h-8" src={GithubIcon} alt="github" />
-                </a>
-            </div>
         </div>
     );
 };
