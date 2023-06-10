@@ -5,9 +5,15 @@ interface ModalProps {
     isVisible: boolean;
     setVisible: Function;
     children?: ReactNode;
+    light?: boolean;
 }
 
-const Modal: React.FC<ModalProps> = ({ isVisible, setVisible, children }) => {
+const Modal: React.FC<ModalProps> = ({
+    isVisible,
+    setVisible,
+    children,
+    light = false,
+}) => {
     const modalRoot = document.getElementById('modal');
 
     const bodyRef = useRef<HTMLDivElement>(null);
@@ -15,7 +21,7 @@ const Modal: React.FC<ModalProps> = ({ isVisible, setVisible, children }) => {
     return isVisible
         ? createPortal(
               <div
-                  className="fixed top-0 bottom-0 left-0 right-0  z-40"
+                  className="fixed top-0 bottom-0 left-0 right-0 bg-[#00000090] z-auto"
                   onClick={(
                       e: React.MouseEvent<HTMLDivElement, MouseEvent>
                   ) => {
@@ -33,7 +39,9 @@ const Modal: React.FC<ModalProps> = ({ isVisible, setVisible, children }) => {
                       ref={bodyRef}
                   >
                       <span
-                          className="absolute right-0 text-white text-xl font-bold cursor-pointer hover:bg-main_light p-1 px-2"
+                          className={`absolute right-0 duration-300 ${
+                              light ? 'text-black' : 'text-white'
+                          }  text-xl font-bold cursor-pointer hover:scale-125 px-2`}
                           onClick={() => setVisible(false)}
                       >
                           x

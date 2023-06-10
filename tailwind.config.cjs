@@ -67,12 +67,22 @@ module.exports = {
                         opacity: '0',
                     },
                 },
+
+                spin: {
+                    '0%': {
+                        transform: 'rotate(0deg)',
+                    },
+                    '100%': {
+                        transform: 'rotate(360deg)',
+                    },
+                },
             },
             animation: {
                 'fade-in-up': 'fade-in-up 250ms ease-in-out',
                 'fade-in-down': 'fade-in-down 250ms ease-in-out',
                 'fade-in': 'fade-in 250ms ease-in-out',
                 'fade-out': 'fade-out 250ms ease-in-out',
+                spin: 'spin 1000ms linear infinite',
             },
             fontFamily: {
                 custom: ['IBM Plex Sans', 'sans-serif'],

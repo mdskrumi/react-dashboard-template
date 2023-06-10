@@ -1,11 +1,10 @@
-import { useContext } from 'react';
-
 // Redux
 import { useAppSelector, useAppDispatch } from 'store/hooks';
-import { setSidebarOpen, setNotificationBarOpen } from 'store/reducers/util';
-
-// Context
-import ThemeContext from 'context/ThemeContext';
+import {
+    setSidebarOpen,
+    setNotificationBarOpen,
+    toggleTheme,
+} from 'store/reducers/util';
 
 // Component
 import MenuRightItem from './MenuRightItem';
@@ -21,10 +20,10 @@ import menuDark from 'assets/dark/menu.svg';
 const TopBar = () => {
     const dispatch = useAppDispatch();
     const isOpen = useAppSelector((state) => state.util.isSidebarOpen);
+    const theme = useAppSelector((state) => state.util.theme);
     const isNotificationBarOpen = useAppSelector(
         (state) => state.util.isNotificationBarOpen
     );
-    const themeContext = useContext(ThemeContext);
 
     return (
         <>
@@ -39,7 +38,7 @@ const TopBar = () => {
 
                 <div className="cursor-pointer flex w-fit mr-4 gap-4">
                     <img
-                        src={themeContext.theme === 'light' ? menuDark : menu}
+                        src={theme === 'light' ? menuDark : menu}
                         className="w-7 h-7"
                         alt="menu"
                         onClick={() =>
@@ -58,11 +57,9 @@ const TopBar = () => {
             >
                 <MenuRightItem
                     title="Theme"
-                    icon={themeContext.theme === 'light' ? dark : light}
+                    icon={theme === 'light' ? dark : light}
                     handleClick={() => {
-                        themeContext.setTheme!(
-                            themeContext.theme === 'light' ? 'dark' : 'light'
-                        );
+                        dispatch(toggleTheme());
                     }}
                 />
                 <MenuRightItem

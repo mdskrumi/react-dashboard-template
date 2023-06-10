@@ -1,12 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 export interface UtilState {
+    theme: 'light' | 'dark';
     isLoading: boolean;
     isSidebarOpen: boolean;
     isNotificationBarOpen: boolean;
 }
 
 const initialState: UtilState = {
+    theme: 'light',
     isLoading: false,
     isSidebarOpen: window.innerWidth < 767 ? false : true,
     isNotificationBarOpen: false,
@@ -25,10 +27,17 @@ const utilSliece = createSlice({
         setNotificationBarOpen: (state, action) => {
             state.isNotificationBarOpen = action.payload;
         },
+        toggleTheme: (state) => {
+            state.theme = state.theme === 'light' ? 'dark' : 'light';
+        },
     },
 });
 
-export const { setLoading, setSidebarOpen, setNotificationBarOpen } =
-    utilSliece.actions;
+export const {
+    setLoading,
+    setSidebarOpen,
+    setNotificationBarOpen,
+    toggleTheme,
+} = utilSliece.actions;
 
 export default utilSliece.reducer;

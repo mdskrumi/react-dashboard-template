@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import {
-    // persistReducer,
+    persistReducer,
     FLUSH,
     REHYDRATE,
     PAUSE,
@@ -8,20 +8,20 @@ import {
     PURGE,
     REGISTER,
 } from 'redux-persist';
-// import storage from 'redux-persist/lib/storage';
+import storage from 'redux-persist/lib/storage';
 import dashboardAPI from './api';
 import { rootReducer } from './reducers';
 
-// const persistConfig = {
-//     key: 'root',
-//     version: 1,
-//     storage,
-// };
+const persistConfig = {
+    key: 'root',
+    version: 1,
+    storage,
+};
 
-// const persistedReducer = persistReducer(persistConfig, rootReducer);
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 const store = configureStore({
-    reducer: rootReducer,
+    reducer: persistedReducer,
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({
             serializableCheck: {
