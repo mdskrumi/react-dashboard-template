@@ -6,14 +6,14 @@ module.exports = {
         extend: {
             colors: {
                 // Light Theme
-                ui: '#FCFCFC',
+                ui: '#F2F2F2',
                 surface: '#FFFFFF',
                 error: '#B00020',
                 text: '#000000',
                 line: '#F0F0F0',
 
                 // Dark Theme
-                'ui-dark': '#141414',
+                'ui-dark': '#1F1F1F',
                 'surface-dark': '#181818',
                 'error-dark': '#CF6679',
                 'text-dark': '#FFFFFF',

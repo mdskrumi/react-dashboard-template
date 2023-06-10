@@ -24,7 +24,7 @@ const ForgetPasswordPage: React.FC = () => {
     });
 
     return (
-        <div className="flex justify-center min-h-screen bg-main items-center text-white">
+        <div className="flex justify-center min-h-screen bg-main items-center">
             <form
                 className="w-full max-w-xs mx-auto"
                 onSubmit={handleSubmit(onSubmit)}

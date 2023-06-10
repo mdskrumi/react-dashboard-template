@@ -10,7 +10,7 @@
     }
 
     #root {
-        @apply m-0 p-0 bg-ui text-text dark:bg-ui-dark dark:text-text-dark font-custom;
+        @apply m-0 p-0 bg-ui text-text dark:bg-ui-dark dark:text-text-dark font-custom dark:shadow-white;
     }
 
     h1 {
@@ -43,5 +43,11 @@
 
     li {
         @apply list-disc list-inside;
+    }
+}
+
+@layer components {
+    .card {
+        @apply mx-auto shadow-md rounded-3xl bg-surface dark:bg-surface-dark;
     }
 }

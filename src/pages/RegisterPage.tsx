@@ -53,7 +53,7 @@ const RegisterPage: React.FC = () => {
 
     return (
         <>
-            <div className="flex flex-col justify-center min-h-screen bg-main items-center text-white">
+            <div className="flex flex-col justify-center min-h-screen bg-main items-center">
                 <form
                     className="w-full max-w-xs mx-auto"
                     onSubmit={handleSubmit(onSubmit)}
