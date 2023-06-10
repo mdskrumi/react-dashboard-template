@@ -1,21 +1,13 @@
 // Redux
 import { useAppSelector, useAppDispatch } from 'store/hooks';
-import {
-    setSidebarOpen,
-    setNotificationBarOpen,
-    toggleTheme,
-} from 'store/reducers/util';
+import { toggleTheme } from 'store/reducers/util';
 
 // Component
 import MenuRightItem from 'components/MenuRightItem';
 
-// Icons
-import Logo from '/logo.svg';
-
 const TopBar = () => {
     const dispatch = useAppDispatch();
-    const isOpen = useAppSelector((state) => state.util.isSidebarOpen);
-    const theme = useAppSelector((state) => state.util.theme);
+    // const theme = useAppSelector((state) => state.util.theme);
     const isNotificationBarOpen = useAppSelector(
         (state) => state.util.isNotificationBarOpen
     );

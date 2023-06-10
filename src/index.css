@@ -48,6 +48,6 @@
     }
 
     .caption {
-        @apply italic font-semibold w-max text-xs;
+        @apply italic font-semibold w-max text-xs text-[0.675rem];
     }
 }

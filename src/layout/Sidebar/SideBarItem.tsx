@@ -57,7 +57,7 @@ const SideBarItem: React.FC<SideBarItemInterface> = ({
     return (
         <>
             <div
-                className="h-[52px] cursor-pointer flex items-center pr-2 pl-5 w-72"
+                className="h-[52px] cursor-pointer flex items-center w-72 my-1"
                 onClick={(e) => {
                     e.stopPropagation();
 
@@ -73,9 +73,20 @@ const SideBarItem: React.FC<SideBarItemInterface> = ({
                     }
                 }}
             >
-                <div className="mr-4">{icon()}</div>
+                <div className="h-[52px] content-center">
+                    <div className="pl-7 mr-6">{icon()}</div>
+                    <p
+                        className={`mt-1 w-full caption text-center ${
+                            isOpen
+                                ? 'animate-fade-out hidden'
+                                : 'animate-fade-in visible'
+                        }`}
+                    >
+                        Dashboard
+                    </p>
+                </div>
                 <div
-                    className={`${isOpen ? 'w-full' : 'w-0'} ${
+                    className={`h-[52px] ${isOpen ? 'w-full' : 'w-0'} ${
                         location.pathname === url && id !== 'logout'
                             ? 'bg-main'
                             : ''
@@ -83,20 +94,20 @@ const SideBarItem: React.FC<SideBarItemInterface> = ({
                 >
                     <div className="flex justify-between items-center w-full">
                         {isOpen && (
-                            <span className="animate-fade-in">{title}</span>
-                        )}
-                        {type === 'expandable' ? (
-                            <img
-                                style={{
-                                    transform: isExpanded
-                                        ? 'rotate(180deg)'
-                                        : '',
-                                }}
-                                className="w-7"
-                                src={'DropdownIcon'}
-                            />
-                        ) : (
-                            ''
+                            <>
+                                <span className="animate-fade-in">{title}</span>
+                                {type === 'expandable' && (
+                                    <img
+                                        style={{
+                                            transform: isExpanded
+                                                ? 'rotate(180deg)'
+                                                : '',
+                                        }}
+                                        className="w-7"
+                                        src={'DropdownIcon'}
+                                    />
+                                )}
+                            </>
                         )}
                     </div>
                 </div>

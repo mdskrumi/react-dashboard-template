@@ -148,11 +148,11 @@ const Sidebar: React.FC = () => {
     return (
         <div
             className={`fixed top-0 bottom-0 ${
-                isOpen ? 'w-72' : 'w-16'
+                isOpen ? 'w-72' : 'w-20'
             } bg-main_dark duration-300 overflow-x-hidden bg-surface dark:bg-surface-dark border-r-[1px]`}
         >
             <div
-                className="pl-2 flex justify-start items-center cursor-pointer h-16"
+                className="pl-4 flex justify-start items-center cursor-pointer h-16 mb-6"
                 onClick={() => dispatch(setSidebarOpen(!isOpen))}
             >
                 <img className="w-12 mr-4" src={Logo} />
@@ -163,11 +163,9 @@ const Sidebar: React.FC = () => {
                     </div>
                 )}
             </div>
-            <div>
-                {menus.map((item) => (
-                    <SideBarItem {...item} key={item.id} />
-                ))}
-            </div>
+            {menus.map((item) => (
+                <SideBarItem {...item} key={item.id} />
+            ))}
         </div>
     );
 };
