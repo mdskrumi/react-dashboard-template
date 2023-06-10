@@ -108,9 +108,7 @@ const MenuItem: React.FC<MenuItemInterface> = ({
                 >
                     <img className="w-5 h-5 mr-4" src={icon} alt={title} />
                     <div className="flex justify-between items-center w-full">
-                        {isOpen && (
-                            <span className="text-gray-100">{title}</span>
-                        )}
+                        {isOpen && <span>{title}</span>}
                         {type === 'expandable' ? (
                             <img
                                 style={{

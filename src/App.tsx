@@ -1,18 +1,10 @@
 import { Suspense, lazy, useEffect } from 'react';
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
-import { useAppSelector } from 'store/hooks';
 
 import SplashPage from 'pages/SplashPage';
 
-import useWait from 'hooks/useWait';
-
-// const LoginPage = lazy(() => import('pages/LoginPage'));
-const LoginPage = lazy(() =>
-    useWait(100000).then(() => import('pages/LoginPage'))
-);
+const LoginPage = lazy(() => import('pages/LoginPage'));
 const RegisterPage = lazy(() => import('pages/RegisterPage'));
 const ForgetPasswordPage = lazy(() => import('pages/ForgetPasswordPage'));
 const Dashboard = lazy(() => import('pages/Dashboard'));
@@ -29,6 +21,10 @@ const LoadingPage = lazy(() => import('pages/LoadingPage'));
 
 const PrivateOutlet = lazy(() => import('layout/PrivateOutlet'));
 const PublicOutlet = lazy(() => import('layout/PublicOutlet'));
+
+import { useAppSelector } from 'store/hooks';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
     const theme = useAppSelector((state) => state.util.theme);
