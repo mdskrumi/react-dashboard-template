@@ -1,5 +1,3 @@
-import { FaRegHandPointRight } from 'react-icons/fa';
-
 // Redux
 import { useAppSelector, useAppDispatch } from 'store/hooks';
 import { setSidebarOpen } from 'store/reducers/util';
@@ -10,6 +8,14 @@ import Logo from '/logo.svg';
 // Components
 import SideBarItem, { SideBarItemInterface } from 'layout/Sidebar/SideBarItem';
 
+// Icons
+import { TbPackages } from 'react-icons/tb';
+import { CgWebsite, CgComponents, CgLogOut } from 'react-icons/cg';
+import { LuPackageCheck } from 'react-icons/lu';
+import { TbTypography } from 'react-icons/tb';
+import { SiBigbluebutton } from 'react-icons/si';
+import { AiOutlineLoading3Quarters } from 'react-icons/ai';
+
 const Sidebar: React.FC = () => {
     const dispatch = useAppDispatch();
     const isOpen = useAppSelector((state) => state.util.isSidebarOpen);
@@ -19,18 +25,14 @@ const Sidebar: React.FC = () => {
             id: 'dashboard',
             title: 'Dashboard',
             url: '/',
-            icon: () => (
-                <FaRegHandPointRight size={'1.5em'} className="text-primary" />
-            ),
+            icon: () => <CgWebsite size={'1.5em'} className="text-primary" />,
             type: 'url',
             subMenus: [],
         },
         {
             id: 'sample',
             title: 'Sample Pages',
-            icon: () => (
-                <FaRegHandPointRight size={'1.5em'} className="text-primary" />
-            ),
+            icon: () => <TbPackages size={'1.5em'} className="text-primary" />,
             type: 'expandable',
             subMenus: [
                 {
@@ -38,7 +40,7 @@ const Sidebar: React.FC = () => {
                     title: 'Sample Page One',
                     url: '/sample-one',
                     icon: () => (
-                        <FaRegHandPointRight
+                        <LuPackageCheck
                             size={'1.5em'}
                             className="text-primary"
                         />
@@ -51,7 +53,7 @@ const Sidebar: React.FC = () => {
                     title: 'Sample Page Two',
                     url: '/sample-two',
                     icon: () => (
-                        <FaRegHandPointRight
+                        <LuPackageCheck
                             size={'1.5em'}
                             className="text-primary"
                         />
@@ -64,7 +66,7 @@ const Sidebar: React.FC = () => {
                     title: 'Sample Page Three',
                     url: '/sample-three',
                     icon: () => (
-                        <FaRegHandPointRight
+                        <LuPackageCheck
                             size={'1.5em'}
                             className="text-primary"
                         />
@@ -79,7 +81,7 @@ const Sidebar: React.FC = () => {
             title: 'Typography',
             url: '/typography',
             icon: () => (
-                <FaRegHandPointRight size={'1.5em'} className="text-primary" />
+                <TbTypography size={'1.5em'} className="text-primary" />
             ),
             type: 'url',
             subMenus: [],
@@ -88,7 +90,7 @@ const Sidebar: React.FC = () => {
             id: 'components',
             title: 'Components',
             icon: () => (
-                <FaRegHandPointRight size={'1.5em'} className="text-primary" />
+                <CgComponents size={'1.5em'} className="text-primary" />
             ),
             type: 'expandable',
             subMenus: [
@@ -97,20 +99,7 @@ const Sidebar: React.FC = () => {
                     title: 'Buttons',
                     url: '/button-page',
                     icon: () => (
-                        <FaRegHandPointRight
-                            size={'1.5em'}
-                            className="text-primary"
-                        />
-                    ),
-                    type: 'url',
-                    subMenus: [],
-                },
-                {
-                    id: 'filter-page',
-                    title: 'Filters',
-                    url: '/filter-page',
-                    icon: () => (
-                        <FaRegHandPointRight
+                        <SiBigbluebutton
                             size={'1.5em'}
                             className="text-primary"
                         />
@@ -123,7 +112,7 @@ const Sidebar: React.FC = () => {
                     title: 'Loader',
                     url: '/loading-page',
                     icon: () => (
-                        <FaRegHandPointRight
+                        <AiOutlineLoading3Quarters
                             size={'1.5em'}
                             className="text-primary"
                         />
@@ -137,9 +126,7 @@ const Sidebar: React.FC = () => {
             id: 'logout',
             title: 'Log Out',
             url: '/',
-            icon: () => (
-                <FaRegHandPointRight size={'1.5em'} className="text-primary" />
-            ),
+            icon: () => <CgLogOut size={'1.5em'} className="text-primary" />,
             type: 'url',
             subMenus: [],
         },
@@ -175,7 +162,7 @@ const Sidebar: React.FC = () => {
             >
                 <div
                     className={`relative ${
-                        isOpen ? 'w-5/6' : 'w-0'
+                        isOpen ? 'max-w-xs' : 'max-w-0'
                     }  bg-surface dark:bg-surface-dark min-h-[100vh] duration-300`}
                 >
                     <div

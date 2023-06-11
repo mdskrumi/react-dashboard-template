@@ -16,7 +16,7 @@ const TopBar = () => {
             >
                 <div>
                     <RiMenuUnfoldFill
-                        size={'2em'}
+                        size={'1.5em'}
                         className="ml-4 text-dim hover:text-dim-varient cursor-pointer"
                         onClick={() => dispatch(setSidebarOpen(!isSidebarOpen))}
                     />
@@ -26,9 +26,9 @@ const TopBar = () => {
                     className="fixed right-6 top-4 text-dim hover:text-dim-varient cursor-pointer"
                 >
                     {theme === 'light' ? (
-                        <FiMoon size="2rem" />
+                        <FiMoon size="1.5rem" />
                     ) : (
-                        <FiSun size="2rem" />
+                        <FiSun size="1.5rem" />
                     )}
                 </div>
             </div>
