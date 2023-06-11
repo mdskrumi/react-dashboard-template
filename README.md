@@ -101,4 +101,3 @@ This project is licensed under the MIT license. See the LICENSE file for details
 ## Authors
 
 - [Md. Sakibul Alam](https://github.com/mdskrumi)
-- [Md. Asaduzzaman](https://github.com/Asad-404)
