@@ -10,14 +10,14 @@ module.exports = {
                 surface: '#FFFFFF',
                 error: '#B00020',
                 text: '#000000',
-                line: '#F0F0F0',
+                line: '#E5E7EB',
 
                 // Dark Theme
                 'ui-dark': '#1F1F1F',
                 'surface-dark': '#181818',
                 'error-dark': '#CF6679',
                 'text-dark': '#FFFFFF',
-                'line-dark': '#242424',
+                'line-dark': '#303030',
 
                 // Common
                 primary: '#00AB55',
@@ -29,6 +29,8 @@ module.exports = {
                 danger: '#ff0000',
                 'danger-varient': '#ff2626',
                 hint: '#797A7B',
+                dim: '#64748B',
+                'dim-varient': '#7b8fab',
             },
             keyframes: {
                 'fade-in-up': {

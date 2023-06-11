@@ -14,6 +14,7 @@ export interface SideBarItemInterface {
     url?: string;
     subMenus?: SideBarItemInterface[];
     children?: React.ReactNode;
+    isMobile?: boolean;
 }
 
 const SideBarItem: React.FC<SideBarItemInterface> = ({
@@ -23,6 +24,7 @@ const SideBarItem: React.FC<SideBarItemInterface> = ({
     icon,
     url,
     subMenus,
+    isMobile,
 }) => {
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
@@ -30,6 +32,8 @@ const SideBarItem: React.FC<SideBarItemInterface> = ({
 
     const isOpen = useAppSelector((state) => state.util.isSidebarOpen);
     const [isExpanded, setIsExpanded] = useState(false);
+
+    console.log(isMobile);
 
     useEffect(() => {
         let shouldClose = true;

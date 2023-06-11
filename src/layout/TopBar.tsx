@@ -1,40 +1,36 @@
 // Redux
 import { useAppSelector, useAppDispatch } from 'store/hooks';
-import { toggleTheme } from 'store/reducers/util';
-
-// Component
-import MenuRightItem from 'components/MenuRightItem';
+import { toggleTheme, setSidebarOpen } from 'store/reducers/util';
+import { RiMenuUnfoldFill } from 'react-icons/ri';
+import { FiMoon, FiSun } from 'react-icons/fi';
 
 const TopBar = () => {
     const dispatch = useAppDispatch();
-    // const theme = useAppSelector((state) => state.util.theme);
-    const isNotificationBarOpen = useAppSelector(
-        (state) => state.util.isNotificationBarOpen
-    );
+    const theme = useAppSelector((state) => state.util.theme);
+    const isSidebarOpen = useAppSelector((state) => state.util.isSidebarOpen);
 
     return (
         <>
             <div
-                className={`max-w-[1920px] m-auto fixed items-center justify-between flex h-16 top-0 w-full border-b-[1px] bg-surface dark:bg-surface-dark`}
-            ></div>
-
-            <div
-                className={`fixed top-12 bottom-0 right-0 h-full max-w-sm ${
-                    isNotificationBarOpen ? 'w-[50%]' : 'w-0'
-                } duration-300 bg-surface dark:bg-surface-dark`}
+                className={`max-w-[1920px] m-auto fixed items-center justify-between flex h-16 top-0 w-full border-b-[1px] border-line dark:border-line-dark bg-surface dark:bg-surface-dark select-none`}
             >
-                <MenuRightItem
-                    title="Theme"
-                    icon={''}
-                    handleClick={() => {
-                        dispatch(toggleTheme());
-                    }}
-                />
-                <MenuRightItem
-                    title="Notifications"
-                    icon={''}
-                    handleClick={() => {}}
-                />
+                <div>
+                    <RiMenuUnfoldFill
+                        size={'2em'}
+                        className="ml-4 text-dim hover:text-dim-varient cursor-pointer"
+                        onClick={() => dispatch(setSidebarOpen(!isSidebarOpen))}
+                    />
+                </div>
+                <div
+                    onClick={() => dispatch(toggleTheme())}
+                    className="fixed right-6 top-4 text-dim hover:text-dim-varient cursor-pointer"
+                >
+                    {theme === 'light' ? (
+                        <FiMoon size="2rem" />
+                    ) : (
+                        <FiSun size="2rem" />
+                    )}
+                </div>
             </div>
         </>
     );

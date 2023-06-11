@@ -13,9 +13,10 @@ const persistConfig = {
 };
 
 const persistedUserReducerReducer = persistReducer(persistConfig, userReducer);
+const persistedUtilReducerReducer = persistReducer(persistConfig, utilReducer);
 
 export const rootReducer = combineReducers({
     user: persistedUserReducerReducer,
-    util: utilReducer,
+    util: persistedUtilReducerReducer,
     [dashboardAPI.reducerPath]: dashboardAPI.reducer,
 });

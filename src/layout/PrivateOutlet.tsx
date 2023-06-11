@@ -15,8 +15,15 @@ const PrivateOutlet = () => {
             <TopBar />
             <Sidebar />
             <div
-                className={`pt-16 min-h-screen overflow-auto duration-300`}
-                style={{ paddingLeft: isOpen ? '18.5rem' : '5.5rem' }}
+                style={{
+                    paddingLeft:
+                        window.innerWidth < 1024
+                            ? '1rem'
+                            : isOpen
+                            ? '18.5rem'
+                            : '5.5rem',
+                }}
+                className={`pt-16 min-h-screen overflow-auto duration-300 lg:pl-0`}
             >
                 <Outlet />
             </div>
