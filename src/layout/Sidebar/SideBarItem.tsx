@@ -6,6 +6,9 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { useAppSelector, useAppDispatch } from 'store/hooks';
 import { clearUser } from 'store/reducers/user';
 
+// Icon
+import { BsArrowRightShort } from 'react-icons/bs';
+
 export interface SideBarItemInterface {
     id: string;
     title: string;
@@ -101,14 +104,13 @@ const SideBarItem: React.FC<SideBarItemInterface> = ({
                             <>
                                 <span className="animate-fade-in">{title}</span>
                                 {type === 'expandable' && (
-                                    <img
+                                    <BsArrowRightShort
+                                        className="mr-4 duration-300"
                                         style={{
                                             transform: isExpanded
-                                                ? 'rotate(180deg)'
+                                                ? 'rotate(90deg)'
                                                 : '',
                                         }}
-                                        className="w-7"
-                                        src={'DropdownIcon'}
                                     />
                                 )}
                             </>
