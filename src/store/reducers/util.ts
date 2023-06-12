@@ -10,7 +10,7 @@ export interface UtilState {
 const initialState: UtilState = {
     theme: 'light',
     isLoading: false,
-    isSidebarOpen: window.innerWidth < 767 ? false : true,
+    isSidebarOpen: window.innerWidth < 1024 ? false : true,
     isNotificationBarOpen: false,
 };
 
