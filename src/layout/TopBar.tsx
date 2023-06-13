@@ -12,18 +12,26 @@ const TopBar = () => {
     return (
         <>
             <div
-                className={`max-w-[1920px] m-auto fixed items-center justify-between flex h-16 top-0 w-full border-b-[1px] border-line dark:border-line-dark bg-surface dark:bg-surface-dark select-none`}
+                className={`max-w-[1920px] m-auto fixed items-center justify-between flex h-16 top-0 w-full border-b-[1px] border-line dark:border-line-dark bg-surface dark:bg-surface-dark select-none duration-300`}
+                style={{
+                    marginLeft:
+                        window.innerWidth > 1024
+                            ? isSidebarOpen
+                                ? '287px'
+                                : '79px'
+                            : '0',
+                }}
             >
                 <div>
                     <RiMenuUnfoldFill
                         size={'1.5em'}
-                        className="ml-4 text-dim hover:text-dim-varient cursor-pointer"
+                        className="ml-4 cursor-pointer"
                         onClick={() => dispatch(setSidebarOpen(!isSidebarOpen))}
                     />
                 </div>
                 <div
                     onClick={() => dispatch(toggleTheme())}
-                    className="fixed right-6 top-4 text-dim hover:text-dim-varient cursor-pointer"
+                    className="fixed right-6 top-4 cursor-pointer"
                 >
                     {theme === 'light' ? (
                         <FiMoon size="1.5rem" />
