@@ -37,8 +37,8 @@ const Sidebar: React.FC = () => {
             subMenus: [
                 {
                     id: 'sample-page-one',
-                    title: 'Sample Page One',
-                    url: '/sample-one',
+                    title: 'Sample Page',
+                    url: '/sample-page',
                     icon: () => (
                         <LuPackageCheck
                             size={'1.5em'}
@@ -50,21 +50,8 @@ const Sidebar: React.FC = () => {
                 },
                 {
                     id: 'sample-page-two',
-                    title: 'Sample Page Two',
-                    url: '/sample-two',
-                    icon: () => (
-                        <LuPackageCheck
-                            size={'1.5em'}
-                            className="text-primary"
-                        />
-                    ),
-                    type: 'url',
-                    subMenus: [],
-                },
-                {
-                    id: 'sample-page-three',
-                    title: 'Sample Page Three',
-                    url: '/sample-three',
+                    title: 'Sample Page',
+                    url: '/sample-page-2',
                     icon: () => (
                         <LuPackageCheck
                             size={'1.5em'}
@@ -97,7 +84,7 @@ const Sidebar: React.FC = () => {
                 {
                     id: 'button-page',
                     title: 'Buttons',
-                    url: '/button-page',
+                    url: '/buttons',
                     icon: () => (
                         <SiBigbluebutton
                             size={'1.5em'}
@@ -110,7 +97,7 @@ const Sidebar: React.FC = () => {
                 {
                     id: 'loading-page',
                     title: 'Loader',
-                    url: '/loading-page',
+                    url: '/loaders',
                     icon: () => (
                         <AiOutlineLoading3Quarters
                             size={'1.5em'}

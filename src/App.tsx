@@ -9,6 +9,7 @@ const RegisterPage = lazy(() => import('pages/RegisterPage'));
 const ForgetPasswordPage = lazy(() => import('pages/ForgetPasswordPage'));
 
 const Dashboard = lazy(() => import('pages/Dashboard'));
+const SamplePage = lazy(() => import('pages/SamplePage'));
 const SetPassword = lazy(() => import('pages/SetPassword'));
 
 const PublicOutlet = lazy(() => import('layout/PublicOutlet'));
@@ -53,6 +54,17 @@ function App() {
                         </Route>
                         <Route path="" element={<PrivateOutlet />}>
                             <Route path="" element={<Dashboard />} />
+                            <Route
+                                path="sample-page"
+                                element={<SamplePage />}
+                            />
+                            <Route
+                                path="sample-page-2"
+                                element={<SamplePage />}
+                            />
+                            <Route path="typography" element={<SamplePage />} />
+                            <Route path="buttons" element={<SamplePage />} />
+                            <Route path="loaders" element={<SamplePage />} />
                         </Route>
                         <Route path="*" element={<Navigate to={'/'} />} />
                     </Routes>

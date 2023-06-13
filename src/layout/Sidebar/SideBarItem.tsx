@@ -89,7 +89,7 @@ const SideBarItem: React.FC<SideBarItemInterface> = ({
                                 : 'animate-fade-in visible'
                         }`}
                     >
-                        Dashboard
+                        {title}
                     </p>
                 </div>
                 <div

@@ -18,12 +18,12 @@ const PrivateOutlet = () => {
                 style={{
                     paddingLeft:
                         window.innerWidth < 1024
-                            ? '1rem'
+                            ? '0rem'
                             : isOpen
                             ? '18.5rem'
                             : '5.5rem',
                 }}
-                className={`pt-16 min-h-screen overflow-auto duration-300 lg:pl-0`}
+                className={`pt-16 min-h-screen overflow-auto duration-300`}
             >
                 <Outlet />
             </div>

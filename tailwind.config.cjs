@@ -9,14 +9,14 @@ module.exports = {
                 ui: '#F2F2F2',
                 surface: '#FFFFFF',
                 error: '#B00020',
-                text: '#000000',
+                text: '#475569',
                 line: '#E5E7EB',
 
                 // Dark Theme
                 'ui-dark': '#1F1F1F',
                 'surface-dark': '#181818',
                 'error-dark': '#CF6679',
-                'text-dark': '#FFFFFF',
+                'text-dark': '#E2E8F0',
                 'line-dark': '#303030',
 
                 // Common
