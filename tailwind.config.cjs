@@ -10,7 +10,7 @@ module.exports = {
                 surface: '#FFFFFF',
                 error: '#B00020',
                 text: '#475569',
-                line: '#E5E7EB',
+                line: '#D2D4D9',
 
                 // Dark Theme
                 'ui-dark': '#1F1F1F',

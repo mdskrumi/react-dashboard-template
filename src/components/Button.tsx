@@ -1,27 +1,34 @@
-import { ButtonInterface } from '../types';
+export interface IButton {
+    title: string;
+    handleClick?: Function;
+    type?: 'button' | 'submit' | 'reset' | undefined;
+    variant?: 'primary' | 'secondary' | 'ghost' | 'danger';
+    renderIcon?: Function;
+    iconFirst?: boolean;
+    disabled?: boolean;
+    className?: string;
+}
 
-const Button: React.FC<ButtonInterface> = ({
+const Button: React.FC<IButton> = ({
     title,
     handleClick,
     type = 'button',
     variant = 'primary',
-    icon,
-    iconAlt,
+    renderIcon,
+    iconFirst = true,
     disabled,
     className,
 }) => (
     <button
         type={type}
-        className={`${
-            disabled
-                ? 'font-bold bg-main p-2 lg:px-4 text-gray-400 text-center border border-solid border-gray-400 rounded w-fit hover:cursor-not-allowed'
-                : variant === 'danger'
-                ? 'font-bold bg-red-600 p-2 lg:px-4 text-white text-center border border-solid border-red-600 rounded hover:bg-red-200 hover:text-red-600 transition-colors duration-300 w-fit focus-within:outline-red-400'
-                : variant === 'secondary'
-                ? 'font-bold bg-secondary p-2 lg:px-4 text-white text-center border border-solid border-secondary_dark rounded hover:bg-secondary_light hover:text-secondary_dark transition-colors duration-300 w-fit focus-within:outline-secondary_dark'
+        className={`p-2 lg:px-4 text-center border border-solid rounded transition-all duration-300 w-fit font-medium hover:scale-105 ${
+            variant === 'secondary'
+                ? 'bg-secondary hover:bg-secondary-varient dark:bg-secondary-varient dark:hover:bg-secondary'
                 : variant === 'ghost'
-                ? 'font-bold bg-main p-2 lg:px-4 text-white text-center border border-solid border-white rounded hover:bg-main_light hover:text-white transition-colors duration-300 w-fit focus-within:outline-main'
-                : 'font-bold bg-primary p-2 lg:px-4 text-white text-center border border-solid border-primary_dark rounded hover:bg-primary_light hover:text-white transition-colors duration-300 w-fit focus-within:outline-primary_dark'
+                ? 'bg-surface hover:bg-ui dark:bg-surface-dark dark:hover:bg-ui-dark'
+                : variant === 'danger'
+                ? 'bg-danger hover:bg-error-dark dark:bg-danger dark:hover:bg-error'
+                : 'bg-primary hover:bg-primary-varient dark:bg-primary-varient dark:hover:bg-primary'
         } ${className}`}
         onClick={(e) => {
             if (typeof handleClick === 'function') {
@@ -31,8 +38,17 @@ const Button: React.FC<ButtonInterface> = ({
         disabled={disabled}
     >
         <div className="flex w-full items-center justify-around">
-            {icon && <img src={icon} alt={iconAlt} className="w-5 h-5 mr-3" />}
-            {title}
+            {iconFirst && typeof renderIcon === 'function' && renderIcon()}
+            <p
+                className={`${
+                    typeof renderIcon === 'function' && iconFirst
+                        ? 'ml-1'
+                        : 'mr-1'
+                }`}
+            >
+                {title}
+            </p>
+            {!iconFirst && typeof renderIcon === 'function' && renderIcon()}
         </div>
     </button>
 );

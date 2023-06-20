@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { Link } from 'react-router-dom';
 
 import Button from 'components/Button';
 import { ForgetPasswordInterface } from 'types';
@@ -24,27 +25,22 @@ const ForgetPasswordPage: React.FC = () => {
     });
 
     return (
-        <div className="flex justify-center min-h-screen bg-main items-center">
+        <div className="h-[100vh] grid content-center bg-ui dark:bg-ui-dark">
             <form
-                className="w-full max-w-xs mx-auto"
+                className="w-full max-w-md p-6 md:p-10 card"
                 onSubmit={handleSubmit(onSubmit)}
             >
-                <div className="flex gap-2 pb-8 items-center cursor-default">
-                    <img className="w-10" src={Logo} />
-                    <h2>Forget Password</h2>
+                <div className="text-center cursor-default mb-16">
+                    <img className="w-20 m-auto" src={Logo} />
+                    <h3>React Dashboard</h3>
+                    <p className="font-medium">Find Your Account</p>
                 </div>
 
                 <div className="mb-4">
-                    <label
-                        htmlFor="email"
-                        className="block  text-sm font-bold mb-2"
-                    >
-                        Email
-                    </label>
+                    <label htmlFor="email">Email</label>
                     <input
                         type="text"
                         id="email"
-                        className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
                         {...register('email', {
                             required: {
                                 value: true,
@@ -67,6 +63,14 @@ const ForgetPasswordPage: React.FC = () => {
                         handleClick={handleSubmit}
                         variant="primary"
                     />
+                </div>
+                <div className="mt-4">
+                    <span>
+                        To login?{' '}
+                        <Link to={'/'} className="text-primary_light">
+                            Log In
+                        </Link>
+                    </span>
                 </div>
             </form>
         </div>

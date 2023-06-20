@@ -54,18 +54,13 @@ const LoginPage: React.FC = () => {
                 <div className="text-center cursor-default mb-16">
                     <img className="w-20 m-auto" src={Logo} />
                     <h3>React Dashboard</h3>
+                    <p className="font-medium">Log into your account</p>
                 </div>
                 <div className="mb-4">
-                    <label
-                        htmlFor="email"
-                        className="block text-sm font-bold mb-2"
-                    >
-                        Email
-                    </label>
+                    <label htmlFor="email">Email</label>
                     <input
                         type="text"
                         id="email"
-                        className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
                         {...register('email', {
                             required: {
                                 value: true,
@@ -82,16 +77,10 @@ const LoginPage: React.FC = () => {
                     )}
                 </div>
                 <div className="mb-1">
-                    <label
-                        htmlFor="password"
-                        className="block text-sm font-bold mb-2"
-                    >
-                        Password
-                    </label>
+                    <label htmlFor="password">Password</label>
                     <input
                         type="password"
                         id="password"
-                        className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
                         {...register('password', {
                             required: {
                                 value: true,

@@ -52,145 +52,119 @@ const RegisterPage: React.FC = () => {
     });
 
     return (
-        <>
-            <div className="flex flex-col justify-center min-h-screen bg-main items-center">
-                <form
-                    className="w-full max-w-xs mx-auto"
-                    onSubmit={handleSubmit(onSubmit)}
-                >
-                    <div className="flex gap-2 pb-8 items-center cursor-default">
-                        <img className="w-10" src={Logo} />
-                        <h1>Dashboard</h1>
-                    </div>
-                    <div className="mb-1">
-                        <label
-                            htmlFor="fName"
-                            className="block text-sm font-bold mb-2"
-                        >
-                            First Name
-                        </label>
-                        <input
-                            type="text"
-                            id="fName"
-                            className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
-                            {...register('firstName', {
-                                required: {
-                                    value: true,
-                                    message: 'This field is requried.',
-                                },
-                            })}
-                        />
-                        {errors.firstName && errors.firstName.message && (
-                            <ErrorMessage message={errors.firstName.message} />
-                        )}
-                    </div>
-                    <div className="mb-1">
-                        <label
-                            htmlFor="lastName"
-                            className="block text-sm font-bold mb-2"
-                        >
-                            Last Name
-                        </label>
-                        <input
-                            type="text"
-                            id="lastName"
-                            className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
-                            {...register('lastName', {
-                                required: {
-                                    value: true,
-                                    message: 'This field is requried.',
-                                },
-                            })}
-                        />
-                        {errors.lastName && errors.lastName.message && (
-                            <ErrorMessage message={errors.lastName.message} />
-                        )}
-                    </div>
-                    <div className="mb-4">
-                        <label
-                            htmlFor="email"
-                            className="block  text-sm font-bold mb-2"
-                        >
-                            Email
-                        </label>
-                        <input
-                            type="text"
-                            id="email"
-                            className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
-                            {...register('email', {
-                                required: {
-                                    value: true,
-                                    message: 'This field is requried.',
-                                },
-                                pattern: {
-                                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                                    message: 'Invalid email address',
-                                },
-                            })}
-                        />
-                        {errors.email && errors.email.message && (
-                            <ErrorMessage message={errors.email.message} />
-                        )}
-                    </div>
+        <div className="h-[100vh] grid content-center bg-ui dark:bg-ui-dark">
+            <form
+                className="w-full max-w-md p-6 md:p-10 card mb-10"
+                onSubmit={handleSubmit(onSubmit)}
+            >
+                <div className="text-center cursor-default mb-16">
+                    <img className="w-20 m-auto" src={Logo} />
+                    <h3>React Dashboard</h3>
+                    <p className="font-medium">Create Your Account</p>
+                </div>
 
-                    <Button
-                        title="Register"
-                        handleClick={handleSubmit(onSubmit)}
-                        variant="primary"
-                        disabled={showEmailVarifyField}
+                <div className="mb-1">
+                    <label htmlFor="fName">First Name</label>
+                    <input
+                        type="text"
+                        id="fName"
+                        {...register('firstName', {
+                            required: {
+                                value: true,
+                                message: 'This field is requried.',
+                            },
+                        })}
                     />
-                    {!showEmailVarifyField && (
-                        <div className="mt-4">
-                            <span>
-                                Already have an account?{' '}
-                                <Link to={'/'} className="text-primary_light">
-                                    Log In Now
-                                </Link>
-                            </span>
-                        </div>
+                    {errors.firstName && errors.firstName.message && (
+                        <ErrorMessage message={errors.firstName.message} />
                     )}
-                </form>
-                {showEmailVarifyField && (
-                    <form
-                        className="w-full max-w-xs mx-auto pt-2"
-                        onSubmit={handleSubmitCode(onCodeSubmit)}
-                    >
-                        <div className="mb-4">
-                            <label
-                                htmlFor="varificationCode"
-                                className="block text-sm font-bold mb-2"
-                            >
-                                Varification Code
-                            </label>
-                            <input
-                                type="text"
-                                id="varificationCode"
-                                className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
-                                {...registerCode('varificationCode', {
-                                    required: {
-                                        value: true,
-                                        message: 'This field is requried.',
-                                    },
-                                })}
-                            />
-                            {errorsCode.varificationCode &&
-                                errorsCode.varificationCode.message && (
-                                    <ErrorMessage
-                                        message={
-                                            errorsCode.varificationCode.message
-                                        }
-                                    />
-                                )}
-                        </div>
-                        <Button
-                            title="Varify"
-                            type="submit"
-                            variant="primary"
-                        />
-                    </form>
+                </div>
+                <div className="mb-1">
+                    <label htmlFor="lastName">Last Name</label>
+                    <input
+                        type="text"
+                        id="lastName"
+                        {...register('lastName', {
+                            required: {
+                                value: true,
+                                message: 'This field is requried.',
+                            },
+                        })}
+                    />
+                    {errors.lastName && errors.lastName.message && (
+                        <ErrorMessage message={errors.lastName.message} />
+                    )}
+                </div>
+                <div className="mb-4">
+                    <label htmlFor="email">Email</label>
+                    <input
+                        type="text"
+                        id="email"
+                        {...register('email', {
+                            required: {
+                                value: true,
+                                message: 'This field is requried.',
+                            },
+                            pattern: {
+                                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                                message: 'Invalid email address',
+                            },
+                        })}
+                    />
+                    {errors.email && errors.email.message && (
+                        <ErrorMessage message={errors.email.message} />
+                    )}
+                </div>
+
+                <Button
+                    title="Register"
+                    handleClick={handleSubmit(onSubmit)}
+                    variant="primary"
+                    disabled={showEmailVarifyField}
+                />
+                {!showEmailVarifyField && (
+                    <div className="mt-4">
+                        <span>
+                            Already have an account?{' '}
+                            <Link to={'/'} className="text-primary_light">
+                                Log In Now
+                            </Link>
+                        </span>
+                    </div>
                 )}
-            </div>
-        </>
+            </form>
+            {showEmailVarifyField && (
+                <form
+                    className="w-full max-w-md p-6 md:p-10 card"
+                    onSubmit={handleSubmitCode(onCodeSubmit)}
+                >
+                    <div className="mb-4">
+                        <label htmlFor="varificationCode">
+                            Varification Code
+                        </label>
+                        <input
+                            type="text"
+                            id="varificationCode"
+                            {...registerCode('varificationCode', {
+                                required: {
+                                    value: true,
+                                    message: 'This field is requried.',
+                                },
+                            })}
+                        />
+                        {errorsCode.varificationCode &&
+                            errorsCode.varificationCode.message && (
+                                <ErrorMessage
+                                    message={
+                                        errorsCode.varificationCode.message
+                                    }
+                                />
+                            )}
+                    </div>
+                    <Button title="Varify" type="submit" variant="primary" />
+                </form>
+            )}
+        </div>
     );
 };
 
