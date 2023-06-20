@@ -1,14 +1,3 @@
-export interface ButtonInterface {
-    title: string;
-    handleClick?: Function;
-    type?: 'button' | 'submit' | 'reset' | undefined;
-    variant?: 'primary' | 'secondary' | 'ghost' | 'danger';
-    icon?: string;
-    iconAlt?: string;
-    disabled?: boolean;
-    className?: string;
-}
-
 export interface LoginUserInterface {
     email: string;
     password: string;

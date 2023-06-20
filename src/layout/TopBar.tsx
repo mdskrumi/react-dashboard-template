@@ -12,7 +12,7 @@ const TopBar = () => {
     return (
         <>
             <div
-                className={`max-w-[1920px] m-auto fixed items-center justify-between flex h-16 top-0 w-full border-b-[1px] border-line dark:border-line-dark bg-surface dark:bg-surface-dark select-none duration-300`}
+                className={`max-w-[1920px] m-auto fixed items-center justify-between flex h-16 top-0 w-full border-b-[1px] border-line dark:border-line-dark bg-surface dark:bg-surface-dark select-none duration-300 z-50`}
                 style={{
                     marginLeft:
                         window.innerWidth > 1024

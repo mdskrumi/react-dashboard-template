@@ -10,11 +10,8 @@ import SideBarItem, { SideBarItemInterface } from 'layout/Sidebar/SideBarItem';
 
 // Icons
 import { TbPackages } from 'react-icons/tb';
-import { CgWebsite, CgComponents, CgLogOut } from 'react-icons/cg';
-import { LuPackageCheck } from 'react-icons/lu';
-import { TbTypography } from 'react-icons/tb';
-import { SiBigbluebutton } from 'react-icons/si';
-import { AiOutlineLoading3Quarters } from 'react-icons/ai';
+import { CgWebsite, CgLogOut, CgProfile } from 'react-icons/cg';
+import { LuPackageCheck, LuSettings } from 'react-icons/lu';
 
 const Sidebar: React.FC = () => {
     const dispatch = useAppDispatch();
@@ -30,88 +27,25 @@ const Sidebar: React.FC = () => {
             subMenus: [],
         },
         {
-            id: 'sample',
-            title: 'Sample Pages',
+            id: 'components',
+            title: 'Components',
+            url: '/components',
             icon: () => <TbPackages size={'1.5em'} className="text-primary" />,
-            type: 'expandable',
-            subMenus: [
-                {
-                    id: 'sample-page-one',
-                    title: 'Sample Page',
-                    url: '/sample-page',
-                    icon: () => (
-                        <LuPackageCheck
-                            size={'1.5em'}
-                            className="text-primary"
-                        />
-                    ),
-                    type: 'url',
-                    subMenus: [],
-                },
-                {
-                    id: 'sample-page-two',
-                    title: 'Sample Page',
-                    url: '/sample-page-2',
-                    icon: () => (
-                        <LuPackageCheck
-                            size={'1.5em'}
-                            className="text-primary"
-                        />
-                    ),
-                    type: 'url',
-                    subMenus: [],
-                },
-            ],
+            type: 'url',
+            subMenus: [],
         },
+
         {
-            id: 'typography',
-            title: 'Typography',
-            url: '/typography',
-            icon: () => (
-                <TbTypography size={'1.5em'} className="text-primary" />
-            ),
+            id: 'settings',
+            title: 'Settings',
+            url: '/settings',
+            icon: () => <LuSettings size={'1.5em'} className="text-primary" />,
             type: 'url',
             subMenus: [],
         },
         {
-            id: 'components',
-            title: 'Components',
-            icon: () => (
-                <CgComponents size={'1.5em'} className="text-primary" />
-            ),
-            type: 'expandable',
-            subMenus: [
-                {
-                    id: 'button-page',
-                    title: 'Buttons',
-                    url: '/buttons',
-                    icon: () => (
-                        <SiBigbluebutton
-                            size={'1.5em'}
-                            className="text-primary"
-                        />
-                    ),
-                    type: 'url',
-                    subMenus: [],
-                },
-                {
-                    id: 'loading-page',
-                    title: 'Loader',
-                    url: '/loaders',
-                    icon: () => (
-                        <AiOutlineLoading3Quarters
-                            size={'1.5em'}
-                            className="text-primary"
-                        />
-                    ),
-                    type: 'url',
-                    subMenus: [],
-                },
-            ],
-        },
-        {
             id: 'logout',
-            title: 'Log Out',
+            title: 'Logout',
             url: '/',
             icon: () => <CgLogOut size={'1.5em'} className="text-primary" />,
             type: 'url',
@@ -122,7 +56,7 @@ const Sidebar: React.FC = () => {
     return (
         <>
             <div
-                className={`hidden lg:block fixed top-0 bottom-0 ${
+                className={`z-50 hidden lg:block fixed top-0 bottom-0 ${
                     isOpen ? 'w-72' : 'w-20'
                 } duration-300 overflow-x-hidden border-r-[1px] bg-surface dark:bg-surface-dark border-line dark:border-line-dark`}
             >
@@ -143,9 +77,10 @@ const Sidebar: React.FC = () => {
                 ))}
             </div>
             <div
-                className={`block lg:hidden overflow-hidden overflow-y-auto fixed top-0 bottom-0 left-0 bg-[#00000090] ${
+                className={`z-50 block lg:hidden overflow-hidden overflow-y-auto fixed top-0 bottom-0 left-0 bg-[#00000090] ${
                     isOpen ? 'w-full' : 'w-0'
                 }`}
+                onClick={() => dispatch(setSidebarOpen(false))}
             >
                 <div
                     className={`relative ${
@@ -164,7 +99,7 @@ const Sidebar: React.FC = () => {
                     </div>
                     <div>
                         {menus.map((item) => (
-                            <SideBarItem {...item} key={item.id} />
+                            <SideBarItem {...item} isMobile key={item.id} />
                         ))}
                     </div>
                 </div>

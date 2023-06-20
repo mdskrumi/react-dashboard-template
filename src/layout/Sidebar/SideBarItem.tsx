@@ -5,6 +5,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 // Redux
 import { useAppSelector, useAppDispatch } from 'store/hooks';
 import { clearUser } from 'store/reducers/user';
+import { setSidebarOpen } from 'store/reducers/util';
 
 // Icon
 import { BsArrowRightShort } from 'react-icons/bs';
@@ -67,6 +68,10 @@ const SideBarItem: React.FC<SideBarItemInterface> = ({
                 className="h-[52px] cursor-pointer flex items-center w-72 my-1"
                 onClick={(e) => {
                     e.stopPropagation();
+
+                    if (isMobile) {
+                        dispatch(setSidebarOpen(!isOpen));
+                    }
 
                     if (id === 'logout') {
                         // TODO: clear user data

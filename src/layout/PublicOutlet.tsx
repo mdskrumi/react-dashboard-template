@@ -3,6 +3,7 @@ import { FiSun, FiMoon } from 'react-icons/fi';
 
 import { useAppSelector, useAppDispatch } from 'store/hooks';
 import { toggleTheme } from 'store/reducers/util';
+import Footer from 'components/footer';
 
 const PublicOutlet = () => {
     const dispatch = useAppDispatch();
@@ -13,17 +14,16 @@ const PublicOutlet = () => {
         <>
             <div
                 onClick={() => dispatch(toggleTheme())}
-                className="text-primary fixed right-6 top-4 hover:text-primary-varient select-none"
+                className="fixed right-6 top-4 select-none"
             >
                 {theme === 'light' ? (
-                    <FiMoon size="2rem" />
+                    <FiMoon size="1.5rem" />
                 ) : (
-                    <FiSun size="2rem" />
+                    <FiSun size="1.5rem" />
                 )}
             </div>
-            <div className="overflow-hidden">
-                <Outlet />
-            </div>
+            <Outlet />
+            <Footer />
         </>
     ) : (
         <Navigate to={'dashboard'} />

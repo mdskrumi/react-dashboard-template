@@ -40,6 +40,19 @@
     li {
         @apply list-disc list-inside;
     }
+
+    label {
+        @apply text-sm font-medium;
+    }
+
+    input,
+    textarea {
+        @apply border rounded w-full py-2 px-4 leading-tight focus:outline-double outline-primary border-line text-text bg-ui dark:bg-ui-dark dark:text-text-dark dark:border-line-dark;
+    }
+
+    a {
+        @apply text-primary font-medium;
+    }
 }
 
 @layer components {
@@ -49,5 +62,17 @@
 
     .caption {
         @apply italic font-semibold w-max text-xs text-[0.675rem];
+    }
+
+    .table {
+        @apply w-full table-auto bg-surface dark:bg-surface-dark;
+    }
+
+    .table-head-row {
+        @apply p-4 text-base font-medium mr-auto text-left;
+    }
+
+    .table-body-row {
+        @apply p-4 text-sm mr-auto;
     }
 }
