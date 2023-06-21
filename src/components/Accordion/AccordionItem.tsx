@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, useState } from 'react';
 import { AiFillCaretDown } from 'react-icons/ai';
 
 export interface IAccordionItem {
@@ -6,8 +6,6 @@ export interface IAccordionItem {
     subTitle?: string;
     trailing?: string;
     children: ReactNode;
-    expanded: boolean;
-    setExpanded: React.MouseEventHandler<HTMLDivElement>;
 }
 
 const AccordionItem: React.FC<IAccordionItem> = ({
@@ -15,21 +13,19 @@ const AccordionItem: React.FC<IAccordionItem> = ({
     subTitle,
     trailing,
     children,
-    expanded,
-    setExpanded,
 }) => {
+    const [expanded, setExpanded] = useState(false);
+
     return (
         <div
             className="cursor-pointer rounded-2xl overflow-hidden bg-ui dark:bg-ui-dark"
-            onClick={setExpanded}
+            onClick={() => setExpanded(!expanded)}
         >
             <div className="px-6 py-3 select-none grid grid-cols-1">
-                <h5>{title}</h5>
-
                 <div className="flex justify-end items-center">
-                    {subTitle && <p className="w-full">{subTitle}</p>}
+                    <h5 className="w-full">{title}</h5>
                     {trailing && (
-                        <p className="italic font-semibold text-xs">
+                        <p className="italic font-semibold text-xs min-w-fit">
                             {trailing}
                         </p>
                     )}
@@ -40,13 +36,15 @@ const AccordionItem: React.FC<IAccordionItem> = ({
                         className="w-7 transition-transform duration-300"
                     />
                 </div>
+
+                {subTitle && <p className="w-full">{subTitle}</p>}
             </div>
             <div
-                className={`px-6 pt-0 overflow-hidden transition-[max-height] duration-500 ease-in h-auto ${
+                className={`px-6 overflow-hidden transition-[max-height] duration-500 ease-in ${
                     expanded ? 'h-auto' : 'h-0'
                 }`}
             >
-                <div>{children}</div>
+                <div className="pb-4">{children}</div>
             </div>
         </div>
     );

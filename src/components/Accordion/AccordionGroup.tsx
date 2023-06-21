@@ -1,33 +1,14 @@
-import { useState } from 'react';
-import AccordionItem from './AccordionItem';
+import { ReactNode } from 'react';
 
-const AccordionGroup = () => {
-    const [expanded, setExpanded] = useState(-1);
+export interface IAccordionGroup {
+    defaultExpanded?: number;
+    children: ReactNode;
+}
 
+const AccordionGroup: React.FC<IAccordionGroup> = ({ children }) => {
     return (
-        <div className="grid grid-cols-1 gap-3 card p-5 rounded-lg">
-            <AccordionItem
-                title="Accordion Example 1"
-                expanded={expanded === 1 ? true : false}
-                setExpanded={() =>
-                    setExpanded((curr) => (curr === -1 ? 1 : -1))
-                }
-                subTitle="asd"
-                trailing="asd"
-            >
-                <div>Accordion Body</div>{' '}
-            </AccordionItem>
-            <AccordionItem
-                title="Accordion Example 1"
-                expanded={expanded === 1 ? true : false}
-                setExpanded={() =>
-                    setExpanded((curr) => (curr === -1 ? 1 : -1))
-                }
-                subTitle="asd"
-                trailing="asd"
-            >
-                <div>Accordion Body</div>{' '}
-            </AccordionItem>
+        <div className="grid grid-cols-1 gap-3 card p-5 rounded-lg w-fit">
+            {children}
         </div>
     );
 };
