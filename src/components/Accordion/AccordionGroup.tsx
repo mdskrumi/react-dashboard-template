@@ -1,7 +1,6 @@
 import { ReactNode } from 'react';
 
 export interface IAccordionGroup {
-    defaultExpanded?: number;
     children: ReactNode;
 }
 
