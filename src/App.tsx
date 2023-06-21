@@ -10,6 +10,7 @@ const ForgetPasswordPage = lazy(() => import('pages/ForgetPasswordPage'));
 
 const Dashboard = lazy(() => import('pages/Dashboard'));
 const AccordionPage = lazy(() => import('pages/Components/AccordionPage'));
+const AlertPage = lazy(() => import('pages/Components/AlertPage'));
 const SetPassword = lazy(() => import('pages/SetPassword'));
 
 const PublicOutlet = lazy(() => import('layout/PublicOutlet'));
@@ -58,6 +59,7 @@ function App() {
                                 path="accordion"
                                 element={<AccordionPage />}
                             />
+                            <Route path="alert" element={<AlertPage />} />
                         </Route>
                         <Route path="*" element={<Navigate to={'/'} />} />
                     </Routes>

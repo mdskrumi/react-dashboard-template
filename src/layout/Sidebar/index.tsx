@@ -46,6 +46,19 @@ const Sidebar: React.FC = () => {
                     type: 'url',
                     subMenus: [],
                 },
+                {
+                    id: 'alert',
+                    title: 'Alert',
+                    url: '/alert',
+                    icon: () => (
+                        <LuPackageCheck
+                            size={'1.5em'}
+                            className="text-primary"
+                        />
+                    ),
+                    type: 'url',
+                    subMenus: [],
+                },
             ],
         },
 

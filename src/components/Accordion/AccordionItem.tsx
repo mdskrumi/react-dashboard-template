@@ -23,11 +23,9 @@ const AccordionItem: React.FC<IAccordionItem> = ({
         >
             <div className="px-6 py-3 select-none grid grid-cols-1">
                 <div className="flex justify-end items-center">
-                    <h5 className="w-full">{title}</h5>
+                    <h6 className="w-full">{title}</h6>
                     {trailing && (
-                        <p className="italic font-semibold text-xs min-w-fit">
-                            {trailing}
-                        </p>
+                        <p className="caption min-w-fit">{trailing}</p>
                     )}
                     <AiFillCaretDown
                         style={{
@@ -37,7 +35,9 @@ const AccordionItem: React.FC<IAccordionItem> = ({
                     />
                 </div>
 
-                {subTitle && <p className="w-full">{subTitle}</p>}
+                {subTitle && (
+                    <p className="w-full text-sm font-light">{subTitle}</p>
+                )}
             </div>
             <div
                 className={`px-6 overflow-hidden transition-[max-height] duration-500 ease-in ${
