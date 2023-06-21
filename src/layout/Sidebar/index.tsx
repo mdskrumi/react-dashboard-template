@@ -10,7 +10,7 @@ import SideBarItem, { SideBarItemInterface } from 'layout/Sidebar/SideBarItem';
 
 // Icons
 import { TbPackages } from 'react-icons/tb';
-import { CgWebsite, CgLogOut, CgProfile } from 'react-icons/cg';
+import { CgWebsite, CgLogOut } from 'react-icons/cg';
 import { LuPackageCheck, LuSettings } from 'react-icons/lu';
 
 const Sidebar: React.FC = () => {
@@ -31,8 +31,22 @@ const Sidebar: React.FC = () => {
             title: 'Components',
             url: '/components',
             icon: () => <TbPackages size={'1.5em'} className="text-primary" />,
-            type: 'url',
-            subMenus: [],
+            type: 'expandable',
+            subMenus: [
+                {
+                    id: 'accordion',
+                    title: 'Accordion',
+                    url: '/accordion',
+                    icon: () => (
+                        <LuPackageCheck
+                            size={'1.5em'}
+                            className="text-primary"
+                        />
+                    ),
+                    type: 'url',
+                    subMenus: [],
+                },
+            ],
         },
 
         {
