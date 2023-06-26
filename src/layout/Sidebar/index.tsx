@@ -12,6 +12,7 @@ import SideBarItem, { SideBarItemInterface } from 'layout/Sidebar/SideBarItem';
 import { TbPackages } from 'react-icons/tb';
 import { CgWebsite, CgLogOut } from 'react-icons/cg';
 import { LuPackageCheck, LuSettings } from 'react-icons/lu';
+import { FaToggleOn } from 'react-icons/fa';
 
 const Sidebar: React.FC = () => {
     const dispatch = useAppDispatch();
@@ -55,6 +56,16 @@ const Sidebar: React.FC = () => {
                             size={'1.5em'}
                             className="text-primary"
                         />
+                    ),
+                    type: 'url',
+                    subMenus: [],
+                },
+                {
+                    id: 'toggle',
+                    title: 'Toggle',
+                    url: '/toggle',
+                    icon: () => (
+                        <FaToggleOn size={'1.5em'} className="text-primary" />
                     ),
                     type: 'url',
                     subMenus: [],

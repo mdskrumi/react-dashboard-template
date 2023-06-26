@@ -9,8 +9,12 @@ const RegisterPage = lazy(() => import('pages/RegisterPage'));
 const ForgetPasswordPage = lazy(() => import('pages/ForgetPasswordPage'));
 
 const Dashboard = lazy(() => import('pages/Dashboard'));
+
+// Component Pages
 const AccordionPage = lazy(() => import('pages/Components/AccordionPage'));
 const AlertPage = lazy(() => import('pages/Components/AlertPage'));
+const TogglePage = lazy(() => import('pages/Components/TogglePage'));
+
 const SetPassword = lazy(() => import('pages/SetPassword'));
 
 const PublicOutlet = lazy(() => import('layout/PublicOutlet'));
@@ -60,6 +64,7 @@ function App() {
                                 element={<AccordionPage />}
                             />
                             <Route path="alert" element={<AlertPage />} />
+                            <Route path="toggle" element={<TogglePage />} />
                         </Route>
                         <Route path="*" element={<Navigate to={'/'} />} />
                     </Routes>
