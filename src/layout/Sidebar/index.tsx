@@ -13,6 +13,7 @@ import { TbPackages } from 'react-icons/tb';
 import { CgWebsite, CgLogOut } from 'react-icons/cg';
 import { LuPackageCheck, LuSettings } from 'react-icons/lu';
 import { FaToggleOn } from 'react-icons/fa';
+import { HiBadgeCheck } from 'react-icons/hi';
 
 const Sidebar: React.FC = () => {
     const dispatch = useAppDispatch();
@@ -61,9 +62,19 @@ const Sidebar: React.FC = () => {
                     subMenus: [],
                 },
                 {
-                    id: 'toggle',
-                    title: 'Toggle',
-                    url: '/toggle',
+                    id: 'badge',
+                    title: 'Badge',
+                    url: '/badge',
+                    icon: () => (
+                        <HiBadgeCheck size={'1.5em'} className="text-primary" />
+                    ),
+                    type: 'url',
+                    subMenus: [],
+                },
+                {
+                    id: 'tab',
+                    title: 'Tab',
+                    url: '/tab',
                     icon: () => (
                         <FaToggleOn size={'1.5em'} className="text-primary" />
                     ),

@@ -1,17 +1,17 @@
-import Toggle from 'components/Toggle';
+import Tab from 'components/Tab';
 import MainLayout from 'layout/MainLayout';
 import { useState } from 'react';
 
-const TogglePage = () => {
+const TabPage = () => {
     const [selected, setSelected] = useState('1');
 
     return (
         <MainLayout
-            title="Toggle"
-            breadcrumbs={[{ title: 'Toggle', link: '#', disabled: true }]}
+            title="Tab"
+            breadcrumbs={[{ title: 'Tab', link: '#', disabled: true }]}
         >
-            <Toggle
-                toggleItems={[
+            <Tab
+                tabItems={[
                     { label: 'Tab 1', value: '1' },
                     { label: 'Tab 2', value: '2' },
                     { label: 'Tab 3', value: '3' },
@@ -26,4 +26,4 @@ const TogglePage = () => {
     );
 };
 
-export default TogglePage;
+export default TabPage;

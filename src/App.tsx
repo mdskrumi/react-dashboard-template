@@ -4,16 +4,17 @@ import { ToastContainer } from 'react-toastify';
 
 import SplashPage from 'pages/SplashPage';
 
-const LoginPage = lazy(() => import('pages/LoginPage'));
-const RegisterPage = lazy(() => import('pages/RegisterPage'));
-const ForgetPasswordPage = lazy(() => import('pages/ForgetPasswordPage'));
+const LoginPage = lazy(() => import('pages/Auth/LoginPage'));
+const RegisterPage = lazy(() => import('pages/Auth/RegisterPage'));
+const ForgetPasswordPage = lazy(() => import('pages/Auth/ForgetPasswordPage'));
 
 const Dashboard = lazy(() => import('pages/Dashboard'));
 
 // Component Pages
 const AccordionPage = lazy(() => import('pages/Components/AccordionPage'));
 const AlertPage = lazy(() => import('pages/Components/AlertPage'));
-const TogglePage = lazy(() => import('pages/Components/TogglePage'));
+const BadgePage = lazy(() => import('pages/Components/BadgePage'));
+const TabPage = lazy(() => import('pages/Components/TabPage'));
 
 const SetPassword = lazy(() => import('pages/SetPassword'));
 
@@ -64,7 +65,8 @@ function App() {
                                 element={<AccordionPage />}
                             />
                             <Route path="alert" element={<AlertPage />} />
-                            <Route path="toggle" element={<TogglePage />} />
+                            <Route path="badge" element={<BadgePage />} />
+                            <Route path="tab" element={<TabPage />} />
                         </Route>
                         <Route path="*" element={<Navigate to={'/'} />} />
                     </Routes>
