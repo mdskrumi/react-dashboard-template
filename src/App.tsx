@@ -2,6 +2,8 @@ import { Suspense, lazy, useEffect } from 'react';
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 
+import { useAppSelector } from 'store/hooks';
+
 import SplashPage from 'pages/SplashPage';
 
 const LoginPage = lazy(() => import('pages/Auth/LoginPage'));
@@ -14,14 +16,13 @@ const Dashboard = lazy(() => import('pages/Dashboard'));
 const AccordionPage = lazy(() => import('pages/Components/AccordionPage'));
 const AlertPage = lazy(() => import('pages/Components/AlertPage'));
 const BadgePage = lazy(() => import('pages/Components/BadgePage'));
+const ButtonPage = lazy(() => import('pages/Components/ButtonPage'));
 const TabPage = lazy(() => import('pages/Components/TabPage'));
 
 const SetPassword = lazy(() => import('pages/SetPassword'));
 
 const PublicOutlet = lazy(() => import('layout/PublicOutlet'));
 const PrivateOutlet = lazy(() => import('layout/PrivateOutlet'));
-
-import { useAppSelector } from 'store/hooks';
 
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -66,6 +67,7 @@ function App() {
                             />
                             <Route path="alert" element={<AlertPage />} />
                             <Route path="badge" element={<BadgePage />} />
+                            <Route path="button" element={<ButtonPage />} />
                             <Route path="tab" element={<TabPage />} />
                         </Route>
                         <Route path="*" element={<Navigate to={'/'} />} />

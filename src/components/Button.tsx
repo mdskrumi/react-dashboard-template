@@ -29,7 +29,7 @@ const Button: React.FC<IButton> = ({
                 : variant === 'danger'
                 ? 'bg-danger hover:bg-error-dark dark:bg-danger dark:hover:bg-error'
                 : 'bg-primary hover:bg-primary-varient dark:bg-primary-varient dark:hover:bg-primary'
-        } ${className}`}
+        } ${disabled ? 'cursor-not-allowed opacity-70' : ''} ${className}`}
         onClick={(e) => {
             if (typeof handleClick === 'function') {
                 handleClick!(e);
