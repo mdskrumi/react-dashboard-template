@@ -10,11 +10,12 @@ import SideBarItem, { SideBarItemInterface } from 'layout/Sidebar/SideBarItem';
 
 // Icons
 import { TbPackages } from 'react-icons/tb';
-import { CgWebsite, CgLogOut } from 'react-icons/cg';
+import { CgWebsite, CgLogOut, CgSpinner } from 'react-icons/cg';
 import { LuPackageCheck, LuSettings } from 'react-icons/lu';
 import { FaToggleOn } from 'react-icons/fa';
 import { HiBadgeCheck } from 'react-icons/hi';
 import { RxButton, RxDropdownMenu } from 'react-icons/rx';
+import { TbSquareNumber1 } from 'react-icons/tb';
 
 const Sidebar: React.FC = () => {
     const dispatch = useAppDispatch();
@@ -91,6 +92,29 @@ const Sidebar: React.FC = () => {
                             size={'1.5em'}
                             className="text-primary"
                         />
+                    ),
+                    type: 'url',
+                    subMenus: [],
+                },
+                {
+                    id: 'pagination',
+                    title: 'Pagination',
+                    url: '/pagination',
+                    icon: () => (
+                        <TbSquareNumber1
+                            size={'1.5em'}
+                            className="text-primary"
+                        />
+                    ),
+                    type: 'url',
+                    subMenus: [],
+                },
+                {
+                    id: 'spinner',
+                    title: 'Spinner',
+                    url: '/spinner',
+                    icon: () => (
+                        <CgSpinner size={'1.5em'} className="text-primary" />
                     ),
                     type: 'url',
                     subMenus: [],

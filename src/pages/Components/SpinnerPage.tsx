@@ -1,3 +1,4 @@
+import Spinner from 'components/Spinner';
 import MainLayout from 'layout/MainLayout';
 
 const SpinnerPage = () => {
@@ -5,7 +6,16 @@ const SpinnerPage = () => {
         <MainLayout
             title="Spinner"
             breadcrumbs={[{ title: 'Spinner', link: '#', disabled: true }]}
-        ></MainLayout>
+        >
+            <div className="grid grid-cols-2 gap-3">
+                <Spinner varient="small" />
+                <Spinner varient="small" message="Small Spinner" />
+                <Spinner varient="normal" />
+                <Spinner varient="normal" message="Normal Spinner" />
+                <Spinner varient="large" />
+                <Spinner varient="large" message="Large Spinner" />
+            </div>
+        </MainLayout>
     );
 };
 

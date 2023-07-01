@@ -18,6 +18,8 @@ const Pagination: React.FC<IPagination> = ({
 }) => {
     const [items, setItems] = useState<any>([]);
 
+    console.log(currentPage);
+
     useEffect(() => {
         setItems([]);
         const lowerRange = Math.max(currentPage - 2, 1);
@@ -33,8 +35,8 @@ const Pagination: React.FC<IPagination> = ({
                     key={1}
                     className={
                         1 === currentPage
-                            ? 'px-4 py-2 rounded card cursor-pointer hover:scale-110'
-                            : 'px-4 py-2 rounded card cursor-pointer'
+                            ? 'px-4 py-2 rounded card cursor-pointer hover:scale-110 bg-primary'
+                            : 'px-4 py-2 rounded card cursor-pointer hover:scale-110'
                     }
                     onClick={() => {
                         setCurrentPage(1);
@@ -64,7 +66,7 @@ const Pagination: React.FC<IPagination> = ({
                     key={number}
                     className={
                         number === currentPage
-                            ? 'px-4 py-2 rounded card cursor-pointer hover:scale-110'
+                            ? 'px-4 py-2 rounded card cursor-pointer hover:scale-110 bg-primary'
                             : 'px-4 py-2 rounded card cursor-pointer hover:scale-110'
                     }
                     id={`page-${number}`}
@@ -80,19 +82,14 @@ const Pagination: React.FC<IPagination> = ({
         if (higherRange < numberOfPages) {
             setItems((elements: any) => [
                 ...elements,
-                <div
-                    key={'....'}
-                    className={
-                        'px-4 py-2 rounded card cursor-pointe hover:scale-110r'
-                    }
-                >
+                <div key={'....'} className={'px-4 py-2 rounded card'}>
                     {'...'}
                 </div>,
                 <div
                     key={numberOfPages}
                     className={
                         numberOfPages === currentPage
-                            ? 'px-4 py-2 rounded card cursor-pointer hover:scale-110'
+                            ? 'px-4 py-2 rounded card cursor-pointer hover:scale-110 bg-primary'
                             : 'px-4 py-2 rounded card cursor-pointer hover:scale-110'
                     }
                     onClick={() => {
@@ -134,6 +131,7 @@ const Pagination: React.FC<IPagination> = ({
                 <a
                     href="#"
                     className="px-4 py-2 rounded cursor-pointer invisible sm:visible hover:scale-110"
+                    onClick={prevPage}
                 >
                     <AiOutlineArrowLeft />
                 </a>
@@ -143,6 +141,7 @@ const Pagination: React.FC<IPagination> = ({
                 <a
                     href="#"
                     className="px-4 py-2 rounded cursor-pointer invisible sm:visible hover:scale-110"
+                    onClick={nextPage}
                 >
                     <AiOutlineArrowRight />
                 </a>

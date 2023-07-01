@@ -18,6 +18,8 @@ const AlertPage = lazy(() => import('pages/Components/AlertPage'));
 const BadgePage = lazy(() => import('pages/Components/BadgePage'));
 const ButtonPage = lazy(() => import('pages/Components/ButtonPage'));
 const DropDownPage = lazy(() => import('pages/Components/DropDownPage'));
+const PaginationPage = lazy(() => import('pages/Components/PaginationPage'));
+const SpinnerPage = lazy(() => import('pages/Components/SpinnerPage'));
 const TabPage = lazy(() => import('pages/Components/TabPage'));
 
 const SetPassword = lazy(() => import('pages/SetPassword'));
@@ -70,6 +72,11 @@ function App() {
                             <Route path="badge" element={<BadgePage />} />
                             <Route path="button" element={<ButtonPage />} />
                             <Route path="dropdown" element={<DropDownPage />} />
+                            <Route
+                                path="pagination"
+                                element={<PaginationPage />}
+                            />
+                            <Route path="spinner" element={<SpinnerPage />} />
                             <Route path="tab" element={<TabPage />} />
                         </Route>
                         <Route path="*" element={<Navigate to={'/'} />} />

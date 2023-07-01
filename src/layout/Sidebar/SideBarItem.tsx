@@ -126,7 +126,11 @@ const SideBarItem: React.FC<SideBarItemInterface> = ({
 
             <div
                 className={`overflow-hidden duration-500`}
-                style={{ maxHeight: !isExpanded ? 0 : 57 * 7 }}
+                style={{
+                    maxHeight: !isExpanded
+                        ? 0
+                        : 57 * import.meta.env.DASHBOARD_MAX_SUB_MENU,
+                }}
             >
                 {subMenus?.map((sub) => (
                     <div key={sub.id}>

@@ -1,10 +1,10 @@
-export interface ILoading {
+export interface ISpinner {
     className?: string;
     varient?: 'small' | 'normal' | 'large';
     message?: string;
 }
 
-const Loading: React.FC<ILoading> = ({ className, varient, message }) => (
+const Spinner: React.FC<ISpinner> = ({ className, varient, message }) => (
     <div
         className={`min-h-full min-w-full flex-col justify-center items-center ${className}`}
     >
@@ -21,4 +21,4 @@ const Loading: React.FC<ILoading> = ({ className, varient, message }) => (
     </div>
 );
 
-export default Loading;
+export default Spinner;
