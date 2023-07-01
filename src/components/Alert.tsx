@@ -22,7 +22,7 @@ const Alert: React.FC<IAlert> = ({
                 : 'bg-surface dark:bg-surface-dark'
         } ${className}`}
     >
-        <div className="flex w-full items-center justify-around">
+        <div className="flex items-baseline w-full justify-around">
             {typeof renderIcon === 'function' && renderIcon()}
             <p className="ml-1">{content}</p>
         </div>

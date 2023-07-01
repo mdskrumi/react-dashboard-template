@@ -41,6 +41,8 @@ const DropDownButton: React.FC<IDropDownButton> = ({
                         : variant === 'danger'
                         ? 'bg-danger hover:bg-error-dark dark:bg-danger dark:hover:bg-error'
                         : 'bg-primary hover:bg-primary-varient dark:bg-primary-varient dark:hover:bg-primary'
+                } ${
+                    disabled ? 'cursor-not-allowed opacity-70' : ''
                 } ${className}`}
                 onClick={() => {
                     setIsActionVisible(() => !isActionVisible);

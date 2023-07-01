@@ -17,6 +17,7 @@ const AccordionPage = lazy(() => import('pages/Components/AccordionPage'));
 const AlertPage = lazy(() => import('pages/Components/AlertPage'));
 const BadgePage = lazy(() => import('pages/Components/BadgePage'));
 const ButtonPage = lazy(() => import('pages/Components/ButtonPage'));
+const DropDownPage = lazy(() => import('pages/Components/DropDownPage'));
 const TabPage = lazy(() => import('pages/Components/TabPage'));
 
 const SetPassword = lazy(() => import('pages/SetPassword'));
@@ -68,6 +69,7 @@ function App() {
                             <Route path="alert" element={<AlertPage />} />
                             <Route path="badge" element={<BadgePage />} />
                             <Route path="button" element={<ButtonPage />} />
+                            <Route path="dropdown" element={<DropDownPage />} />
                             <Route path="tab" element={<TabPage />} />
                         </Route>
                         <Route path="*" element={<Navigate to={'/'} />} />
