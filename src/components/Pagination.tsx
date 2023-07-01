@@ -18,8 +18,6 @@ const Pagination: React.FC<IPagination> = ({
 }) => {
     const [items, setItems] = useState<any>([]);
 
-    console.log(currentPage);
-
     useEffect(() => {
         setItems([]);
         const lowerRange = Math.max(currentPage - 2, 1);
