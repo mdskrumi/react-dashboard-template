@@ -6,9 +6,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from 'store/hooks';
 import { login } from 'store/reducers/user';
 
-import Button from 'components/Button';
+import Button from 'components/Elements/Button';
 import { LoginUserInterface } from 'types';
-import ErrorMessage from 'components/ErrorMessage';
+import ErrorMessage from 'components/Elements/ErrorMessage';
 
 // Icons
 import Logo from '/logo.svg';

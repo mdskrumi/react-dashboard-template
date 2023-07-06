@@ -1,6 +1,6 @@
 import MainLayout from 'layout/MainLayout';
-import AccordionGroup from 'components/Accordion/AccordionGroup';
-import AccordionItem from 'components/Accordion/AccordionItem';
+import AccordionGroup from 'components/Elements/Accordion/AccordionGroup';
+import AccordionItem from 'components/Elements/Accordion/AccordionItem';
 
 const AccordionPage = () => {
     return (

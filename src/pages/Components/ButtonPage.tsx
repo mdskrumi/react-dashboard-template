@@ -1,4 +1,4 @@
-import Button from 'components/Button';
+import Button from 'components/Elements/Button';
 import MainLayout from 'layout/MainLayout';
 
 import { GiConfirmed } from 'react-icons/gi';

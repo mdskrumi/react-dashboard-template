@@ -1,4 +1,4 @@
-import Loading from 'components/Spinner';
+import Loading from 'components/Elements/Spinner';
 
 const SplashPage = () => {
     return (

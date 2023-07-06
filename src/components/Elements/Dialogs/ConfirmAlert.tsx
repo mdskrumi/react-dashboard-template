@@ -1,4 +1,4 @@
-import Button from 'components/Button';
+import Button from 'components/Elements/Button';
 
 export interface IConfirmAlert {
     title: string;

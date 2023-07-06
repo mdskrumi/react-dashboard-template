@@ -3,7 +3,7 @@ import { FiSun, FiMoon } from 'react-icons/fi';
 
 import { useAppSelector, useAppDispatch } from 'store/hooks';
 import { toggleTheme } from 'store/reducers/util';
-import Footer from 'components/footer';
+import Footer from 'components/Footer';
 
 const PublicOutlet = () => {
     const dispatch = useAppDispatch();

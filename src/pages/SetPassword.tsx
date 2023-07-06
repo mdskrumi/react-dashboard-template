@@ -1,10 +1,13 @@
 import { useForm } from 'react-hook-form';
 
 // Components
-import ErrorMessage from 'components/ErrorMessage';
-import Button from 'components/Button';
+import ErrorMessage from 'components/Elements/ErrorMessage';
+import Button from 'components/Elements/Button';
 
-import { ISetPassword } from 'types';
+export interface ISetPassword {
+    password: string;
+    confirmPassword: string;
+}
 
 const SetPassword: React.FC = () => {
     const onSubmit = async (data: ISetPassword) => {

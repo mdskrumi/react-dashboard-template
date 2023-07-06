@@ -1,6 +1,6 @@
 import { IoIosWarning } from 'react-icons/io';
 import MainLayout from 'layout/MainLayout';
-import Alert from 'components/Alert';
+import Alert from 'components/Elements/Alert';
 
 const AlertPage = () => {
     return (

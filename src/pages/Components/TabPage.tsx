@@ -1,4 +1,4 @@
-import Tab from 'components/Tab';
+import Tab from 'components/Elements/Tab';
 import MainLayout from 'layout/MainLayout';
 import { useState } from 'react';
 

@@ -2,9 +2,9 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 
-import Button from 'components/Button';
+import Button from 'components/Elements/Button';
 import { ForgetPasswordInterface } from 'types';
-import ErrorMessage from 'components/ErrorMessage';
+import ErrorMessage from 'components/Elements/ErrorMessage';
 
 // Icons
 import Logo from '/logo.svg';

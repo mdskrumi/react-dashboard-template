@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { BiHome } from 'react-icons/bi';
 
-import Footer from 'components/footer';
+import Footer from 'components/Footer';
 
 export interface IBreadcrumb {
     title: string;

@@ -1,5 +1,5 @@
 import MainLayout from 'layout/MainLayout';
-import Badge from 'components/Badge';
+import Badge from 'components/Elements/Badge';
 
 const BadgePage = () => {
     return (

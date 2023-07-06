@@ -1,4 +1,4 @@
-import Pagination from 'components/Pagination';
+import Pagination from 'components/Elements/Pagination';
 import MainLayout from 'layout/MainLayout';
 import { useState } from 'react';
 

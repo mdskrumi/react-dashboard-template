@@ -1,4 +1,4 @@
-import Spinner from 'components/Spinner';
+import Spinner from 'components/Elements/Spinner';
 import MainLayout from 'layout/MainLayout';
 
 const SpinnerPage = () => {
