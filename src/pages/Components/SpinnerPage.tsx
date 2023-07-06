@@ -8,12 +8,12 @@ const SpinnerPage = () => {
             breadcrumbs={[{ title: 'Spinner', link: '#', disabled: true }]}
         >
             <div className="grid grid-cols-2 gap-3">
-                <Spinner varient="small" />
-                <Spinner varient="small" message="Small Spinner" />
-                <Spinner varient="normal" />
-                <Spinner varient="normal" message="Normal Spinner" />
-                <Spinner varient="large" />
-                <Spinner varient="large" message="Large Spinner" />
+                <Spinner variant="small" />
+                <Spinner variant="small" message="Small Spinner" />
+                <Spinner variant="normal" />
+                <Spinner variant="normal" message="Normal Spinner" />
+                <Spinner variant="large" />
+                <Spinner variant="large" message="Large Spinner" />
             </div>
         </MainLayout>
     );

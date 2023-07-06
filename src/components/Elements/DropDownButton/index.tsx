@@ -35,12 +35,12 @@ const DropDownButton: React.FC<IDropDownButton> = ({
             <button
                 className={`p-2 lg:px-4 text-center border border-solid rounded transition-all duration-300 w-fit font-medium hover:scale-105 ${
                     variant === 'secondary'
-                        ? 'bg-secondary hover:bg-secondary-varient dark:bg-secondary-varient dark:hover:bg-secondary'
+                        ? 'bg-secondary hover:bg-secondary-variant dark:bg-secondary-variant dark:hover:bg-secondary'
                         : variant === 'ghost'
                         ? 'bg-surface hover:bg-ui dark:bg-surface-dark dark:hover:bg-ui-dark'
                         : variant === 'danger'
                         ? 'bg-danger hover:bg-error-dark dark:bg-danger dark:hover:bg-error'
-                        : 'bg-primary hover:bg-primary-varient dark:bg-primary-varient dark:hover:bg-primary'
+                        : 'bg-primary hover:bg-primary-variant dark:bg-primary-variant dark:hover:bg-primary'
                 } ${
                     disabled ? 'cursor-not-allowed opacity-70' : ''
                 } ${className}`}

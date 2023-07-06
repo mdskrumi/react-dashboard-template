@@ -21,16 +21,16 @@ module.exports = {
 
                 // Common
                 primary: '#00AB55',
-                'primary-varient': '#008743',
+                'primary-variant': '#008743',
                 secondary: '#03DAC6',
-                'secondary-varient': '#018786',
+                'secondary-variant': '#018786',
                 link: '#2000CC',
-                'link-varient': '#0044CC',
+                'link-variant': '#0044CC',
                 danger: '#ff0000',
-                'danger-varient': '#ff2626',
+                'danger-variant': '#ff2626',
                 hint: '#797A7B',
                 dim: '#64748B',
-                'dim-varient': '#7b8fab',
+                'dim-variant': '#7b8fab',
             },
             keyframes: {
                 'fade-in-up': {
