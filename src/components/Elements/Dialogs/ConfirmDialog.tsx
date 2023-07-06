@@ -1,6 +1,6 @@
 import Button from 'components/Elements/Button';
 
-export interface IConfirmAlert {
+export interface IConfirmDialog {
     title: string;
     subTitle: string;
     type: 'normal' | 'danger';
@@ -10,7 +10,7 @@ export interface IConfirmAlert {
     onSecondaryActionClick: Function;
 }
 
-const ConfirmAlert: React.FC<IConfirmAlert> = ({
+const ConfirmDialog: React.FC<IConfirmDialog> = ({
     title,
     subTitle,
     type = 'normal',
@@ -41,4 +41,4 @@ const ConfirmAlert: React.FC<IConfirmAlert> = ({
     );
 };
 
-export default ConfirmAlert;
+export default ConfirmDialog;
