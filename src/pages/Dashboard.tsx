@@ -1,4 +1,7 @@
 import MainLayout from 'layout/MainLayout';
+import { Editor } from 'react-draft-wysiwyg';
+
+import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
 const Dashboard: React.FC = () => {
     return (
@@ -34,6 +37,12 @@ const Dashboard: React.FC = () => {
                     <li>Vite JS for speedy development</li>
                 </ul>
             </div>
+            <Editor
+                toolbarClassName="toolbarClassName"
+                wrapperClassName="wrapperClassName"
+                editorClassName="editorClassName"
+            />
+            ;
         </MainLayout>
     );
 };

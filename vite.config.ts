@@ -11,6 +11,7 @@ export default defineConfig({
     server: {
         port: 3000,
     },
+    define: { global: 'window' },
     plugins: [
         react(),
         viteTsconfigPaths(),
@@ -19,6 +20,7 @@ export default defineConfig({
             devOptions: {
                 enabled: true,
             },
+
             includeAssets: [
                 'favicon.ico',
                 'apple-touch-icon.png',
