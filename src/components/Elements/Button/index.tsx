@@ -1,3 +1,5 @@
+import Spinner from '../Spinner';
+
 export interface IButton {
     title: string;
     handleClick?: Function;
@@ -6,6 +8,7 @@ export interface IButton {
     renderIcon?: Function;
     iconFirst?: boolean;
     disabled?: boolean;
+    loading?: boolean;
     className?: string;
 }
 
@@ -17,6 +20,7 @@ const Button: React.FC<IButton> = ({
     renderIcon,
     iconFirst = true,
     disabled,
+    loading = false,
     className,
 }) => (
     <button
@@ -38,17 +42,27 @@ const Button: React.FC<IButton> = ({
         disabled={disabled}
     >
         <div className="flex w-full items-center justify-around">
-            {iconFirst && typeof renderIcon === 'function' && renderIcon()}
-            <p
-                className={`${
-                    typeof renderIcon === 'function' && iconFirst
-                        ? 'ml-1'
-                        : 'mr-1'
-                }`}
-            >
-                {title}
-            </p>
-            {!iconFirst && typeof renderIcon === 'function' && renderIcon()}
+            {loading ? (
+                <Spinner variant="extra-small" />
+            ) : (
+                <>
+                    {iconFirst &&
+                        typeof renderIcon === 'function' &&
+                        renderIcon()}
+                    <p
+                        className={`${
+                            typeof renderIcon === 'function' && iconFirst
+                                ? 'ml-1'
+                                : 'mr-1'
+                        }`}
+                    >
+                        {title}
+                    </p>
+                    {!iconFirst &&
+                        typeof renderIcon === 'function' &&
+                        renderIcon()}
+                </>
+            )}
         </div>
     </button>
 );
