@@ -3,18 +3,22 @@ import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
 
 export interface IPagination {
     itemsPerPage: number;
+    totalItem?: number;
     numberOfPages: number;
     currentPage: number;
     setCurrentPage: Function;
     hideMessage?: boolean;
+    className?: string;
 }
 
 const Pagination: React.FC<IPagination> = ({
     currentPage,
     setCurrentPage,
     itemsPerPage,
+    totalItem,
     numberOfPages,
     hideMessage = false,
+    className,
 }) => {
     const [items, setItems] = useState<any>([]);
 
@@ -113,37 +117,44 @@ const Pagination: React.FC<IPagination> = ({
     };
 
     return (
-        <div className="flex flex-col lg:flex-row items-center">
-            {!hideMessage && (
-                <p className="caption">
-                    {`Showing ${(currentPage - 1) * itemsPerPage + 1} to ${
-                        currentPage * itemsPerPage
-                    } of ${numberOfPages * itemsPerPage} entires`}
-                </p>
-            )}
+        <div className={className}>
+            <div className="flex flex-col lg:flex-row items-center">
+                {!hideMessage && (
+                    <p className="caption">
+                        {`Showing ${
+                            (currentPage - 1) * itemsPerPage + 1
+                        } to ${Math.min(
+                            currentPage * itemsPerPage,
+                            totalItem ? totalItem : currentPage * itemsPerPage
+                        )} of ${
+                            totalItem ? totalItem : numberOfPages * itemsPerPage
+                        } entires`}
+                    </p>
+                )}
 
-            <nav
-                aria-label="Pagination"
-                className="flex justify-center items-center mt-8 lg:mt-0 gap-1"
-            >
-                <a
-                    href="#"
-                    className="px-4 py-2 rounded cursor-pointer invisible sm:visible hover:scale-110"
-                    onClick={prevPage}
+                <nav
+                    aria-label="Pagination"
+                    className="flex justify-center items-center mt-8 lg:mt-0 gap-1"
                 >
-                    <AiOutlineArrowLeft />
-                </a>
+                    <a
+                        href="#"
+                        className="px-4 py-2 rounded cursor-pointer invisible sm:visible hover:scale-110"
+                        onClick={prevPage}
+                    >
+                        <AiOutlineArrowLeft />
+                    </a>
 
-                {items}
+                    {items}
 
-                <a
-                    href="#"
-                    className="px-4 py-2 rounded cursor-pointer invisible sm:visible hover:scale-110"
-                    onClick={nextPage}
-                >
-                    <AiOutlineArrowRight />
-                </a>
-            </nav>
+                    <a
+                        href="#"
+                        className="px-4 py-2 rounded cursor-pointer invisible sm:visible hover:scale-110"
+                        onClick={nextPage}
+                    >
+                        <AiOutlineArrowRight />
+                    </a>
+                </nav>
+            </div>
         </div>
     );
 };

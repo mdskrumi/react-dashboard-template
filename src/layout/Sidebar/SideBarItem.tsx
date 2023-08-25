@@ -19,6 +19,7 @@ export interface SideBarItemInterface {
     subMenus?: SideBarItemInterface[];
     children?: React.ReactNode;
     isMobile?: boolean;
+    isSub?: boolean;
 }
 
 const SideBarItem: React.FC<SideBarItemInterface> = ({
@@ -29,6 +30,7 @@ const SideBarItem: React.FC<SideBarItemInterface> = ({
     url,
     subMenus,
     isMobile,
+    isSub = false,
 }) => {
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
@@ -36,8 +38,6 @@ const SideBarItem: React.FC<SideBarItemInterface> = ({
 
     const isOpen = useAppSelector((state) => state.util.isSidebarOpen);
     const [isExpanded, setIsExpanded] = useState(false);
-
-    console.log(isMobile);
 
     useEffect(() => {
         let shouldClose = true;
@@ -65,16 +65,25 @@ const SideBarItem: React.FC<SideBarItemInterface> = ({
     return (
         <>
             <div
-                className="h-[52px] cursor-pointer flex items-center w-72 my-1"
+                className={`${
+                    isOpen ? 'py-2' : 'py-1'
+                } cursor-pointer flex items-center ${
+                    isSub
+                        ? 'bg-ui dark:bg-ui-dark border-l-4 border-primary'
+                        : ''
+                } ${
+                    location.pathname === url &&
+                    id !== 'logout' &&
+                    'text-primary font-semibold'
+                }`}
                 onClick={(e) => {
                     e.stopPropagation();
 
-                    if (isMobile) {
+                    if (isMobile && type !== 'expandable') {
                         dispatch(setSidebarOpen(!isOpen));
                     }
 
                     if (id === 'logout') {
-                        // TODO: clear user data
                         localStorage.clear();
                         dispatch(clearUser());
                     }
@@ -85,20 +94,20 @@ const SideBarItem: React.FC<SideBarItemInterface> = ({
                     }
                 }}
             >
-                <div className="h-[52px] content-center">
+                <div className="py-1 content-center">
                     <div className="pl-7 mr-6">{icon()}</div>
                     <p
                         className={`mt-1 w-full caption text-center ${
                             isOpen
                                 ? 'animate-fade-out hidden'
                                 : 'animate-fade-in visible'
-                        }`}
+                        } hover:text-primary hover:font-semibold`}
                     >
                         {title}
                     </p>
                 </div>
                 <div
-                    className={`h-[52px] ${isOpen ? 'w-full' : 'w-0'} ${
+                    className={`${isOpen ? 'w-full' : 'w-0'} ${
                         location.pathname === url && id !== 'logout'
                             ? 'bg-main'
                             : ''
@@ -107,7 +116,9 @@ const SideBarItem: React.FC<SideBarItemInterface> = ({
                     <div className="flex justify-between items-center w-full">
                         {isOpen && (
                             <>
-                                <span className="animate-fade-in">{title}</span>
+                                <span className="animate-fade-in hover:text-primary hover:font-semibold">
+                                    {title}
+                                </span>
                                 {type === 'expandable' && (
                                     <BsArrowRightShort
                                         className="mr-4 duration-300"
@@ -126,15 +137,16 @@ const SideBarItem: React.FC<SideBarItemInterface> = ({
 
             <div
                 className={`overflow-hidden duration-500`}
-                style={{
-                    maxHeight: !isExpanded
-                        ? 0
-                        : 57 * import.meta.env.DASHBOARD_MAX_SUB_MENU,
-                }}
+                style={{ maxHeight: !isExpanded ? 0 : 57 * 7 }}
             >
                 {subMenus?.map((sub) => (
                     <div key={sub.id}>
-                        <SideBarItem {...sub} />
+                        <SideBarItem
+                            {...sub}
+                            isMobile={isMobile}
+                            key={sub.id}
+                            isSub
+                        />
                     </div>
                 ))}
             </div>
