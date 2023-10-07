@@ -1,18 +1,19 @@
 import { ReactNode, useRef } from 'react';
 import { createPortal } from 'react-dom';
+import { ImCancelCircle } from 'react-icons/im';
 
 interface ModalProps {
     isVisible: boolean;
     setVisible: Function;
     children?: ReactNode;
-    light?: boolean;
+    forceClose?: boolean;
 }
 
 const Modal: React.FC<ModalProps> = ({
     isVisible,
     setVisible,
     children,
-    light = false,
+    forceClose = false,
 }) => {
     const modalRoot = document.getElementById('modal');
 
@@ -21,30 +22,31 @@ const Modal: React.FC<ModalProps> = ({
     return isVisible
         ? createPortal(
               <div
-                  className="fixed top-0 bottom-0 left-0 right-0 bg-[#00000090] z-auto"
+                  className="fixed top-0 bottom-0 left-0 right-0 bg-[#00000090] z-50"
                   onClick={(
                       e: React.MouseEvent<HTMLDivElement, MouseEvent>
                   ) => {
+                      if (forceClose) {
+                          return;
+                      }
                       e.stopPropagation();
                       if (
                           bodyRef.current &&
                           !bodyRef.current.contains(e.target as Element)
                       ) {
-                          //   setVisible(false);
+                          setVisible(false);
                       }
                   }}
               >
                   <div
-                      className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50"
+                      className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 m-auto max-h-[90vh] max-w-[95vw] overflow-auto"
                       ref={bodyRef}
                   >
                       <span
-                          className={`absolute right-0 duration-300 ${
-                              light ? 'text-black' : 'text-white'
-                          }  text-xl font-bold cursor-pointer hover:scale-125 px-2`}
+                          className={`absolute top-3 right-3 duration-300 text-xl font-bold cursor-pointer hover:scale-110 px-2 z-10`}
                           onClick={() => setVisible(false)}
                       >
-                          x
+                          <ImCancelCircle />
                       </span>
                       {children}
                   </div>

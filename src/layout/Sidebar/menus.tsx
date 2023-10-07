@@ -1,5 +1,3 @@
-import { SideBarItemInterface } from 'layout/Sidebar/SideBarItem';
-
 // Icons
 import { TbPackages, TbSquareNumber1 } from 'react-icons/tb';
 import { CgWebsite, CgLogOut, CgSpinner } from 'react-icons/cg';
@@ -8,21 +6,30 @@ import { HiBadgeCheck } from 'react-icons/hi';
 import { RxButton, RxDropdownMenu } from 'react-icons/rx';
 import { FaToggleOn } from 'react-icons/fa';
 
+export interface SideBarItemInterface {
+    id: string;
+    title: string;
+    icon: Function;
+    url: string;
+    subMenus?: SideBarItemInterface[];
+    level: number;
+}
+
 export const menus: SideBarItemInterface[] = [
     {
         id: 'dashboard',
         title: 'Dashboard',
         url: '/',
         icon: () => <CgWebsite size={'1.5em'} className="text-primary" />,
-        type: 'url',
+        level: 1,
         subMenus: [],
     },
     {
         id: 'components',
         title: 'Components',
-        url: '/components',
+        url: '#',
         icon: () => <TbPackages size={'1.5em'} className="text-primary" />,
-        type: 'expandable',
+        level: 1,
         subMenus: [
             {
                 id: 'accordion',
@@ -31,7 +38,7 @@ export const menus: SideBarItemInterface[] = [
                 icon: () => (
                     <LuPackageCheck size={'1.5em'} className="text-primary" />
                 ),
-                type: 'url',
+                level: 2,
                 subMenus: [],
             },
             {
@@ -41,7 +48,7 @@ export const menus: SideBarItemInterface[] = [
                 icon: () => (
                     <LuPackageCheck size={'1.5em'} className="text-primary" />
                 ),
-                type: 'url',
+                level: 2,
                 subMenus: [],
             },
             {
@@ -51,7 +58,7 @@ export const menus: SideBarItemInterface[] = [
                 icon: () => (
                     <HiBadgeCheck size={'1.5em'} className="text-primary" />
                 ),
-                type: 'url',
+                level: 2,
                 subMenus: [],
             },
             {
@@ -61,7 +68,7 @@ export const menus: SideBarItemInterface[] = [
                 icon: () => (
                     <RxButton size={'1.5em'} className="text-primary" />
                 ),
-                type: 'url',
+                level: 2,
                 subMenus: [],
             },
             {
@@ -71,7 +78,7 @@ export const menus: SideBarItemInterface[] = [
                 icon: () => (
                     <RxDropdownMenu size={'1.5em'} className="text-primary" />
                 ),
-                type: 'url',
+                level: 2,
                 subMenus: [],
             },
             {
@@ -81,7 +88,7 @@ export const menus: SideBarItemInterface[] = [
                 icon: () => (
                     <TbSquareNumber1 size={'1.5em'} className="text-primary" />
                 ),
-                type: 'url',
+                level: 2,
                 subMenus: [],
             },
             {
@@ -91,7 +98,7 @@ export const menus: SideBarItemInterface[] = [
                 icon: () => (
                     <CgSpinner size={'1.5em'} className="text-primary" />
                 ),
-                type: 'url',
+                level: 2,
                 subMenus: [],
             },
             {
@@ -101,7 +108,7 @@ export const menus: SideBarItemInterface[] = [
                 icon: () => (
                     <FaToggleOn size={'1.5em'} className="text-primary" />
                 ),
-                type: 'url',
+                level: 2,
                 subMenus: [],
             },
         ],
@@ -112,7 +119,7 @@ export const menus: SideBarItemInterface[] = [
         title: 'Settings',
         url: '/settings',
         icon: () => <LuSettings size={'1.5em'} className="text-primary" />,
-        type: 'url',
+        level: 2,
         subMenus: [],
     },
     {
@@ -120,7 +127,7 @@ export const menus: SideBarItemInterface[] = [
         title: 'Logout',
         url: '/',
         icon: () => <CgLogOut size={'1.5em'} className="text-primary" />,
-        type: 'url',
+        level: 2,
         subMenus: [],
     },
 ];

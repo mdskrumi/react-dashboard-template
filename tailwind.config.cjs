@@ -5,32 +5,35 @@ module.exports = {
     theme: {
         extend: {
             colors: {
+
                 // Light Theme
-                ui: '#F2F2F2',
+                ui: '#EDF4FF',
+                'ui-variant': '#C5D5F0',
                 surface: '#FFFFFF',
                 error: '#B00020',
                 text: '#475569',
                 line: '#D2D4D9',
+                'bg-hover': '#A7A7FC30',
 
                 // Dark Theme
-                'ui-dark': '#1F1F1F',
-                'surface-dark': '#181818',
+                'ui-dark': '#1b181f',
+                'ui-dark-variant': '#0f0d12',
+                'surface-dark': '#262329',
                 'error-dark': '#CF6679',
                 'text-dark': '#E2E8F0',
                 'line-dark': '#303030',
+                'bg-hover-dark': '#A7A7FC10',
 
                 // Common
                 primary: '#00AB55',
                 'primary-variant': '#008743',
                 secondary: '#03DAC6',
                 'secondary-variant': '#018786',
-                link: '#2000CC',
-                'link-variant': '#0044CC',
                 danger: '#ff0000',
                 'danger-variant': '#ff2626',
                 hint: '#797A7B',
-                dim: '#64748B',
-                'dim-variant': '#7b8fab',
+                disable: '#7b8fab',
+                overlay: '#06223F80',
             },
             keyframes: {
                 'fade-in-up': {

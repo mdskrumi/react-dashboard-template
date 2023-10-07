@@ -1,8 +1,7 @@
-import { ReactNode } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { BiHome } from 'react-icons/bi';
-
 import Footer from 'components/Footer';
+import { ReactNode } from 'react';
+import { BiHome } from 'react-icons/bi';
+import { Link, useNavigate } from 'react-router-dom';
 
 export interface IBreadcrumb {
     title: string;
@@ -13,6 +12,7 @@ export interface IBreadcrumb {
 export interface IMainLayout {
     title: string;
     breadcrumbs: IBreadcrumb[];
+    hideBreadcrumbs?: boolean;
     hasBackButton?: boolean;
     backButtonTitle?: string;
     children?: ReactNode;
@@ -21,6 +21,7 @@ export interface IMainLayout {
 const MainLayout: React.FC<IMainLayout> = ({
     title,
     breadcrumbs,
+    hideBreadcrumbs = false,
     hasBackButton = false,
     backButtonTitle,
     children,
@@ -28,8 +29,8 @@ const MainLayout: React.FC<IMainLayout> = ({
     const navigate = useNavigate();
 
     return (
-        <div className="w-full min-h-[calc(100vh-64px)] pt-5 pl-5 pr-5 relative">
-            <header className="flex flex-col lg:flex-row lg:justify-between lg:items-end gap-1 mb-6">
+        <div className="w-full min-h-[calc(100vh-64px)] pt-2 pl-2 pr-2 relative">
+            <header className="flex flex-col lg:flex-row lg:justify-between lg:items-end gap-1 mb-3">
                 <div>
                     {hasBackButton && (
                         <p
@@ -41,26 +42,28 @@ const MainLayout: React.FC<IMainLayout> = ({
                     )}
                     <h1 className="text-xl">{title}</h1>
                 </div>
-                <div className="flex items-center gap-1">
-                    <Link to={'/'}>
-                        <BiHome />
-                    </Link>
-                    {breadcrumbs.map((breadcrumb) => (
-                        <>
-                            <span>/</span>
-                            <Link
-                                to={breadcrumb.link}
-                                className={`${
-                                    breadcrumb.disabled
-                                        ? 'cursor-not-allowed text-text dark:text-text-dark'
-                                        : 'cursor-pointer'
-                                }`}
-                            >
-                                {breadcrumb.title}
-                            </Link>
-                        </>
-                    ))}
-                </div>
+                {!hideBreadcrumbs && (
+                    <div className="flex items-center gap-1">
+                        <Link to={'/'} key={0}>
+                            <BiHome className="hover:scale-105" />
+                        </Link>
+                        {breadcrumbs.map((breadcrumb, index) => (
+                            <div key={index + 1}>
+                                <span>/</span>
+                                <Link
+                                    to={breadcrumb.link}
+                                    className={`${
+                                        breadcrumb.disabled
+                                            ? 'cursor-not-allowed text-text dark:text-text-dark'
+                                            : 'cursor-pointer'
+                                    }`}
+                                >
+                                    {breadcrumb.title}
+                                </Link>
+                            </div>
+                        ))}
+                    </div>
+                )}
             </header>
             <main className="pb-16">{children}</main>
             <Footer />

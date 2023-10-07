@@ -22,11 +22,13 @@ const PublicOutlet = () => {
                     <FiSun size="1.5rem" />
                 )}
             </div>
-            <Outlet />
-            <Footer />
+            <div className="overflow-hidden">
+                <Outlet />
+                <Footer />
+            </div>
         </>
     ) : (
-        <Navigate to={'dashboard'} />
+        <Navigate to={'dashboard'} replace />
     );
 };
 

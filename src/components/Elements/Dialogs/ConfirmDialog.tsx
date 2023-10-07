@@ -1,6 +1,6 @@
 import Button from 'components/Elements/Button';
 
-export interface IConfirmDialog {
+export interface IConfirmAlert {
     title: string;
     subTitle: string;
     type: 'normal' | 'danger';
@@ -10,7 +10,7 @@ export interface IConfirmDialog {
     onSecondaryActionClick: Function;
 }
 
-const ConfirmDialog: React.FC<IConfirmDialog> = ({
+const ConfirmAlert: React.FC<IConfirmAlert> = ({
     title,
     subTitle,
     type = 'normal',
@@ -20,7 +20,7 @@ const ConfirmDialog: React.FC<IConfirmDialog> = ({
     onSecondaryActionClick,
 }) => {
     return (
-        <div className="card px-10 py-8">
+        <div className="card p-6 w-[95vw] max-w-lg">
             <h2 className="text-lg font-semibold mb-4">{title}</h2>
             <p className="mb-6">{subTitle}</p>
 
@@ -41,4 +41,4 @@ const ConfirmDialog: React.FC<IConfirmDialog> = ({
     );
 };
 
-export default ConfirmDialog;
+export default ConfirmAlert;
