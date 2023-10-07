@@ -82,6 +82,16 @@ export const menus: SideBarItemInterface[] = [
                 subMenus: [],
             },
             {
+                id: 'iconActionButton',
+                title: 'Icon Action Button',
+                url: '/icon-action-button',
+                icon: () => (
+                    <RxButton size={'1.5em'} className="text-primary" />
+                ),
+                level: 2,
+                subMenus: [],
+            },
+            {
                 id: 'pagination',
                 title: 'Pagination',
                 url: '/pagination',

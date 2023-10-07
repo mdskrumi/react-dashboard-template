@@ -10,7 +10,7 @@ const ButtonPage = () => {
             breadcrumbs={[{ title: 'Button', link: '#', disabled: true }]}
         >
             <div className="grid grid-cols-1 gap-4">
-                <div className="card w-fit pb-6 px-10 pt-3">
+                <div className="card pb-6 px-10 pt-3">
                     <div className="text-center font-bold text-xl mb-5">
                         Basic
                     </div>
@@ -21,7 +21,7 @@ const ButtonPage = () => {
                         <Button title="Button" variant="danger" />
                     </div>
                 </div>
-                <div className="card w-fit pb-6 px-10 pt-3">
+                <div className="card pb-6 px-10 pt-3">
                     <div className="text-center font-bold text-xl mb-5">
                         Icon Right
                     </div>
@@ -49,7 +49,7 @@ const ButtonPage = () => {
                     </div>
                 </div>
 
-                <div className="card w-fit pb-6 px-10 pt-3">
+                <div className="card pb-6 px-10 pt-3">
                     <div className="text-center font-bold text-xl mb-5">
                         Icon Left
                     </div>
@@ -81,7 +81,7 @@ const ButtonPage = () => {
                     </div>
                 </div>
 
-                <div className="card w-fit pb-6 px-10 pt-3">
+                <div className="card pb-6 px-10 pt-3">
                     <div className="text-center font-bold text-xl mb-5">
                         Icon with Disabled
                     </div>
@@ -117,7 +117,7 @@ const ButtonPage = () => {
                     </div>
                 </div>
 
-                <div className="card w-fit pb-6 px-10 pt-3">
+                <div className="card pb-6 px-10 pt-3">
                     <div className="text-center font-bold text-xl mb-5">
                         Disabled
                     </div>
@@ -129,7 +129,7 @@ const ButtonPage = () => {
                     </div>
                 </div>
 
-                <div className="card w-fit pb-6 px-10 pt-3">
+                <div className="card pb-6 px-10 pt-3">
                     <div className="text-center font-bold text-xl mb-5">
                         Loading
                     </div>

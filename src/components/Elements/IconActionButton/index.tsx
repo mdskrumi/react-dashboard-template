@@ -1,4 +1,5 @@
 import { MouseEventHandler } from 'react';
+import Spinner from '../Spinner';
 
 export interface IIconActionButton {
     className?: string;
@@ -7,6 +8,7 @@ export interface IIconActionButton {
     onClick: MouseEventHandler<HTMLDivElement>;
     iconFirst?: boolean;
     disabled?: boolean;
+    loading?: boolean;
 }
 
 const IconActionButton: React.FC<IIconActionButton> = ({
@@ -16,6 +18,7 @@ const IconActionButton: React.FC<IIconActionButton> = ({
     onClick,
     iconFirst = false,
     disabled = false,
+    loading = false,
 }) => {
     return (
         <div
@@ -32,7 +35,7 @@ const IconActionButton: React.FC<IIconActionButton> = ({
                 </div>
             )}
             <div className={`${iconFirst ? 'border-l' : 'border-r'} py-1 px-4`}>
-                {title}
+                {loading ? <Spinner variant="extra-small" /> : <p>{title}</p>}
             </div>
             {!iconFirst && (
                 <div
