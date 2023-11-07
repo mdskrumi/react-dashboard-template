@@ -129,7 +129,7 @@ export const menus: SideBarItemInterface[] = [
         title: 'Settings',
         url: '/settings',
         icon: () => <LuSettings size={'1.5em'} className="text-primary" />,
-        level: 2,
+        level: 1,
         subMenus: [],
     },
     {
@@ -137,7 +137,7 @@ export const menus: SideBarItemInterface[] = [
         title: 'Logout',
         url: '/',
         icon: () => <CgLogOut size={'1.5em'} className="text-primary" />,
-        level: 2,
+        level: 1,
         subMenus: [],
     },
 ];
