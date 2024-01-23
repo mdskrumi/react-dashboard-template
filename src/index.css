@@ -13,45 +13,79 @@
         @apply m-0 p-0 bg-ui text-text dark:bg-ui-dark dark:text-text-dark font-custom dark:shadow-white;
     }
 
+    /* Heading Typography */
     h1 {
-        @apply text-5xl font-semibold;
+        @apply text-4xl font-bold uppercase;
     }
 
     h2 {
-        @apply text-4xl font-semibold;
+        @apply text-3xl font-bold uppercase;
     }
 
     h3 {
-        @apply text-3xl font-semibold;
-    }
-
-    h4 {
         @apply text-2xl font-semibold;
     }
 
-    h5 {
+    h4 {
         @apply text-xl font-semibold;
     }
 
-    h6 {
+    h5 {
         @apply text-lg font-semibold;
     }
 
-    li {
-        @apply list-disc list-inside;
+    h6 {
+        @apply text-base font-semibold;
     }
 
+    /* List Items */
+    li {
+        @apply inline-block;
+    }
+
+    /* Body Text */
+    p {
+        @apply text-sm;
+    }
+
+    /* Links */
+    a {
+        @apply duration-500 ease-in no-underline focus:outline-0 text-primary font-medium;
+    }
+
+    /* Input */
     label {
         @apply text-sm font-medium;
     }
 
     input,
-    textarea {
-        @apply border rounded w-full py-2 px-4 leading-tight focus:outline-double outline-primary border-line text-text bg-ui dark:bg-ui-dark dark:text-text-dark dark:border-line-dark;
+    textarea,
+    .rdw-editor-main {
+        @apply border rounded w-full py-2 px-2 leading-tight focus:outline-double outline-primary border-line text-text bg-ui dark:bg-ui-dark dark:text-text-dark dark:border-line-dark;
     }
 
-    a {
-        @apply text-primary font-medium;
+    select {
+        @apply border rounded w-full py-2 leading-tight focus:outline-double outline-primary border-line text-text bg-ui dark:bg-ui-dark dark:text-text-dark dark:border-line-dark;
+    }
+
+    /* width */
+    ::-webkit-scrollbar {
+        @apply w-[5px];
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        @apply bg-text-dark dark:bg-text;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        @apply bg-text dark:bg-text-dark rounded-lg;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        @apply bg-primary-variant;
     }
 }
 
@@ -69,10 +103,18 @@
     }
 
     .table-head-row {
-        @apply p-4 text-base font-medium mr-auto text-left;
+        @apply p-4 text-base font-medium mr-auto text-left uppercase;
     }
 
     .table-body-row {
         @apply p-4 text-sm mr-auto;
+    }
+
+    .abs-center {
+        @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
+    }
+
+    .radio {
+        @apply appearance-none transition duration-300 ease-in-out border-2 border-line dark:border-line-dark rounded-full p-2 bg-surface dark:bg-surface-dark checked:border-line dark:checked:border-line-dark checked:bg-primary dark:checked:bg-primary;
     }
 }

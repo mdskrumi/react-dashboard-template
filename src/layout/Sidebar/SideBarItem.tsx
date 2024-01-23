@@ -5,81 +5,56 @@ import { useNavigate, useLocation } from 'react-router-dom';
 // Redux
 import { useAppSelector, useAppDispatch } from 'store/hooks';
 import { clearUser } from 'store/reducers/user';
+
 import { setSidebarOpen } from 'store/reducers/util';
 
-// Icon
-import { BsArrowRightShort } from 'react-icons/bs';
+import { SideBarItemInterface } from './menus';
 
-export interface SideBarItemInterface {
-    id: string;
-    title: string;
-    icon: Function;
-    type: 'expandable' | 'url';
-    url?: string;
-    subMenus?: SideBarItemInterface[];
-    children?: React.ReactNode;
+// Icon
+import { HiOutlinePlus, HiOutlineMinus } from 'react-icons/hi';
+import { countSubmenus, hasMatchingSubMenu } from 'utils/sidebar';
+
+interface Props {
+    menuItem: SideBarItemInterface;
     isMobile?: boolean;
-    isSub?: boolean;
 }
 
-const SideBarItem: React.FC<SideBarItemInterface> = ({
-    id,
-    title,
-    type,
-    icon,
-    url,
-    subMenus,
-    isMobile,
-    isSub = false,
-}) => {
+const SideBarItem: React.FC<Props> = ({ menuItem, isMobile }) => {
+    const { id, title, icon, url, subMenus, level } = menuItem;
+
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
     const location = useLocation();
 
     const isOpen = useAppSelector((state) => state.util.isSidebarOpen);
-    const [isExpanded, setIsExpanded] = useState(false);
+    const [isExpanded, setIsExpanded] = useState(
+        hasMatchingSubMenu(menuItem, location.pathname)
+    );
 
     useEffect(() => {
-        let shouldClose = true;
-        for (let i = 0; subMenus && i < subMenus!.length; i++) {
-            if (location.pathname.search(subMenus![i]!.url!) !== -1) {
-                shouldClose = false;
-            }
-            if (subMenus![i].type === 'expandable') {
-                for (let j = 0; j < subMenus![i].subMenus!.length; j++) {
-                    if (
-                        location.pathname.search(
-                            subMenus![i].subMenus![j].url!
-                        ) !== -1
-                    ) {
-                        shouldClose = false;
-                    }
-                }
-            }
-        }
-        if (shouldClose) {
-            setIsExpanded(false);
-        }
-    }, [url, location.pathname]);
+        setIsExpanded(hasMatchingSubMenu(menuItem, location.pathname));
+    }, [location.pathname]);
 
     return (
         <>
             <div
                 className={`${
-                    isOpen ? 'py-2' : 'py-1'
+                    isOpen ? 'py-3' : 'py-2'
                 } cursor-pointer flex items-center ${
-                    isSub
+                    level === 2
                         ? 'bg-ui dark:bg-ui-dark border-l-4 border-primary'
+                        : level === 3
+                        ? 'bg-ui-variant dark:bg-ui-dark-variant border-l-4 border-primary-variant'
                         : ''
                 } ${
                     location.pathname === url &&
                     id !== 'logout' &&
-                    'text-primary font-semibold'
-                }`}
+                    'text-primary'
+                } hover:text-primary`}
                 onClick={(e) => {
                     e.stopPropagation();
 
-                    if (isMobile && type !== 'expandable') {
+                    if (isMobile && !subMenus) {
                         dispatch(setSidebarOpen(!isOpen));
                     }
 
@@ -87,21 +62,21 @@ const SideBarItem: React.FC<SideBarItemInterface> = ({
                         localStorage.clear();
                         dispatch(clearUser());
                     }
-                    if (type === 'expandable') {
+                    if (subMenus && subMenus.length > 0) {
                         setIsExpanded(!isExpanded);
                     } else {
                         navigate(url!);
                     }
                 }}
             >
-                <div className="py-1 content-center">
+                <div className="content-center">
                     <div className="pl-7 mr-6">{icon()}</div>
                     <p
-                        className={`mt-1 w-full caption text-center ${
+                        className={`w-full text-center text-xs ${
                             isOpen
                                 ? 'animate-fade-out hidden'
                                 : 'animate-fade-in visible'
-                        } hover:text-primary hover:font-semibold`}
+                        }`}
                     >
                         {title}
                     </p>
@@ -116,18 +91,15 @@ const SideBarItem: React.FC<SideBarItemInterface> = ({
                     <div className="flex justify-between items-center w-full">
                         {isOpen && (
                             <>
-                                <span className="animate-fade-in hover:text-primary hover:font-semibold">
-                                    {title}
-                                </span>
-                                {type === 'expandable' && (
-                                    <BsArrowRightShort
-                                        className="mr-4 duration-300"
-                                        style={{
-                                            transform: isExpanded
-                                                ? 'rotate(90deg)'
-                                                : '',
-                                        }}
-                                    />
+                                <p className="animate-fade-in">{title}</p>
+                                {subMenus && subMenus.length > 0 && (
+                                    <div className="pr-6">
+                                        {isExpanded ? (
+                                            <HiOutlineMinus />
+                                        ) : (
+                                            <HiOutlinePlus />
+                                        )}
+                                    </div>
                                 )}
                             </>
                         )}
@@ -136,16 +108,19 @@ const SideBarItem: React.FC<SideBarItemInterface> = ({
             </div>
 
             <div
-                className={`overflow-hidden duration-500`}
-                style={{ maxHeight: !isExpanded ? 0 : 57 * 7 }}
+                className={`overflow-hidden duration-500 ${
+                    isExpanded ? 'visible opacity-100' : 'invisible opacity-0'
+                }`}
+                style={{
+                    maxHeight: !isExpanded ? 0 : 72 * countSubmenus(menuItem),
+                }}
             >
                 {subMenus?.map((sub) => (
                     <div key={sub.id}>
                         <SideBarItem
-                            {...sub}
-                            isMobile={isMobile}
                             key={sub.id}
-                            isSub
+                            menuItem={sub}
+                            isMobile={isMobile}
                         />
                     </div>
                 ))}

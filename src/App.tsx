@@ -18,6 +18,7 @@ const AlertPage = lazy(() => import('pages/Components/AlertPage'));
 const BadgePage = lazy(() => import('pages/Components/BadgePage'));
 const ButtonPage = lazy(() => import('pages/Components/ButtonPage'));
 const DropDownPage = lazy(() => import('pages/Components/DropDownPage'));
+const IconButtonPage = lazy(() => import('pages/Components/IconButtonPage'));
 const PaginationPage = lazy(() => import('pages/Components/PaginationPage'));
 const SpinnerPage = lazy(() => import('pages/Components/SpinnerPage'));
 const TabPage = lazy(() => import('pages/Components/TabPage'));
@@ -72,6 +73,10 @@ function App() {
                             <Route path="badge" element={<BadgePage />} />
                             <Route path="button" element={<ButtonPage />} />
                             <Route path="dropdown" element={<DropDownPage />} />
+                            <Route
+                                path="icon-action-button"
+                                element={<IconButtonPage />}
+                            />
                             <Route
                                 path="pagination"
                                 element={<PaginationPage />}

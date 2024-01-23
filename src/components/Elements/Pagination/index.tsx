@@ -37,7 +37,7 @@ const Pagination: React.FC<IPagination> = ({
                     key={1}
                     className={
                         1 === currentPage
-                            ? 'px-4 py-2 rounded card cursor-pointer hover:scale-110 bg-primary'
+                            ? 'px-4 py-2 rounded card cursor-pointer hover:scale-110 bg-primary dark:bg-primary text-white'
                             : 'px-4 py-2 rounded card cursor-pointer hover:scale-110'
                     }
                     onClick={() => {
@@ -68,7 +68,7 @@ const Pagination: React.FC<IPagination> = ({
                     key={number}
                     className={
                         number === currentPage
-                            ? 'px-4 py-2 rounded card cursor-pointer hover:scale-110 bg-primary'
+                            ? 'px-4 py-2 rounded card cursor-pointer hover:scale-110 bg-primary dark:bg-primary text-white'
                             : 'px-4 py-2 rounded card cursor-pointer hover:scale-110'
                     }
                     id={`page-${number}`}
@@ -91,7 +91,7 @@ const Pagination: React.FC<IPagination> = ({
                     key={numberOfPages}
                     className={
                         numberOfPages === currentPage
-                            ? 'px-4 py-2 rounded card cursor-pointer hover:scale-110 bg-primary'
+                            ? 'px-4 py-2 rounded card cursor-pointer hover:scale-110 bg-primary dark:bg-primary text-white'
                             : 'px-4 py-2 rounded card cursor-pointer hover:scale-110'
                     }
                     onClick={() => {
@@ -118,7 +118,7 @@ const Pagination: React.FC<IPagination> = ({
 
     return (
         <div className={className}>
-            <div className="flex flex-col lg:flex-row items-center">
+            <div className="flex flex-col lg:flex-row items-center font-semibold">
                 {!hideMessage && (
                     <p className="caption">
                         {`Showing ${
@@ -126,9 +126,7 @@ const Pagination: React.FC<IPagination> = ({
                         } to ${Math.min(
                             currentPage * itemsPerPage,
                             totalItem ? totalItem : currentPage * itemsPerPage
-                        )} of ${
-                            totalItem ? totalItem : numberOfPages * itemsPerPage
-                        } entires`}
+                        )} of ${totalItem} entires`}
                     </p>
                 )}
 

@@ -7,7 +7,7 @@ const BadgePage = () => {
             title="Badge"
             breadcrumbs={[{ title: 'Badge', link: '#', disabled: true }]}
         >
-            <div className="flex justify-center card w-fit p-10 gap-4">
+            <div className="flex justify-center card p-10 gap-4">
                 <Badge text="Success" variant="success" />
                 <Badge text="Waring" variant="warning" />
                 <Badge text="Fail" variant="fail" />
