@@ -1,0 +1,15 @@
+{
+    "dashboard": "Dashboard",
+    "components": "Komponenten",
+    "accordion": "Akkordeon",
+    "alert": "Warnung",
+    "badge": "Abzeichen",
+    "button": "Schaltfläche",
+    "dropdown": "Dropdown",
+    "iconActionButton": "Symbolaktionsschaltfläche",
+    "pagination": "Paginierung",
+    "spinner": "Spinner",
+    "tab": "Registerkarte",
+    "settings": "Einstellungen",
+    "logout": "Ausloggen"
+}

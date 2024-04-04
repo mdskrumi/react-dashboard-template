@@ -5,6 +5,7 @@ export interface IListItem {
     handleClick: MouseEventHandler<HTMLDivElement>;
     renderIcon?: Function;
     iconFirst?: boolean;
+    disabled?: boolean;
 }
 
 export interface IDropDownButton {
@@ -29,6 +30,7 @@ const DropDownButton: React.FC<IDropDownButton> = ({
     align = 'right',
 }) => {
     const [isActionVisible, setIsActionVisible] = useState(false);
+    const toggleActionVisible = () => setIsActionVisible(!isActionVisible);
 
     return (
         <div className="relative">
@@ -44,9 +46,7 @@ const DropDownButton: React.FC<IDropDownButton> = ({
                 } ${
                     disabled ? 'cursor-not-allowed opacity-70' : ''
                 } ${className}`}
-                onClick={() => {
-                    setIsActionVisible(() => !isActionVisible);
-                }}
+                onClick={toggleActionVisible}
                 disabled={disabled}
             >
                 <div className="flex w-full items-center justify-around">
@@ -74,8 +74,14 @@ const DropDownButton: React.FC<IDropDownButton> = ({
             >
                 {itemList?.map((item) => (
                     <div
-                        className="cursor-pointer px-2 py-3 shadow hover:scale-105 w-full flex items-center gap-2"
-                        onClick={item.handleClick}
+                        className={`cursor-pointer px-2 py-3 shadow hover:scale-105 w-full flex items-center gap-2 ${
+                            item.disabled ? 'opacity-50' : 'opacity-100'
+                        }`}
+                        onClick={(e) => {
+                            if (item.disabled) return;
+                            item.handleClick(e);
+                            toggleActionVisible();
+                        }}
                     >
                         {item.iconFirst &&
                             typeof item.renderIcon === 'function' &&

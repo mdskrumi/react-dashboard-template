@@ -8,7 +8,6 @@ import { FaToggleOn } from 'react-icons/fa';
 
 export interface SideBarItemInterface {
     id: string;
-    title: string;
     icon: Function;
     url: string;
     subMenus?: SideBarItemInterface[];
@@ -18,7 +17,6 @@ export interface SideBarItemInterface {
 export const menus: SideBarItemInterface[] = [
     {
         id: 'dashboard',
-        title: 'Dashboard',
         url: '/',
         icon: () => <CgWebsite size={'1.5em'} className="text-primary" />,
         level: 1,
@@ -26,14 +24,12 @@ export const menus: SideBarItemInterface[] = [
     },
     {
         id: 'components',
-        title: 'Components',
         url: '#',
         icon: () => <TbPackages size={'1.5em'} className="text-primary" />,
         level: 1,
         subMenus: [
             {
                 id: 'accordion',
-                title: 'Accordion',
                 url: '/accordion',
                 icon: () => (
                     <LuPackageCheck size={'1.5em'} className="text-primary" />
@@ -43,7 +39,6 @@ export const menus: SideBarItemInterface[] = [
             },
             {
                 id: 'alert',
-                title: 'Alert',
                 url: '/alert',
                 icon: () => (
                     <LuPackageCheck size={'1.5em'} className="text-primary" />
@@ -53,7 +48,6 @@ export const menus: SideBarItemInterface[] = [
             },
             {
                 id: 'badge',
-                title: 'Badge',
                 url: '/badge',
                 icon: () => (
                     <HiBadgeCheck size={'1.5em'} className="text-primary" />
@@ -63,7 +57,6 @@ export const menus: SideBarItemInterface[] = [
             },
             {
                 id: 'button',
-                title: 'Button',
                 url: '/button',
                 icon: () => (
                     <RxButton size={'1.5em'} className="text-primary" />
@@ -73,7 +66,6 @@ export const menus: SideBarItemInterface[] = [
             },
             {
                 id: 'dropdown',
-                title: 'Dropdown',
                 url: '/dropdown',
                 icon: () => (
                     <RxDropdownMenu size={'1.5em'} className="text-primary" />
@@ -83,7 +75,6 @@ export const menus: SideBarItemInterface[] = [
             },
             {
                 id: 'iconActionButton',
-                title: 'Icon Action Button',
                 url: '/icon-action-button',
                 icon: () => (
                     <RxButton size={'1.5em'} className="text-primary" />
@@ -93,7 +84,7 @@ export const menus: SideBarItemInterface[] = [
             },
             {
                 id: 'pagination',
-                title: 'Pagination',
+
                 url: '/pagination',
                 icon: () => (
                     <TbSquareNumber1 size={'1.5em'} className="text-primary" />
@@ -103,7 +94,7 @@ export const menus: SideBarItemInterface[] = [
             },
             {
                 id: 'spinner',
-                title: 'Spinner',
+
                 url: '/spinner',
                 icon: () => (
                     <CgSpinner size={'1.5em'} className="text-primary" />
@@ -113,7 +104,6 @@ export const menus: SideBarItemInterface[] = [
             },
             {
                 id: 'tab',
-                title: 'Tab',
                 url: '/tab',
                 icon: () => (
                     <FaToggleOn size={'1.5em'} className="text-primary" />
@@ -126,7 +116,6 @@ export const menus: SideBarItemInterface[] = [
 
     {
         id: 'settings',
-        title: 'Settings',
         url: '/settings',
         icon: () => <LuSettings size={'1.5em'} className="text-primary" />,
         level: 1,
@@ -134,7 +123,6 @@ export const menus: SideBarItemInterface[] = [
     },
     {
         id: 'logout',
-        title: 'Logout',
         url: '/',
         icon: () => <CgLogOut size={'1.5em'} className="text-primary" />,
         level: 1,
