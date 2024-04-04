@@ -29,6 +29,8 @@ const PublicOutlet = lazy(() => import('layout/PublicOutlet'));
 const PrivateOutlet = lazy(() => import('layout/PrivateOutlet'));
 
 import 'react-toastify/dist/ReactToastify.css';
+import './i18n'
+
 
 function App() {
     const theme = useAppSelector((state) => state.util.theme);

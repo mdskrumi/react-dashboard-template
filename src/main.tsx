@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 
 import { Provider } from 'react-redux';
@@ -16,7 +16,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <React.StrictMode>
         <Provider store={store}>
             <PersistGate loading={<h1> Loading... </h1>} persistor={persistor}>
-                <App />
+                <Suspense fallback={<p>...</p>}>
+                    <App />
+                </Suspense>
             </PersistGate>
         </Provider>
     </React.StrictMode>

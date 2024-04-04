@@ -1,9 +1,13 @@
 import MainLayout from 'layout/MainLayout';
 
+import { useTranslation } from 'react-i18next';
+
 const Dashboard: React.FC = () => {
+    const { t } = useTranslation();
+
     return (
         <MainLayout
-            title="Dashboard"
+            title={t('dashboard', { ns: 'sidebar' })}
             breadcrumbs={[{ title: 'Dashboard', link: '#', disabled: true }]}
         >
             <div className="grid w-full grid-cols-1 lg:grid-cols-2 gap-5">
