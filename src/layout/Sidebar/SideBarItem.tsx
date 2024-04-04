@@ -13,6 +13,7 @@ import { SideBarItemInterface } from './menus';
 // Icon
 import { HiOutlinePlus, HiOutlineMinus } from 'react-icons/hi';
 import { countSubmenus, hasMatchingSubMenu } from 'utils/sidebar';
+import { useTranslation } from 'react-i18next';
 
 interface Props {
     menuItem: SideBarItemInterface;
@@ -20,7 +21,9 @@ interface Props {
 }
 
 const SideBarItem: React.FC<Props> = ({ menuItem, isMobile }) => {
-    const { id, title, icon, url, subMenus, level } = menuItem;
+    const { id, icon, url, subMenus, level } = menuItem;
+
+    const { t } = useTranslation();
 
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
@@ -78,7 +81,7 @@ const SideBarItem: React.FC<Props> = ({ menuItem, isMobile }) => {
                                 : 'animate-fade-in visible'
                         }`}
                     >
-                        {title}
+                        {t(id)}
                     </p>
                 </div>
                 <div
@@ -91,7 +94,7 @@ const SideBarItem: React.FC<Props> = ({ menuItem, isMobile }) => {
                     <div className="flex justify-between items-center w-full">
                         {isOpen && (
                             <>
-                                <p className="animate-fade-in">{title}</p>
+                                <p className="animate-fade-in"> {t(id)}</p>
                                 {subMenus && subMenus.length > 0 && (
                                     <div className="pr-6">
                                         {isExpanded ? (
