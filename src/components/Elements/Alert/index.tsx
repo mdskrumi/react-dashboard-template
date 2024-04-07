@@ -12,17 +12,17 @@ const Alert: React.FC<IAlert> = ({
     className,
 }) => (
     <div
-        className={`w-fit border text-center rounded-xl p-4 text-sm ${
+        className={`w-fit rounded-xl border p-4 text-center text-sm ${
             variant === 'success'
                 ? 'bg-[#D1FAE5] text-[#097552]'
                 : variant === 'warning'
-                ? 'bg-[#FAF7D1] text-[#736e0b]'
-                : variant === 'fail'
-                ? 'bg-[#FFE4E6] text-[#F43F5E]'
-                : 'bg-surface dark:bg-surface-dark'
+                  ? 'bg-[#FAF7D1] text-[#736e0b]'
+                  : variant === 'fail'
+                    ? 'bg-[#FFE4E6] text-[#F43F5E]'
+                    : 'bg-surface dark:bg-surface-dark'
         } ${className}`}
     >
-        <div className="flex items-center w-full justify-around">
+        <div className="flex w-full items-center justify-around">
             {typeof renderIcon === 'function' && renderIcon()}
             <p className="ml-1">{content}</p>
         </div>
