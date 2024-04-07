@@ -1,5 +1,3 @@
-import { ImSpinner } from 'react-icons/im';
-
 export interface ISpinner {
     className?: string;
     variant?: 'extra-small' | 'small' | 'normal' | 'large';
@@ -8,19 +6,19 @@ export interface ISpinner {
 
 const Spinner: React.FC<ISpinner> = ({ className, variant, message }) => (
     <div
-        className={`min-h-full min-w-full flex-col justify-center items-center ${className}`}
+        className={`min-h-full min-w-full flex-col items-center justify-center ${className}`}
     >
         {variant === 'extra-small' ? (
-            <div className="animate-spin border-4 m-auto rounded-full border-gray-300 border-t-primary w-6 h-6 spin" />
+            <div className="spin m-auto h-6 w-6 animate-spin rounded-full border-4 border-gray-300 border-t-primary" />
         ) : variant === 'small' ? (
-            <div className="animate-spin border-8 m-auto rounded-full border-gray-300 border-t-primary w-10 h-10 spin" />
+            <div className="spin m-auto h-10 w-10 animate-spin rounded-full border-8 border-gray-300 border-t-primary" />
         ) : variant === 'large' ? (
-            <div className="animate-spin border-8 m-auto rounded-full border-gray-300 border-t-primary w-32 h-32 spin" />
+            <div className="spin m-auto h-32 w-32 animate-spin rounded-full border-8 border-gray-300 border-t-primary" />
         ) : (
-            <div className="animate-spin border-8 m-auto rounded-full border-gray-300 border-t-primary w-20 h-20 spin" />
+            <div className="spin m-auto h-20 w-20 animate-spin rounded-full border-8 border-gray-300 border-t-primary" />
         )}
         {message && (
-            <p className="mt-2 italic font-medium text-center">{message}</p>
+            <p className="mt-2 text-center font-medium italic">{message}</p>
         )}
     </div>
 );
