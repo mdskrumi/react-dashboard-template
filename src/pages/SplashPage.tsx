@@ -4,7 +4,7 @@ const SplashPage: React.FC<{ message?: string }> = ({
     message = 'React Dashboard Template',
 }) => {
     return (
-        <div className="bg-ui dark:bg-ui-dark grid content-center h-[100vh]">
+        <div className="grid h-[100vh] content-center">
             <Spinner variant="normal" message={message} />
         </div>
     );

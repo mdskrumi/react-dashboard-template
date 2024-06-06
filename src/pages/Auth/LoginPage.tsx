@@ -46,13 +46,13 @@ const LoginPage: React.FC = () => {
     });
 
     return (
-        <div className="h-[100vh] grid content-center bg-ui dark:bg-ui-dark">
+        <div className="grid h-[100vh] content-center">
             <form
-                className="w-full max-w-md p-6 md:p-10 card"
+                className="card w-full max-w-md p-6 md:p-10"
                 onSubmit={handleSubmit(onSubmit)}
             >
-                <div className="text-center cursor-default mb-16">
-                    <img className="w-20 m-auto" src={Logo} />
+                <div className="mb-16 cursor-default text-center">
+                    <img className="m-auto w-20" src={Logo} />
                     <h3>React Dashboard</h3>
                     <p className="font-medium">Log into your account</p>
                 </div>
@@ -98,7 +98,7 @@ const LoginPage: React.FC = () => {
 
                     <div className="text-right">
                         <Link
-                            className="text-sm text-primary_light pt-2"
+                            className="text-primary_light pt-2 text-sm"
                             to={'/auth/forget-password'}
                         >
                             Forget password?
