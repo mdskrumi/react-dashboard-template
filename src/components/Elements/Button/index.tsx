@@ -25,14 +25,14 @@ const Button: React.FC<IButton> = ({
 }) => (
     <button
         type={type}
-        className={`p-2 lg:px-4 text-center border border-solid rounded transition-all duration-300 w-fit font-medium hover:scale-105  ${
+        className={`w-fit rounded border border-solid p-2 text-center font-medium transition-all duration-300 hover:scale-105 lg:px-4  ${
             variant === 'secondary'
-                ? 'bg-secondary hover:bg-secondary-variant dark:bg-secondary-variant dark:hover:bg-secondary text-text-dark'
+                ? 'bg-light-secondary300 hover:bg-light-secondary600 dark:bg-dark-secondary300 dark:hover:bg-dark-secondary600'
                 : variant === 'ghost'
-                ? 'bg-surface hover:bg-ui dark:bg-surface-dark dark:hover:bg-ui-dark text-text dark:text-text-dark'
-                : variant === 'danger'
-                ? 'bg-danger hover:bg-error-dark dark:bg-danger dark:hover:bg-error text-text-dark'
-                : 'bg-primary hover:bg-primary-variant dark:bg-primary-variant dark:hover:bg-primary text-text-dark'
+                  ? 'bg-light-accent50 hover:bg-light-accent700 dark:bg-dark-accent50 dark:hover:bg-dark-accent700'
+                  : variant === 'danger'
+                    ? 'bg-light-error300 hover:bg-light-error600 dark:bg-dark-error300 dark:hover:bg-dark-error600'
+                    : 'bg-light-primary300 hover:bg-light-primary600 dark:bg-dark-primary300 dark:hover:bg-dark-primary600'
         } ${disabled ? 'cursor-not-allowed opacity-70' : ''} ${className}`}
         onClick={(e) => {
             if (typeof handleClick === 'function') {

@@ -27,3 +27,6 @@ dev-dist
 
 
 *.mjs
+
+
+.env

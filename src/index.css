@@ -6,7 +6,7 @@
 
 @layer base {
     body {
-        @apply text-light-gray900 dark:text-dark-gray900 bg-light-primary50 dark:bg-dark-primary50 m-0 p-0;
+        @apply text-light-gray800 dark:text-dark-gray800 bg-light-accent50 dark:bg-dark-accent50 m-0 p-0;
     }
 
     #root {
@@ -50,7 +50,11 @@
 
     /* Links */
     a {
-        @apply text-light-secondary900 dark:text-dark-secondary900 font-medium no-underline duration-500 ease-in focus:outline-0;
+        @apply hover:underline text-light-secondary900 dark:text-dark-secondary900 font-medium no-underline duration-300 ease-in focus:outline-0 hover:text-light-secondary500 dark:hover:text-dark-secondary500;
+    }
+
+    button {
+        @apply text-light-gray900 hover:text-light-gray200 dark:text-dark-gray900 dark:hover:text-dark-gray200
     }
 
     /* Input */
@@ -75,23 +79,23 @@
 
     /* Track */
     ::-webkit-scrollbar-track {
-        @apply bg-light-accent900 dark:bg-dark-accent900;
+        @apply bg-light-accent200 dark:bg-dark-accent200;
     }
 
     /* Handle */
     ::-webkit-scrollbar-thumb {
-        @apply bg-light-accent900 dark:bg-dark-accent900 rounded-lg;
+        @apply bg-light-accent400 dark:bg-dark-accent400 rounded-lg;
     }
 
     /* Handle on hover */
     ::-webkit-scrollbar-thumb:hover {
-        @apply bg-light-primary900 dark:bg-dark-primary900;
+        @apply bg-light-accent400 dark:bg-dark-accent400;
     }
 }
 
 @layer components {
     .card {
-        @apply bg-light-primary200 dark:bg-dark-primary200 mx-auto rounded-3xl shadow-md;
+        @apply bg-light-primary50 dark:bg-dark-primary50 mx-auto rounded-3xl shadow-md;
     }
 
     .caption {
@@ -99,7 +103,7 @@
     }
 
     .table {
-        @apply bg-light-primary200 dark:bg-dark-primary200 w-full table-auto;
+        @apply bg-light-primary50 dark:bg-dark-primary50 w-full table-auto;
     }
 
     .table-head-row {
@@ -115,6 +119,6 @@
     }
 
     .radio {
-        @apply border-light-gray200 dark:border-dark-gray200 bg-light-primary200 dark:bg-dark-primary200 checked:bg-light-primary900 dark:checked:bg-dark-primary900 appearance-none rounded-full border-2 p-2 transition duration-300 ease-in-out;
+        @apply border-light-gray300 dark:border-dark-gray300 bg-light-primary200 dark:bg-dark-primary200 checked:bg-light-primary900 dark:checked:bg-dark-primary900 appearance-none rounded-full border-2 p-2 transition duration-300 ease-in-out;
     }
 }

@@ -35,14 +35,14 @@ const DropDownButton: React.FC<IDropDownButton> = ({
     return (
         <div className="relative">
             <button
-                className={`p-2 lg:px-4 text-center border border-solid rounded transition-all duration-300 w-fit font-medium hover:scale-105 ${
+                className={`w-fit rounded border border-solid p-2 text-center font-medium transition-all duration-300 hover:scale-105 lg:px-4 ${
                     variant === 'secondary'
-                        ? 'bg-secondary hover:bg-secondary-variant dark:bg-secondary-variant dark:hover:bg-secondary'
+                        ? 'bg-light-secondary300 hover:bg-light-secondary600 dark:bg-dark-secondary300 dark:hover:bg-dark-secondary600'
                         : variant === 'ghost'
-                        ? 'bg-surface hover:bg-ui dark:bg-surface-dark dark:hover:bg-ui-dark'
-                        : variant === 'danger'
-                        ? 'bg-danger hover:bg-error-dark dark:bg-danger dark:hover:bg-error'
-                        : 'bg-primary hover:bg-primary-variant dark:bg-primary-variant dark:hover:bg-primary'
+                          ? 'bg-light-accent50 hover:bg-light-accent700 dark:bg-dark-accent50 dark:hover:bg-dark-accent700'
+                          : variant === 'danger'
+                            ? 'bg-light-error300 hover:bg-light-error600 dark:bg-dark-error300 dark:hover:bg-dark-error600'
+                            : 'bg-light-primary300 hover:bg-light-primary600 dark:bg-dark-primary300 dark:hover:bg-dark-primary600'
                 } ${
                     disabled ? 'cursor-not-allowed opacity-70' : ''
                 } ${className}`}
@@ -68,13 +68,13 @@ const DropDownButton: React.FC<IDropDownButton> = ({
                 </div>
             </button>
             <div
-                className={`bg-surface dark:bg-surface-dark absolute duration-200 transition-all min-w-full ${
+                className={`absolute min-w-full bg-light-gray50 transition-all duration-200 dark:bg-dark-gray50 ${
                     align === 'left' ? 'right-0 -left-10' : 'left-0 -right-10'
                 } ${isActionVisible ? 'opacity-100' : 'opacity-0'}`}
             >
                 {itemList?.map((item) => (
                     <div
-                        className={`cursor-pointer px-2 py-3 shadow hover:scale-105 w-full flex items-center gap-2 ${
+                        className={`flex w-full cursor-pointer items-center gap-2 px-2 py-3 shadow hover:scale-105 ${
                             item.disabled ? 'opacity-50' : 'opacity-100'
                         }`}
                         onClick={(e) => {
