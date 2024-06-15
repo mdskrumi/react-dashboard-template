@@ -29,8 +29,8 @@ const MainLayout: React.FC<IMainLayout> = ({
     const navigate = useNavigate();
 
     return (
-        <div className="w-full min-h-[calc(100vh-64px)] pt-2 pl-2 pr-2 relative">
-            <header className="flex flex-col lg:flex-row lg:justify-between lg:items-end gap-1 mb-3">
+        <div className="relative min-h-[calc(100vh-64px)] w-full pl-2 pr-2 pt-2">
+            <header className="mb-3 flex flex-col gap-1 lg:flex-row lg:items-end lg:justify-between">
                 <div>
                     {hasBackButton && (
                         <p
@@ -54,7 +54,7 @@ const MainLayout: React.FC<IMainLayout> = ({
                                     to={breadcrumb.link}
                                     className={`${
                                         breadcrumb.disabled
-                                            ? 'cursor-not-allowed text-text dark:text-text-dark'
+                                            ? 'cursor-not-allowed'
                                             : 'cursor-pointer'
                                     }`}
                                 >

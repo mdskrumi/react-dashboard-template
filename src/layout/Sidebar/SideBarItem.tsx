@@ -52,8 +52,8 @@ const SideBarItem: React.FC<Props> = ({ menuItem, isMobile }) => {
                 } ${
                     location.pathname === url &&
                     id !== 'logout' &&
-                    'text-light-primary900 dark:text-dark-primary900'
-                } hover:text-light-primary900 hover:dark:text-dark-primary900`}
+                    'text-light-primary500 dark:text-dark-primary500'
+                } duration-100 hover:translate-x-0.5`}
                 onClick={(e) => {
                     e.stopPropagation();
 

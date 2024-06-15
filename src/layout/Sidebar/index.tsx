@@ -18,7 +18,7 @@ const Sidebar: React.FC = () => {
         <>
             {/* Desktop Design */}
             <div
-                className={`fixed top-0 bottom-0 z-20 hidden lg:block ${
+                className={`fixed bottom-0 top-0 z-20 hidden lg:block ${
                     isOpen ? 'w-72' : 'w-20'
                 } overflow-x-hidden border-r-[1px] border-light-gray300 bg-light-primary50 duration-300 dark:border-dark-gray300 dark:bg-dark-primary50`}
             >
@@ -41,8 +41,8 @@ const Sidebar: React.FC = () => {
 
             {/* Mobile Design */}
             <div
-                className={`fixed top-0 bottom-0 left-0 z-50 block overflow-hidden overflow-y-auto backdrop-blur-sm lg:hidden ${
-                    isOpen ? 'w-full' : 'w-0'
+                className={`fixed bottom-0 left-0 top-0 z-50 block overflow-hidden overflow-y-auto backdrop-blur-sm lg:hidden ${
+                    isOpen ? 'w-full' : 'w-auto'
                 }`}
                 onClick={() => dispatch(setSidebarOpen(false))}
             >

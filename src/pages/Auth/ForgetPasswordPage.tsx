@@ -25,7 +25,7 @@ const ForgetPasswordPage: React.FC = () => {
     });
 
     return (
-        <div className="bg-ui dark:bg-ui-dark grid h-[100vh] content-center">
+        <div className="grid h-[100vh] content-center">
             <form
                 className="card w-full max-w-md p-6 md:p-10"
                 onSubmit={handleSubmit(onSubmit)}

@@ -50,7 +50,7 @@
 
     /* Links */
     a {
-        @apply hover:underline text-light-secondary900 dark:text-dark-secondary900 font-medium no-underline duration-300 ease-in focus:outline-0 hover:text-light-secondary500 dark:hover:text-dark-secondary500;
+        @apply hover:underline text-light-secondary500 dark:text-dark-secondary500 font-medium no-underline duration-300 ease-in focus:outline-0;
     }
 
     button {

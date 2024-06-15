@@ -6,182 +6,182 @@ module.exports = {
         extend: {
             colors: {
                 light: {
-                    primary50: '#F0F2FF',
-                    primary100: '#E6EEFF',
-                    primary200: '#B3B9FF',
-                    primary300: '#8D9AFF',
-                    primary400: '#6477FF',
-                    primary500: '#5F75FF',
-                    primary600: '#3256E7',
-                    primary700: '#1D48D3',
-                    primary800: '#002DBB',
-                    primary900: '#00059F',
+                    primary50: '#E8F0FE', // Very light primary color
+                    primary100: '#C6DAFC', // Light primary color
+                    primary200: '#94B9FA', // Light-medium primary color
+                    primary300: '#5D9BF8', // Medium primary color
+                    primary400: '#327FF5', // Medium-dark primary color
+                    primary500: '#0057F3', // Base primary color
+                    primary600: '#004AD1', // Darker primary color
+                    primary700: '#003DAE', // Darker primary color
+                    primary800: '#002F8B', // Darker primary color
+                    primary900: '#001B57', // Darkest primary color
 
-                    secondary50: '#FCEBF5',
-                    secondary100: '#FADCF0',
-                    secondary200: '#F0AAD9',
-                    secondary300: '#E581C4',
-                    secondary400: '#D23E9A',
-                    secondary500: '#D20081',
-                    secondary600: '#BA006D',
-                    secondary700: '#940051',
-                    secondary800: '#70003B',
-                    secondary900: '#510028',
+                    secondary50: '#FFF0F5', // Very light secondary color (blush pink)
+                    secondary100: '#FFDFEB', // Light secondary color
+                    secondary200: '#FFB8D1', // Light-medium secondary color
+                    secondary300: '#FF8FB7', // Medium secondary color
+                    secondary400: '#FF639E', // Medium-dark secondary color
+                    secondary500: '#FF387D', // Base secondary color (bright magenta)
+                    secondary600: '#E02371', // Darker secondary color
+                    secondary700: '#C01766', // Darker secondary color
+                    secondary800: '#A0105B', // Darker secondary color
+                    secondary900: '#700540', // Darkest secondary color
 
-                    accent50: '#F6F9FA',
-                    accent100: '#EAF3F8',
-                    accent200: '#C1D6E8',
-                    accent300: '#97B9D7',
-                    accent400: '#5772A5',
-                    accent500: '#2B4079',
-                    accent600: '#24366E',
-                    accent700: '#192850',
-                    accent800: '#0F203B',
-                    accent900: '#091A2B',
+                    accent50: '#F4F9FA', // Very light accent color (cool gray)
+                    accent100: '#E1F0F5', // Light accent color
+                    accent200: '#C3E1EA', // Light-medium accent color
+                    accent300: '#A1CDD9', // Medium accent color
+                    accent400: '#6CA6B5', // Medium-dark accent color
+                    accent500: '#39808F', // Base accent color (teal)
+                    accent600: '#326E7A', // Darker accent color
+                    accent700: '#25525B', // Darker accent color
+                    accent800: '#183743', // Darker accent color
+                    accent900: '#10242B', // Darkest accent color
 
-                    gray50: '#FDFDFD',
-                    gray100: '#F7F7F7',
-                    gray200: '#ECECEC',
-                    gray300: '#DCDCDC',
-                    gray400: '#BFBFBF',
-                    gray500: '#A1A1A1',
-                    gray600: '#787878',
-                    gray700: '#646464',
-                    gray800: '#454545',
-                    gray900: '#232323',
+                    gray50: '#FDFDFD', // Keeping current grays
+                    gray100: '#F7F7F7', // Keeping current grays
+                    gray200: '#ECECEC', // Keeping current grays
+                    gray300: '#DCDCDC', // Keeping current grays
+                    gray400: '#BFBFBF', // Keeping current grays
+                    gray500: '#A1A1A1', // Keeping current grays
+                    gray600: '#787878', // Keeping current grays
+                    gray700: '#646464', // Keeping current grays
+                    gray800: '#454545', // Keeping current grays
+                    gray900: '#232323', // Keeping current grays
 
-                    success50: '#F1FAF3',
-                    success100: '#D9F4D4',
-                    success200: '#B3E7B5',
-                    success300: '#8CCB96',
-                    success400: '#66A241',
-                    success500: '#459A2F',
-                    success600: '#3B8F2A',
-                    success700: '#2F7923',
-                    success800: '#1A531E',
-                    success900: '#006900',
+                    success50: '#F1FAF3', // Keeping current success
+                    success100: '#D9F4D4', // Keeping current success
+                    success200: '#B3E7B5', // Keeping current success
+                    success300: '#8CCB96', // Keeping current success
+                    success400: '#66A241', // Keeping current success
+                    success500: '#459A2F', // Keeping current success
+                    success600: '#3B8F2A', // Keeping current success
+                    success700: '#2F7923', // Keeping current success
+                    success800: '#1A531E', // Keeping current success
+                    success900: '#006900', // Keeping current success
 
-                    error50: '#FFE7EB',
-                    error100: '#FFCED2',
-                    error200: '#FFA89E',
-                    error300: '#FFA89E',
-                    error400: '#FF396E',
-                    error500: '#FD0046',
-                    error600: '#EC0045',
-                    error700: '#D60042',
-                    error800: '#C30040',
-                    error900: '#9E003C',
+                    error50: '#FFE9E9', // Lightest error color
+                    error100: '#FFC6C6', // Light error color
+                    error200: '#FF9999', // Medium-light error color
+                    error300: '#FF6D6D', // Medium error color
+                    error400: '#FF4040', // Medium-dark error color
+                    error500: '#FF0000', // Bright red for error
+                    error600: '#E00000', // Darker error color
+                    error700: '#C00000', // Darker error color
+                    error800: '#A00000', // Darker error color
+                    error900: '#700000', // Darkest error color
 
-                    info50: '#E1F6FD',
-                    info100: '#B0E7F9',
-                    info200: '#76D6F6',
-                    info300: '#21C2F3',
-                    info400: '#00B5F3',
-                    info500: '#00A8F2',
-                    info600: '#009AE4',
-                    info700: '#0087D0',
-                    info800: '#0076BD',
-                    info900: '#00569C',
+                    info50: '#E1F6FD', // Keeping current info
+                    info100: '#B0E7F9', // Keeping current info
+                    info200: '#76D6F6', // Keeping current info
+                    info300: '#21C2F3', // Keeping current info
+                    info400: '#00B5F3', // Keeping current info
+                    info500: '#00A8F2', // Keeping current info
+                    info600: '#009AE4', // Keeping current info
+                    info700: '#0087D0', // Keeping current info
+                    info800: '#0076BD', // Keeping current info
+                    info900: '#00569C', // Keeping current info
 
-                    warning50: '#FEFDF1',
-                    warning100: '#FDF5C3',
-                    warning200: '#FCEC94',
-                    warning300: '#F6D666',
-                    warning400: '#F5C545',
-                    warning500: '#F3BA35',
-                    warning600: '#F3B12F',
-                    warning700: '#F29F2B',
-                    warning800: '#F18F28',
-                    warning900: '#EF721E',
+                    warning50: '#FEFDF1', // Keeping current warning
+                    warning100: '#FDF5C3', // Keeping current warning
+                    warning200: '#FCEC94', // Keeping current warning
+                    warning300: '#F6D666', // Keeping current warning
+                    warning400: '#F5C545', // Keeping current warning
+                    warning500: '#F3BA35', // Keeping current warning
+                    warning600: '#F3B12F', // Keeping current warning
+                    warning700: '#F29F2B', // Keeping current warning
+                    warning800: '#F18F28', // Keeping current warning
+                    warning900: '#EF721E', // Keeping current warning
                 },
                 dark: {
-                    primary50: '#0F0D00',
-                    primary100: '#191300',
-                    primary200: '#2D2600',
-                    primary300: '#473800',
-                    primary400: '#6B4B00',
-                    primary500: '#706500',
-                    primary600: '#ADAA00',
-                    primary700: '#E3D300',
-                    primary800: '#FFFA00',
-                    primary900: '#FFFFE6',
+                    primary50: '#0D1A27', // Very dark primary
+                    primary100: '#142A3A', // Dark primary
+                    primary200: '#1D3C4F', // Dark-medium primary
+                    primary300: '#285165', // Medium-dark primary
+                    primary400: '#3E7287', // Medium primary
+                    primary500: '#548DAA', // Base dark primary
+                    primary600: '#4A7B94', // Lighter dark primary
+                    primary700: '#3F687F', // Lighter dark primary
+                    primary800: '#34556B', // Lighter dark primary
+                    primary900: '#1F2F47', // Lightest dark primary
 
-                    secondary50: '#031004',
-                    secondary100: '#09180A',
-                    secondary200: '#15321D',
-                    secondary300: '#20472F',
-                    secondary400: '#3C7564',
-                    secondary500: '#3C806E',
-                    secondary600: '#45AD8B',
-                    secondary700: '#5EC9A8',
-                    secondary800: '#87D2C1',
-                    secondary900: '#AFDCCF',
+                    secondary50: '#1E0F27', // Very dark secondary
+                    secondary100: '#331A3C', // Dark secondary
+                    secondary200: '#492551', // Dark-medium secondary
+                    secondary300: '#5E3166', // Medium-dark secondary
+                    secondary400: '#944B8A', // Medium secondary
+                    secondary500: '#CA65AE', // Base dark secondary (rich purple)
+                    secondary600: '#AB5697', // Lighter dark secondary
+                    secondary700: '#8C4780', // Lighter dark secondary
+                    secondary800: '#6D376A', // Lighter dark secondary
+                    secondary900: '#4C2450', // Lightest dark secondary
 
-                    accent50: '#09060A',
-                    accent100: '#17111B',
-                    accent200: '#3E3247',
-                    accent300: '#674673',
-                    accent400: '#A88DA3',
-                    accent500: '#D4BFCF',
-                    accent600: '#DBCDD8',
-                    accent700: '#E6DEE7',
-                    accent800: '#F0EEF0',
-                    accent900: '#F6F7F9',
+                    accent50: '#1A1C27', // Very dark accent (charcoal)
+                    accent100: '#242E3A', // Dark accent
+                    accent200: '#374257', // Dark-medium accent
+                    accent300: '#4A556F', // Medium-dark accent
+                    accent400: '#6C7B91', // Medium accent
+                    accent500: '#8E99B4', // Base dark accent (steel blue)
+                    accent600: '#7D88A3', // Lighter dark accent
+                    accent700: '#6B7692', // Lighter dark accent
+                    accent800: '#596580', // Lighter dark accent
+                    accent900: '#41465C', // Lightest dark accent
 
-                    gray50: '#020202',
-                    gray100: '#080808',
-                    gray200: '#131313',
-                    gray300: '#232323',
-                    gray400: '#404040',
-                    gray500: '#5E5E5E',
-                    gray600: '#878787',
-                    gray700: '#9B9B9B',
-                    gray800: '#BABABA',
-                    gray900: '#DDDDDD',
+                    gray50: '#020202', // Keeping current grays
+                    gray100: '#080808', // Keeping current grays
+                    gray200: '#131313', // Keeping current grays
+                    gray300: '#232323', // Keeping current grays
+                    gray400: '#404040', // Keeping current grays
+                    gray500: '#5E5E5E', // Keeping current grays
+                    gray600: '#878787', // Keeping current grays
+                    gray700: '#9B9B9B', // Keeping current grays
+                    gray800: '#BABABA', // Keeping current grays
+                    gray900: '#DDDDDD', // Keeping current grays
 
-                    success50: '#006900',
-                    success100: '#1A531E',
-                    success200: '#2F7923',
-                    success300: '#3B8F2A',
-                    success400: '#459A2F',
-                    success500: '#66A241',
-                    success600: '#8CCB96',
-                    success700: '#B3E7B5',
-                    success800: '#D9F4D4',
-                    success900: '#F1FAF3',
+                    success50: '#006900', // Keeping current success
+                    success100: '#1A531E', // Keeping current success
+                    success200: '#2F7923', // Keeping current success
+                    success300: '#3B8F2A', // Keeping current success
+                    success400: '#459A2F', // Keeping current success
+                    success500: '#66A241', // Keeping current success
+                    success600: '#8CCB96', // Keeping current success
+                    success700: '#B3E7B5', // Keeping current success
+                    success800: '#D9F4D4', // Keeping current success
+                    success900: '#F1FAF3', // Keeping current success
 
-                    error50: '#9E003C',
-                    error100: '#C30040',
-                    error200: '#D60042',
-                    error300: '#EC0045',
-                    error400: '#FD0046',
-                    error500: '#FF396E',
-                    error600: '#FFA89E',
-                    error700: '#FFA89E',
-                    error800: '#FFCED2',
-                    error900: '#FFE7EB',
+                    error50: '#330000', // Very dark error color
+                    error100: '#660000', // Dark error color
+                    error200: '#990000', // Dark-medium error color
+                    error300: '#CC0000', // Medium-dark error color
+                    error400: '#FF0000', // Bright red for error
+                    error500: '#FF3333', // Medium-light error color
+                    error600: '#FF6666', // Lighter error color
+                    error700: '#FF9999', // Lighter error color
+                    error800: '#FFCCCC', // Lighter error color
+                    error900: '#FFEEEE', // Lightest error color
 
-                    info50: '#00569C',
-                    info100: '#0076BD',
-                    info200: '#0087D0',
-                    info300: '#009AE4',
-                    info400: '#00A8F2',
-                    info500: '#00B5F3',
-                    info600: '#21C2F3',
-                    info700: '#76D6F6',
-                    info800: '#B0E7F9',
-                    info900: '#E1F6FD',
+                    info50: '#00569C', // Keeping current info
+                    info100: '#0076BD', // Keeping current info
+                    info200: '#0087D0', // Keeping current info
+                    info300: '#009AE4', // Keeping current info
+                    info400: '#00A8F2', // Keeping current info
+                    info500: '#00B5F3', // Keeping current info
+                    info600: '#21C2F3', // Keeping current info
+                    info700: '#76D6F6', // Keeping current info
+                    info800: '#B0E7F9', // Keeping current info
+                    info900: '#E1F6FD', // Keeping current info
 
-                    warning50: '#EF721E',
-                    warning100: '#F18F28',
-                    warning200: '#F29F2B',
-                    warning300: '#F3B12F',
-                    warning400: '#F3BA35',
-                    warning500: '#F5C545',
-                    warning600: '#F6D666',
-                    warning700: '#FCEC94',
-                    warning800: '#FDF5C3',
-                    warning900: '#FEFDF1',
+                    warning50: '#EF721E', // Keeping current warning
+                    warning100: '#F18F28', // Keeping current warning
+                    warning200: '#F29F2B', // Keeping current warning
+                    warning300: '#F3B12F', // Keeping current warning
+                    warning400: '#F3BA35', // Keeping current warning
+                    warning500: '#F5C545', // Keeping current warning
+                    warning600: '#F6D666', // Keeping current warning
+                    warning700: '#FCEC94', // Keeping current warning
+                    warning800: '#FDF5C3', // Keeping current warning
+                    warning900: '#FEFDF1', // Keeping current warning
                 },
             },
             keyframes: {

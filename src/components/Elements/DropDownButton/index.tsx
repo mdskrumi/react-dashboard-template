@@ -69,8 +69,8 @@ const DropDownButton: React.FC<IDropDownButton> = ({
             </button>
             <div
                 className={`absolute min-w-full bg-light-gray50 transition-all duration-200 dark:bg-dark-gray50 ${
-                    align === 'left' ? 'right-0 -left-10' : 'left-0 -right-10'
-                } ${isActionVisible ? 'opacity-100' : 'opacity-0'}`}
+                    align === 'left' ? '-left-10 right-0' : '-right-10 left-0'
+                } ${isActionVisible ? 'block opacity-100' : 'hidden opacity-0'}`}
             >
                 {itemList?.map((item) => (
                     <div
