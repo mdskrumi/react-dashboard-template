@@ -18,12 +18,14 @@ const AccordionItem: React.FC<IAccordionItem> = ({
 
     return (
         <div
-            className="cursor-pointer overflow-hidden rounded-2xl bg-ui dark:bg-ui-dark"
+            className="cursor-pointer overflow-hidden rounded-2xl border-b bg-light-primary50 dark:bg-dark-primary50"
             onClick={() => setExpanded(!expanded)}
         >
             <div className="grid select-none grid-cols-1 px-6 py-3">
                 <div className="flex items-center justify-end">
-                    <h6 className="w-full">{title}</h6>
+                    <h6 className="w-full text-light-primary900 dark:text-dark-primary900">
+                        {title}
+                    </h6>
                     {trailing && (
                         <p className="caption min-w-fit">{trailing}</p>
                     )}
@@ -36,7 +38,9 @@ const AccordionItem: React.FC<IAccordionItem> = ({
                 </div>
 
                 {subTitle && (
-                    <p className="w-full text-sm font-light">{subTitle}</p>
+                    <p className="w-full text-sm font-light text-light-primary900 dark:text-dark-primary900">
+                        {subTitle}
+                    </p>
                 )}
             </div>
             <div

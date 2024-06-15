@@ -1,14 +1,10 @@
 const Footer = () => {
     return (
-        <footer className="absolute bottom-5 right-5 md:right-10 flex text-right">
+        <footer className="absolute bottom-5 right-5 flex text-right md:right-10">
             <p className="text-xs md:text-sm">
                 {`Copyright © ${new Date().getFullYear()} `}
-                <a
-                    className="text-primary-500 hover:underline"
-                    href="#"
-                    target="_blank"
-                >
-                    React Dashboard
+                <a href="#" target="_blank">
+                    {import.meta.env.DASHBOARD_SITE_NAME}
                 </a>
             </p>
         </footer>

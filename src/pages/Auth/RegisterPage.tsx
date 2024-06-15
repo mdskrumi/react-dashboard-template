@@ -52,13 +52,13 @@ const RegisterPage: React.FC = () => {
     });
 
     return (
-        <div className="h-[100vh] grid content-center bg-ui dark:bg-ui-dark">
+        <div className="grid h-[100vh] content-center">
             <form
-                className="w-full max-w-md p-6 md:p-10 card mb-10"
+                className="card mb-10 w-full max-w-md p-6 md:p-10"
                 onSubmit={handleSubmit(onSubmit)}
             >
-                <div className="text-center cursor-default mb-16">
-                    <img className="w-20 m-auto" src={Logo} />
+                <div className="mb-16 cursor-default text-center">
+                    <img className="m-auto w-20" src={Logo} />
                     <h3>React Dashboard</h3>
                     <p className="font-medium">Create Your Account</p>
                 </div>
@@ -126,16 +126,14 @@ const RegisterPage: React.FC = () => {
                     <div className="mt-4">
                         <span>
                             Already have an account?{' '}
-                            <Link to={'/'} className="text-primary_light">
-                                Log In Now
-                            </Link>
+                            <Link to={'/'}>Log In Now</Link>
                         </span>
                     </div>
                 )}
             </form>
             {showEmailVarifyField && (
                 <form
-                    className="w-full max-w-md p-6 md:p-10 card"
+                    className="card w-full max-w-md p-6 md:p-10"
                     onSubmit={handleSubmitCode(onCodeSubmit)}
                 >
                     <div className="mb-4">
