@@ -14,17 +14,17 @@ export interface ITab {
 const Tab: React.FC<ITab> = ({ tabItems, handleClick, value, className }) => {
     return (
         <div
-            className={`flex overflow-x-auto bg-ui text-center font-bold text-sm dark:bg-ui-dark rounded-full mb-8 ${className}`}
+            className={`mb-8 flex overflow-x-auto rounded-full bg-light-primary200 text-center text-sm font-bold dark:bg-dark-primary200 ${className}`}
         >
             {tabItems.map((item: ITabItem, idx: number) => (
                 <p
                     key={item.value}
-                    className={`flex-1 min-w-max m-1 p-2 rounded-full ${
+                    className={`m-1 min-w-max flex-1 rounded-full p-2 ${
                         value === item.value &&
-                        'bg-primary text-text-dark opacity-100'
+                        'bg-light-primary400 text-white opacity-100 dark:bg-dark-primary400'
                     } ${
                         item.disabled
-                            ? 'opacity-60 cursor-not-allowed'
+                            ? 'cursor-not-allowed opacity-60'
                             : 'cursor-pointer'
                     }`}
                     onClick={() => handleClick(idx)}

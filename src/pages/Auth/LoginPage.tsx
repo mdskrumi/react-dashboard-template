@@ -109,12 +109,7 @@ const LoginPage: React.FC = () => {
                 <div className="mt-4">
                     <span>
                         Don't have a account?{' '}
-                        <Link
-                            to={'/auth/register'}
-                            className="text-primary_light"
-                        >
-                            Sign Up Now
-                        </Link>
+                        <Link to={'/auth/register'}>Sign Up Now</Link>
                     </span>
                 </div>
             </form>
