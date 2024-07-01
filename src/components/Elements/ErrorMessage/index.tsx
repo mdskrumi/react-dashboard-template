@@ -5,7 +5,10 @@ interface ErrorMessageInterface {
 }
 
 const ErrorMessage: React.FC<ErrorMessageInterface> = ({ message }) => (
-    <p role="alert" className="text-sm text-error dark:text-error-dark">
+    <p
+        role="alert"
+        className="text-sm text-light-error500 dark:text-dark-error500"
+    >
         {message.toString()}
     </p>
 );

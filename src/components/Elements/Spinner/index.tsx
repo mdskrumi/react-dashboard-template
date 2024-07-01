@@ -1,3 +1,5 @@
+import { FaSpinner } from 'react-icons/fa';
+
 export interface ISpinner {
     className?: string;
     variant?: 'extra-small' | 'small' | 'normal' | 'large';
@@ -6,16 +8,16 @@ export interface ISpinner {
 
 const Spinner: React.FC<ISpinner> = ({ className, variant, message }) => (
     <div
-        className={`min-h-full min-w-full flex-col items-center justify-center ${className}`}
+        className={`flex min-h-full min-w-full flex-col items-center justify-center ${className}`}
     >
         {variant === 'extra-small' ? (
-            <div className="spin m-auto h-6 w-6 animate-spin rounded-full border-4 border-gray-300 border-t-primary" />
+            <FaSpinner className="h-6 w-6 animate-spin text-light-primary600 dark:text-dark-primary600" />
         ) : variant === 'small' ? (
-            <div className="spin m-auto h-10 w-10 animate-spin rounded-full border-8 border-gray-300 border-t-primary" />
+            <FaSpinner className="h-10 w-10 animate-spin text-light-primary600 dark:text-dark-primary600" />
         ) : variant === 'large' ? (
-            <div className="spin m-auto h-32 w-32 animate-spin rounded-full border-8 border-gray-300 border-t-primary" />
+            <FaSpinner className="h-32 w-32 animate-spin text-light-primary600 dark:text-dark-primary600" />
         ) : (
-            <div className="spin m-auto h-20 w-20 animate-spin rounded-full border-8 border-gray-300 border-t-primary" />
+            <FaSpinner className="h-20 w-20 animate-spin text-light-primary600 dark:text-dark-primary600" />
         )}
         {message && (
             <p className="mt-2 text-center font-medium italic">{message}</p>

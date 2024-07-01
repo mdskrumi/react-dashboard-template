@@ -37,8 +37,8 @@ const Pagination: React.FC<IPagination> = ({
                     key={1}
                     className={
                         1 === currentPage
-                            ? 'px-4 py-2 rounded card cursor-pointer hover:scale-110 bg-primary dark:bg-primary text-white'
-                            : 'px-4 py-2 rounded card cursor-pointer hover:scale-110'
+                            ? 'card cursor-pointer rounded bg-light-primary200 px-4 py-2 hover:scale-110 dark:bg-dark-primary200'
+                            : 'card cursor-pointer rounded px-4 py-2 hover:scale-110'
                     }
                     onClick={() => {
                         setCurrentPage(1);
@@ -49,7 +49,7 @@ const Pagination: React.FC<IPagination> = ({
                 <div
                     key={'...'}
                     className={
-                        'px-4 py-2 rounded card cursor-pointer hover:scale-110'
+                        'card cursor-pointer rounded px-4 py-2 hover:scale-110'
                     }
                 >
                     {'...'}
@@ -68,8 +68,8 @@ const Pagination: React.FC<IPagination> = ({
                     key={number}
                     className={
                         number === currentPage
-                            ? 'px-4 py-2 rounded card cursor-pointer hover:scale-110 bg-primary dark:bg-primary text-white'
-                            : 'px-4 py-2 rounded card cursor-pointer hover:scale-110'
+                            ? 'card cursor-pointer rounded bg-light-primary200 px-4 py-2 text-white hover:scale-110 dark:bg-dark-primary200'
+                            : 'card cursor-pointer rounded px-4 py-2 hover:scale-110'
                     }
                     id={`page-${number}`}
                     onClick={() => {
@@ -84,15 +84,15 @@ const Pagination: React.FC<IPagination> = ({
         if (higherRange < numberOfPages) {
             setItems((elements: any) => [
                 ...elements,
-                <div key={'....'} className={'px-4 py-2 rounded card'}>
+                <div key={'....'} className={'card rounded px-4 py-2'}>
                     {'...'}
                 </div>,
                 <div
                     key={numberOfPages}
                     className={
                         numberOfPages === currentPage
-                            ? 'px-4 py-2 rounded card cursor-pointer hover:scale-110 bg-primary dark:bg-primary text-white'
-                            : 'px-4 py-2 rounded card cursor-pointer hover:scale-110'
+                            ? 'card cursor-pointer rounded bg-light-primary200 px-4 py-2 text-white hover:scale-110 dark:bg-dark-primary200'
+                            : 'card cursor-pointer rounded px-4 py-2 hover:scale-110'
                     }
                     onClick={() => {
                         setCurrentPage(numberOfPages);
@@ -118,7 +118,7 @@ const Pagination: React.FC<IPagination> = ({
 
     return (
         <div className={className}>
-            <div className="flex flex-col lg:flex-row items-center font-semibold">
+            <div className="flex flex-col items-center font-semibold lg:flex-row">
                 {!hideMessage && (
                     <p className="caption">
                         {`Showing ${
@@ -132,11 +132,11 @@ const Pagination: React.FC<IPagination> = ({
 
                 <nav
                     aria-label="Pagination"
-                    className="flex justify-center items-center mt-8 lg:mt-0 gap-1"
+                    className="mt-8 flex items-center justify-center gap-1 lg:mt-0"
                 >
                     <a
                         href="#"
-                        className="px-4 py-2 rounded cursor-pointer invisible sm:visible hover:scale-110"
+                        className="invisible cursor-pointer rounded px-4 py-2 hover:scale-110 sm:visible"
                         onClick={prevPage}
                     >
                         <AiOutlineArrowLeft />
@@ -146,7 +146,7 @@ const Pagination: React.FC<IPagination> = ({
 
                     <a
                         href="#"
-                        className="px-4 py-2 rounded cursor-pointer invisible sm:visible hover:scale-110"
+                        className="invisible cursor-pointer rounded px-4 py-2 hover:scale-110 sm:visible"
                         onClick={nextPage}
                     >
                         <AiOutlineArrowRight />

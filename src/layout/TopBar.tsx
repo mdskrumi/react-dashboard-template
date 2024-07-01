@@ -19,7 +19,7 @@ const TopBar = () => {
     return (
         <>
             <div
-                className={`m-auto fixed items-center justify-between flex h-16 top-0 w-full border-b-[1px] border-line dark:border-line-dark bg-surface dark:bg-surface-dark select-none duration-300 z-20`}
+                className={`fixed top-0 z-20 m-auto flex h-16 w-full select-none items-center justify-between border-b-[1px] border-light-gray300 bg-light-primary50 duration-300 dark:border-dark-gray300 dark:bg-dark-primary50`}
                 style={{
                     marginLeft:
                         window.innerWidth > 1024
@@ -32,14 +32,14 @@ const TopBar = () => {
                 <div>
                     <RiMenuFoldLine
                         size={'1.5em'}
-                        className={`duration-300 ml-4 cursor-pointer ${
+                        className={`ml-4 cursor-pointer duration-300 ${
                             !isSidebarOpen && '-scale-x-100'
                         }`}
                         onClick={() => dispatch(setSidebarOpen(!isSidebarOpen))}
                     />
                 </div>
 
-                <div className="fixed right-6 top-4 cursor-pointer flex gap-3 items-center">
+                <div className="fixed right-6 top-4 flex cursor-pointer items-center gap-3">
                     <div>
                         <DropDownButton
                             title={Languages[i18n.resolvedLanguage!]}

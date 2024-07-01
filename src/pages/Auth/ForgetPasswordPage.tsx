@@ -25,13 +25,13 @@ const ForgetPasswordPage: React.FC = () => {
     });
 
     return (
-        <div className="h-[100vh] grid content-center bg-ui dark:bg-ui-dark">
+        <div className="grid h-[100vh] content-center">
             <form
-                className="w-full max-w-md p-6 md:p-10 card"
+                className="card w-full max-w-md p-6 md:p-10"
                 onSubmit={handleSubmit(onSubmit)}
             >
-                <div className="text-center cursor-default mb-16">
-                    <img className="w-20 m-auto" src={Logo} />
+                <div className="mb-16 cursor-default text-center">
+                    <img className="m-auto w-20" src={Logo} />
                     <h3>React Dashboard</h3>
                     <p className="font-medium">Find Your Account</p>
                 </div>
@@ -66,10 +66,7 @@ const ForgetPasswordPage: React.FC = () => {
                 </div>
                 <div className="mt-4">
                     <span>
-                        To login?{' '}
-                        <Link to={'/'} className="text-primary_light">
-                            Log In
-                        </Link>
+                        To login? <Link to={'/'}>Log In</Link>
                     </span>
                 </div>
             </form>

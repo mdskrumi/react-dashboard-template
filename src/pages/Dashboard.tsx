@@ -11,7 +11,7 @@ const Dashboard: React.FC = () => {
             breadcrumbs={[{ title: 'Dashboard', link: '#', disabled: true }]}
         >
             <div className="grid w-full grid-cols-1 gap-5 lg:grid-cols-2">
-                <h1 className=" card col-span-1 p-10 text-center lg:col-span-2">
+                <h1 className="card col-span-1 p-10 text-center lg:col-span-2">
                     React Dashboard Template
                 </h1>
                 <p className="card p-10">

@@ -43,17 +43,17 @@ const SideBarItem: React.FC<Props> = ({ menuItem, isMobile }) => {
             <div
                 className={`${
                     isOpen ? 'py-3' : 'py-2'
-                } cursor-pointer flex items-center ${
+                } flex cursor-pointer items-center font-medium ${
                     level === 2
-                        ? 'bg-ui dark:bg-ui-dark border-l-4 border-primary'
+                        ? 'border-l-4 pl-4'
                         : level === 3
-                        ? 'bg-ui-variant dark:bg-ui-dark-variant border-l-4 border-primary-variant'
-                        : ''
+                          ? 'border-l-4 pl-4'
+                          : ''
                 } ${
                     location.pathname === url &&
                     id !== 'logout' &&
-                    'text-primary'
-                } hover:text-primary`}
+                    'text-light-primary500 dark:text-dark-primary500'
+                } duration-100 hover:translate-x-0.5`}
                 onClick={(e) => {
                     e.stopPropagation();
 
@@ -73,25 +73,19 @@ const SideBarItem: React.FC<Props> = ({ menuItem, isMobile }) => {
                 }}
             >
                 <div className="content-center">
-                    <div className="pl-7 mr-6">{icon()}</div>
+                    <div className="mr-6 pl-7">{icon()}</div>
                     <p
                         className={`w-full text-center text-xs ${
                             isOpen
-                                ? 'animate-fade-out hidden'
-                                : 'animate-fade-in visible'
+                                ? 'hidden animate-fade-out'
+                                : 'visible animate-fade-in'
                         }`}
                     >
                         {t(id)}
                     </p>
                 </div>
-                <div
-                    className={`${isOpen ? 'w-full' : 'w-0'} ${
-                        location.pathname === url && id !== 'logout'
-                            ? 'bg-main'
-                            : ''
-                    }`}
-                >
-                    <div className="flex justify-between items-center w-full">
+                <div className={`${isOpen ? 'w-full' : 'w-0'}`}>
+                    <div className="flex w-full items-center justify-between">
                         {isOpen && (
                             <>
                                 <p className="animate-fade-in"> {t(id)}</p>

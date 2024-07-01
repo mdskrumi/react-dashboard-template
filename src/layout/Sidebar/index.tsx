@@ -18,15 +18,15 @@ const Sidebar: React.FC = () => {
         <>
             {/* Desktop Design */}
             <div
-                className={`z-20 hidden lg:block fixed top-0 bottom-0 ${
+                className={`fixed bottom-0 top-0 z-20 hidden lg:block ${
                     isOpen ? 'w-72' : 'w-20'
-                } duration-300 overflow-x-hidden border-r-[1px] bg-surface dark:bg-surface-dark border-line dark:border-line-dark`}
+                } overflow-x-hidden border-r-[1px] border-light-gray300 bg-light-primary50 duration-300 dark:border-dark-gray300 dark:bg-dark-primary50`}
             >
                 <div
-                    className="pl-4 flex justify-start items-center cursor-default h-16 border-b border-line dark:border-line-dark"
+                    className="flex h-16 cursor-default items-center justify-start border-b border-light-gray300 bg-light-primary100 pl-4 dark:border-dark-gray300 dark:bg-dark-primary100"
                     onClick={() => dispatch(setSidebarOpen(!isOpen))}
                 >
-                    <Image className="w-12 mr-4" src={Logo} />
+                    <Image className="mr-4 w-12" src={Logo} />
                     {isOpen && (
                         <div className="animate-fade-in">
                             <h3 className="min-w-max">Dashboard</h3>
@@ -41,21 +41,21 @@ const Sidebar: React.FC = () => {
 
             {/* Mobile Design */}
             <div
-                className={`z-50 block lg:hidden overflow-hidden overflow-y-auto fixed top-0 bottom-0 left-0 bg-overlay ${
-                    isOpen ? 'w-full' : 'w-0'
+                className={`fixed bottom-0 left-0 top-0 z-50 block overflow-hidden overflow-y-auto backdrop-blur-sm lg:hidden ${
+                    isOpen ? 'w-full' : 'w-auto'
                 }`}
                 onClick={() => dispatch(setSidebarOpen(false))}
             >
                 <div
                     className={`relative ${
                         isOpen ? 'max-w-xs' : 'max-w-0'
-                    }  bg-surface dark:bg-surface-dark min-h-[100vh] duration-300`}
+                    } min-h-[100vh] border-light-gray300 bg-light-primary50 duration-300 dark:border-dark-gray300 dark:bg-dark-primary50`}
                 >
                     <div
-                        className="sticky bg-surface dark:bg-surface-dark top-0 pl-4 flex justify-start items-center cursor-pointer h-16 border-b border-line dark:border-line-dark"
+                        className="sticky top-0 flex h-16 cursor-pointer items-center justify-start border-b border-light-gray300 bg-light-primary100 pl-4 dark:border-dark-gray300 dark:bg-dark-primary100"
                         onClick={() => dispatch(setSidebarOpen(!isOpen))}
                     >
-                        <Image className="w-12 mr-4" src={Logo} />
+                        <Image className="mr-4 w-12" src={Logo} />
                         <div className="animate-fade-in">
                             <h3 className="min-w-max">Dashboard</h3>
                             <p className="caption min-w-max">Simple and Fast</p>

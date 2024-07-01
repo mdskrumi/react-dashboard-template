@@ -6,11 +6,11 @@
 
 @layer base {
     body {
-        @apply m-0 p-0 bg-ui text-text dark:bg-ui-dark dark:text-text-dark;
+        @apply text-light-gray800 dark:text-dark-gray800 bg-light-accent50 dark:bg-dark-accent50 m-0 p-0;
     }
 
     #root {
-        @apply m-0 p-0 bg-ui text-text dark:bg-ui-dark dark:text-text-dark font-custom dark:shadow-white;
+        @apply m-0 p-0 font-custom;
     }
 
     /* Heading Typography */
@@ -50,7 +50,11 @@
 
     /* Links */
     a {
-        @apply duration-500 ease-in no-underline focus:outline-0 text-primary font-medium;
+        @apply hover:underline text-light-secondary500 dark:text-dark-secondary500 font-medium no-underline duration-300 ease-in focus:outline-0;
+    }
+
+    button {
+        @apply text-light-gray900 hover:text-light-gray200 dark:text-dark-gray900 dark:hover:text-dark-gray200
     }
 
     /* Input */
@@ -61,11 +65,11 @@
     input,
     textarea,
     .rdw-editor-main {
-        @apply border rounded w-full py-2 px-2 leading-tight focus:outline-double outline-primary border-line text-text bg-ui dark:bg-ui-dark dark:text-text-dark dark:border-line-dark;
+        @apply bg-light-primary50 dark:bg-dark-primary50 border-light-gray300 dark:border-dark-gray300 outline-light-primary300 dark:outline-dark-primary300 w-full rounded border py-2 px-2 leading-tight focus:outline-double;
     }
 
     select {
-        @apply border rounded w-full py-2 leading-tight focus:outline-double outline-primary border-line text-text bg-ui dark:bg-ui-dark dark:text-text-dark dark:border-line-dark;
+        @apply border-light-gray300 dark:border-dark-gray300 bg-light-primary50 dark:bg-dark-primary50 outline-light-primary300 dark:outline-dark-primary300 w-full rounded border py-2 leading-tight focus:outline-double;
     }
 
     /* width */
@@ -75,46 +79,46 @@
 
     /* Track */
     ::-webkit-scrollbar-track {
-        @apply bg-text-dark dark:bg-text;
+        @apply bg-light-accent200 dark:bg-dark-accent200;
     }
 
     /* Handle */
     ::-webkit-scrollbar-thumb {
-        @apply bg-text dark:bg-text-dark rounded-lg;
+        @apply bg-light-accent400 dark:bg-dark-accent400 rounded-lg;
     }
 
     /* Handle on hover */
     ::-webkit-scrollbar-thumb:hover {
-        @apply bg-primary-variant;
+        @apply bg-light-accent400 dark:bg-dark-accent400;
     }
 }
 
 @layer components {
     .card {
-        @apply mx-auto shadow-md rounded-3xl bg-surface dark:bg-surface-dark;
+        @apply bg-light-primary50 dark:bg-dark-primary50 mx-auto rounded-3xl shadow-md;
     }
 
     .caption {
-        @apply italic font-semibold w-max text-xs text-[0.675rem];
+        @apply w-max text-xs text-[0.675rem] font-semibold italic;
     }
 
     .table {
-        @apply w-full table-auto bg-surface dark:bg-surface-dark;
+        @apply bg-light-primary50 dark:bg-dark-primary50 w-full table-auto;
     }
 
     .table-head-row {
-        @apply p-4 text-base font-medium mr-auto text-left uppercase;
+        @apply mr-auto p-4 text-left text-base font-medium uppercase;
     }
 
     .table-body-row {
-        @apply p-4 text-sm mr-auto;
+        @apply mr-auto p-4 text-sm;
     }
 
     .abs-center {
-        @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
+        @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform;
     }
 
     .radio {
-        @apply appearance-none transition duration-300 ease-in-out border-2 border-line dark:border-line-dark rounded-full p-2 bg-surface dark:bg-surface-dark checked:border-line dark:checked:border-line-dark checked:bg-primary dark:checked:bg-primary;
+        @apply border-light-gray300 dark:border-dark-gray300 bg-light-primary200 dark:bg-dark-primary200 checked:bg-light-primary900 dark:checked:bg-dark-primary900 appearance-none rounded-full border-2 p-2 transition duration-300 ease-in-out;
     }
 }

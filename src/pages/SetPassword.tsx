@@ -25,30 +25,19 @@ const SetPassword: React.FC = () => {
     });
     return (
         <>
-            <div className="flex justify-center min-h-screen bg-main items-center text-white">
+            <div className="flex min-h-screen items-center justify-center">
                 <form
-                    className="w-full max-w-xs mx-auto"
+                    className="mx-auto w-full max-w-xs"
                     onSubmit={handleSubmit(onSubmit)}
                 >
-                    <h1 className="text-center pb-8">
-                        <a
-                            className="flex justify-center items-center before:content-[''] before:inline-block before:w-[2.4rem] before:h-[2.4rem] before:mr-4 before:border-[5px] before:border-solid before:border-white before:rounded-[2.4rem]"
-                            href="/"
-                        >
-                            Dashboard
-                        </a>
+                    <h1 className="pb-8 text-center">
+                        <a href="/">Dashboard</a>
                     </h1>
                     <div className="mb-1">
-                        <label
-                            htmlFor="password"
-                            className="block text-sm font-bold mb-2"
-                        >
-                            Password
-                        </label>
+                        <label htmlFor="password">Password</label>
                         <input
                             type="password"
                             id="password"
-                            className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
                             {...register('password', {
                                 required: {
                                     value: true,
@@ -65,16 +54,12 @@ const SetPassword: React.FC = () => {
                         )}
                     </div>
                     <div className="mb-1">
-                        <label
-                            htmlFor="confirmPassword"
-                            className="block text-sm font-bold mb-2"
-                        >
+                        <label htmlFor="confirmPassword">
                             Confirm Password
                         </label>
                         <input
                             type="password"
                             id="confirmPassword"
-                            className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
                             {...register('confirmPassword', {
                                 required: {
                                     value: true,
@@ -93,7 +78,7 @@ const SetPassword: React.FC = () => {
                                 />
                             )}
                     </div>
-                    <div className="flex items-center justify-between mt-4">
+                    <div className="mt-4 flex items-center justify-between">
                         <Button
                             title="Set password"
                             type="submit"
