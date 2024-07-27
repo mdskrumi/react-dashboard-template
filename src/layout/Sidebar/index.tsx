@@ -47,7 +47,7 @@ const Sidebar: React.FC = () => {
                 onClick={() => dispatch(setSidebarOpen(false))}
             >
                 <div
-                    className={`relative ${
+                    className={`relative border border-r-2 shadow-2xl ${
                         isOpen ? 'max-w-xs' : 'max-w-0'
                     } min-h-[100vh] border-light-gray300 bg-light-primary50 duration-300 dark:border-dark-gray300 dark:bg-dark-primary50`}
                 >
