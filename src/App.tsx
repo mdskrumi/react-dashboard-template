@@ -1,6 +1,5 @@
 import { Suspense, lazy, useEffect } from 'react';
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
-import { ToastContainer } from 'react-toastify';
 
 import { useAppSelector } from 'store/hooks';
 
@@ -28,7 +27,8 @@ const SetPassword = lazy(() => import('pages/SetPassword'));
 const PublicOutlet = lazy(() => import('layout/PublicOutlet'));
 const PrivateOutlet = lazy(() => import('layout/PrivateOutlet'));
 
-import 'react-toastify/dist/ReactToastify.css';
+import toast, { Toaster } from 'react-hot-toast';
+
 import './i18n'
 
 
@@ -45,7 +45,7 @@ function App() {
 
     return (
         <div className="max-w-[1920px] h-screen m-auto animate-fade-in-up">
-            <ToastContainer />
+            <Toaster />
             <BrowserRouter>
                 <Suspense fallback={<SplashPage />}>
                     <Routes>
