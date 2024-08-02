@@ -45,9 +45,9 @@ const RegisterPage: React.FC = () => {
         register: registerCode,
         handleSubmit: handleSubmitCode,
         formState: { errors: errorsCode },
-    } = useForm<{ varificationCode: string }>({
+    } = useForm<{ verificationCode: string }>({
         defaultValues: {
-            varificationCode: '',
+            verificationCode: '',
         },
     });
 
@@ -137,24 +137,24 @@ const RegisterPage: React.FC = () => {
                     onSubmit={handleSubmitCode(onCodeSubmit)}
                 >
                     <div className="mb-4">
-                        <label htmlFor="varificationCode">
-                            Varification Code
+                        <label htmlFor="verificationCode">
+                            Verification Code
                         </label>
                         <input
                             type="text"
-                            id="varificationCode"
-                            {...registerCode('varificationCode', {
+                            id="verificationCode"
+                            {...registerCode('verificationCode', {
                                 required: {
                                     value: true,
                                     message: 'This field is requried.',
                                 },
                             })}
                         />
-                        {errorsCode.varificationCode &&
-                            errorsCode.varificationCode.message && (
+                        {errorsCode.verificationCode &&
+                            errorsCode.verificationCode.message && (
                                 <ErrorMessage
                                     message={
-                                        errorsCode.varificationCode.message
+                                        errorsCode.verificationCode.message
                                     }
                                 />
                             )}
