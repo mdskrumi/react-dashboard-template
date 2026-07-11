@@ -1,6 +1,7 @@
 import { combineReducers } from '@reduxjs/toolkit';
-import storage from 'redux-persist/lib/storage';
 import { persistReducer } from 'redux-persist';
+
+import storage from 'store/storage';
 
 import { dashboardAPI } from 'store/api';
 import userReducer from './user';

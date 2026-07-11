@@ -43,7 +43,7 @@ function App() {
     }, [theme]);
 
     return (
-        <div className="max-w-[1920px] h-screen m-auto animate-fade-in-up">
+        <div className="w-full h-screen m-auto animate-fade-in-up">
             {/* <ToastContainer /> */}
             <Toaster />
             <BrowserRouter>
